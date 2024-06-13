@@ -14,7 +14,7 @@ public class Clock : MonoBehaviour
     [SerializeField] private Color activeTimerColor;
 
     #endregion
-
+    
     #region Constants
 
     private const int MINUTE_TO_SECONDS = 60;

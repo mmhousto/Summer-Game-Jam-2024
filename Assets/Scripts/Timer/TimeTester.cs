@@ -5,8 +5,8 @@ using UnityEngine;
 public class TimeTester : MonoBehaviour
 {
     #region Events
-
-    public delegate void ClickAction();
+    [SerializeField] private TimerSO timerSo;
+    public delegate void ClickAction(TimerSO timer);
 
     public static event ClickAction OnClicked;
 
@@ -16,7 +16,7 @@ public class TimeTester : MonoBehaviour
 
     public void StartTimer()
     {
-        OnClicked?.Invoke();
+        OnClicked?.Invoke(timerSo);
     }
 
     #endregion

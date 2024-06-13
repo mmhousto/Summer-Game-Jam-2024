@@ -2,19 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TimerManager : MonoBehaviour
 {
     #region Fields
-
-    [SerializeField] private TimerSO timerSo;
 
     [SerializeField] private Clock clock;
 
     private int _totaltime;
     private int _remainingtime;
     private bool _activeTimer;
-
+    
     #endregion
 
     #region Constants
@@ -48,12 +47,12 @@ public class TimerManager : MonoBehaviour
 
     #region Methods
 
-    private void StartTimer()
+    private void StartTimer(TimerSO timer)
     {
         if (_activeTimer) return;
         _activeTimer = true;
         clock.StartTimerUI();
-        _totaltime = timerSo.Minutes * MINUTE_TO_SECONDS + timerSo.seconds;
+        _totaltime = timer.Minutes * MINUTE_TO_SECONDS + timer.seconds;
         _remainingtime = _totaltime;
         clock.TimerTextUpdate(_totaltime);
         clock.TimerFillImgUpdate(FILLED_IMG);
@@ -80,6 +79,12 @@ public class TimerManager : MonoBehaviour
     {
         clock.EndTimerUI();
         _activeTimer = false;
+    }
+
+    public void StopTimer()
+    {
+        _remainingtime = TIME_ENDED;
+        EndTimer();
     }
 
     #endregion
