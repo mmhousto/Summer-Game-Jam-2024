@@ -34,13 +34,15 @@ public class TimerManager : MonoBehaviour
 
     private void OnEnable()
     {
-        TimeInvoker.OnClicked += StartTimer;
+        TimeInvoker.OnStart += StartTimer;
+        TimeInvoker.OnInterrupt += StopTimer;
     }
 
 
     private void OnDisable()
     {
-        TimeInvoker.OnClicked -= StartTimer;
+        TimeInvoker.OnStart -= StartTimer;
+        TimeInvoker.OnInterrupt -= StopTimer;
     }
 
     #endregion

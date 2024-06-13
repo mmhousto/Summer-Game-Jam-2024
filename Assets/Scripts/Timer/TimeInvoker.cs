@@ -6,17 +6,23 @@ public class TimeInvoker : MonoBehaviour
 {
     #region Events
     [SerializeField] private TimerSO timerSo;
-    public delegate void ClickAction(TimerSO timer);
+    public delegate void StartAction(TimerSO timer);
+    public delegate void EndAction();
 
-    public static event ClickAction OnClicked;
-
+    public static event StartAction OnStart;
+    public static event EndAction OnInterrupt;
     #endregion
 
     #region Methods
 
     public void StartTimer()
     {
-        OnClicked?.Invoke(timerSo);
+        OnStart?.Invoke(timerSo);
+    }
+    
+    public void EndTimer()
+    {
+        OnInterrupt?.Invoke();
     }
 
     #endregion
