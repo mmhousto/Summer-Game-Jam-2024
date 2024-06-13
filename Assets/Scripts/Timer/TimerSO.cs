@@ -37,7 +37,7 @@ public class TimerSO : ScriptableObject
     private const int MAX_MINUTES = 59;
 
     #endregion
-    
+
     #region UnityMethods
 
     private void OnValidate()

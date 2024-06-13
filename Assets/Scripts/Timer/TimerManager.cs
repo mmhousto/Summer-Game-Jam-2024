@@ -53,12 +53,11 @@ public class TimerManager : MonoBehaviour
         if (_activeTimer) return;
         _activeTimer = true;
         clock.StartTimerUI();
-        clock.TimerTextUpdate(timerSo.Seconds);
-        clock.TimerFillImgUpdate(FILLED_IMG);
         _totaltime = timerSo.Minutes * MINUTE_TO_SECONDS + timerSo.seconds;
         _remainingtime = _totaltime;
+        clock.TimerTextUpdate(_totaltime);
+        clock.TimerFillImgUpdate(FILLED_IMG);
         Invoke(nameof(UpdateTimer), A_SECOND);
-        Debug.Log("Time started");
     }
 
     private void UpdateTimer()

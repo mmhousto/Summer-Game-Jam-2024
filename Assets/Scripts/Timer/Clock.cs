@@ -27,7 +27,6 @@ public class Clock : MonoBehaviour
 
     public void TimerTextUpdate(int seconds)
     {
-        Debug.Log($"Seconds remaining {seconds}");
         var minutes = END_TIME;
         if (seconds >= MINUTE_TO_SECONDS)
         {
@@ -49,7 +48,7 @@ public class Clock : MonoBehaviour
         fillclockImg.fillAmount = FILLED_IMG;
         TimerTextUpdate(END_TIME);
     }
-    
+
     public void StartTimerUI()
     {
         fillclockImg.color = activeTimerColor;
