@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeTester : MonoBehaviour
+public class TimeInvoker : MonoBehaviour
 {
     #region Events
     [SerializeField] private TimerSO timerSo;
