@@ -3,8 +3,13 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour, IInteractable
 {
+    #region Fields
 
     protected bool canInteract;
+
+    #endregion
+
+    #region Unity Methods
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +22,10 @@ public class Interactable : MonoBehaviour, IInteractable
     {
 
     }
+
+    #endregion
+
+    #region Methods
 
     public virtual void Interact()
     {
@@ -40,4 +49,5 @@ public class Interactable : MonoBehaviour, IInteractable
         canInteract = true;
     }
 
+    #endregion
 }

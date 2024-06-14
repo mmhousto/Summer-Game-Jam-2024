@@ -5,11 +5,16 @@ using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
+    #region Fields
 
     private StarterAssetsInputs inputs;
     public Transform playerCamRoot;
 
     private bool isInteracting;
+
+    #endregion
+
+    #region Unity Methods
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +32,10 @@ public class Interact : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Methods
+
     void CheckIfInteracting()
     {
         Ray ray = new Ray(playerCamRoot.position, playerCamRoot.forward);
@@ -41,4 +50,7 @@ public class Interact : MonoBehaviour
 
         isInteracting = false;
     }
+
+    #endregion
+
 }
