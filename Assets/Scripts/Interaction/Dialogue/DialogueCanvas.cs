@@ -29,6 +29,7 @@ public class DialogueCanvas : MonoBehaviour
     private const string THINK_KEY = "Think";
     private const string BUBBLE_CAT = "Dialogbubble";
     private const string POINTER_CAT = "Dialogpointer";
+    private const float DIALOGUE_OFFSET = 1.2f;
 
     #endregion
 
@@ -137,10 +138,19 @@ public class DialogueCanvas : MonoBehaviour
         return resetDialogue;
     }
 
-    public void DisplayDialogue(DialogueClass.Feel newfeel, string dialogue)
+    private void RepositionDialogue(Transform dialogueSource)
+    {
+        var tranf = transform;
+        var sourcePos = dialogueSource.position;
+        var bottompos = sourcePos.y + dialogueSource.localScale.y;
+        tranf.position = new Vector3(sourcePos.x,bottompos+DIALOGUE_OFFSET,sourcePos.z);
+    }
+    
+    public void DisplayDialogue(DialogueClass.Feel newfeel, string dialogue, Transform dialogueSource)
     {
         ChangeDialogueFeel(newfeel);
         dialogueText.text = dialogue;
+        RepositionDialogue(dialogueSource);
     }
 
     #endregion

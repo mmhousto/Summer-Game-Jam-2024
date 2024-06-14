@@ -66,7 +66,7 @@ public class Dialogue : Interactable
             return;
         }
 
-        dialogueCanvas.DisplayDialogue(dialogues[dialogueIdx].feeling, dialogues[dialogueIdx].dialogue);
+        dialogueCanvas.DisplayDialogue(dialogues[dialogueIdx].feeling, dialogues[dialogueIdx].dialogue, dialogues[dialogueIdx].dialogueSource);
         dialogueIdx++;
         StartCoroutine(waitForNextDialogue());
     }
