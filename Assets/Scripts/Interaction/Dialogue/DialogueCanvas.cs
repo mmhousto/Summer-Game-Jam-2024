@@ -48,7 +48,7 @@ public class DialogueCanvas : MonoBehaviour
         
         var dist = Vector3.Distance(camPos, position);
         if(dist<15)return;
-        EndDialogue();
+        BreakDialogue();
     }
 
     public void setCameraFollow()
@@ -105,6 +105,13 @@ public class DialogueCanvas : MonoBehaviour
     }
 
     public void EndDialogue()
+    {
+        HideDialogue();
+        followCamera = false;
+        dialogueText.text = "";
+    }
+    
+    public void BreakDialogue()
     {
         HideDialogue();
         followCamera = false;

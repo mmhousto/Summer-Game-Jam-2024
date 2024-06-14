@@ -689,7 +689,7 @@ GameObject:
   - component: {fileID: 420385650}
   - component: {fileID: 420385654}
   m_Layer: 8
-  m_Name: DialogueNPC
+  m_Name: DialogueNPC Emotions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -799,13 +799,11 @@ MonoBehaviour:
   name: DialogueNPC
   dialogueIdx: 0
   dialogues:
-  - dialogue: Leave adventurer, im busy
+  - dialogue: This is Mad
     feeling: 1
-  - dialogue: Maybe he can help
+  - dialogue: This is Think
     feeling: 2
-  - dialogue: Can you grab some rocks for me? 10 whould suffice
-    feeling: 0
-  - dialogue: See ya
+  - dialogue: This is Calm
     feeling: 0
   dialogueCanvas: {fileID: 1284555523}
 --- !u!1 &490962130
@@ -822,7 +820,7 @@ GameObject:
   - component: {fileID: 490962132}
   - component: {fileID: 490962131}
   m_Layer: 8
-  m_Name: DialogueNPC (2)
+  m_Name: DialogueNPC Lorem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -843,13 +841,16 @@ MonoBehaviour:
   name: DialogueNPC
   dialogueIdx: 0
   dialogues:
-  - dialogue: Leave adventurer, im busy
+  - dialogue: I'm totally calm
     feeling: 0
-  - dialogue: Maybe he can help
-    feeling: 2
-  - dialogue: Can you grab some rocks for me? 10 whould suffice
+  - dialogue: hey
     feeling: 0
-  - dialogue: See ya
+  - dialogue: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+      in culpa qui officia deserunt mollit anim id est laborum."'
     feeling: 0
   dialogueCanvas: {fileID: 1965898410}
 --- !u!136 &490962132
@@ -5696,7 +5697,7 @@ GameObject:
   - component: {fileID: 1560824803}
   - component: {fileID: 1560824802}
   m_Layer: 8
-  m_Name: DialogueNPC (1)
+  m_Name: DialogueNPC Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

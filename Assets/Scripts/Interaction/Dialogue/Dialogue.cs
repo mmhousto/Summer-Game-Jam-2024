@@ -11,6 +11,7 @@ public class Dialogue : Interactable
     [SerializeField] private int dialogueIdx;
     [SerializeField] private DialogueClass[] dialogues;
     [SerializeField] private DialogueCanvas dialogueCanvas;
+
     #endregion
 
     #region Properties
@@ -26,6 +27,7 @@ public class Dialogue : Interactable
     #region Constants
 
     private const int FIRST_DIALOGUE = 0;
+    private const int ArrayToLenght = 1;
 
     #endregion
 
@@ -48,29 +50,56 @@ public class Dialogue : Interactable
             canInteract = true;
             dialogueIdx = FIRST_DIALOGUE;
         }
+
         if (!canInteract) return;
         canInteract = false;
         if (dialogueIdx == FIRST_DIALOGUE)
         {
-            StartDialogue(dialogues,interactedTarget);
+            StartDialogue(dialogues, interactedTarget);
         }
-        Debug.Log($"BugHunt dialogueIdx {dialogueIdx} of {dialogues.Length}");
-        while (dialogueIdx<dialogues.Length)
+    }
+
+    private void ContinueDialogue()
+    {
+        if (dialogueIdx >= dialogues.Length)
         {
-            // if (!Input.GetKeyDown(KeyCode.E)) continue;
-            dialogueIdx++;
-            Debug.Log($"BugHunt dialogueIdx {dialogueIdx}");
-            dialogueCanvas.DisplayDialogue(dialogues[dialogueIdx].feeling,dialogues[dialogueIdx].dialogue);
+            EndDialogue();
+            return;
         }
-        Debug.Log($"BugHunt dialogueIdx {dialogueIdx} of {dialogues.Length} leaving while");
+        dialogueCanvas.DisplayDialogue(dialogues[dialogueIdx].feeling, dialogues[dialogueIdx].dialogue);
+        dialogueIdx++;
+        StartCoroutine(waitForNextDialogue());
+    }
+
+    private void EndDialogue()
+    {
         dialogueCanvas.EndDialogue();
+        dialogueIdx = FIRST_DIALOGUE;
+        StartCoroutine(TalkCooldown());
     }
     
-    private void StartDialogue(IReadOnlyList<DialogueClass> dialogues,Transform interactedTaget)
+    IEnumerator TalkCooldown()
+    {
+        yield return new WaitForSeconds(2f);
+        canInteract = true;
+    }
+    
+    IEnumerator waitForNextDialogue()
+    {
+        yield return new WaitForSeconds(0.2f);
+        while (!Input.GetKeyDown(KeyCode.E))
+        {
+            yield return null;
+        }
+        ContinueDialogue();
+    }
+
+    private void StartDialogue(IReadOnlyList<DialogueClass> dialogues, Transform interactedTaget)
     {
         dialogueCanvas.setCameraFollow();
-        dialogueCanvas.DisplayDialogue(dialogues[dialogueIdx].feeling,dialogues[dialogueIdx].dialogue);
         dialogueCanvas.ShowDialogue();
+        ContinueDialogue();
     }
+
     #endregion
 }
