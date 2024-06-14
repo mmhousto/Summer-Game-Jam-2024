@@ -20,7 +20,6 @@ public class Interactable : MonoBehaviour, IInteractable
     // Update is called once per frame
     void Update()
     {
-
     }
 
     #endregion
@@ -30,11 +29,9 @@ public class Interactable : MonoBehaviour, IInteractable
     public virtual void Interact()
     {
         if (!canInteract) return;
-
         canInteract = false;
         Debug.Log("Interacted with: " + gameObject.name, gameObject);
         StartCoroutine(EndInteract());
-
     }
 
     public bool CanInteract()
