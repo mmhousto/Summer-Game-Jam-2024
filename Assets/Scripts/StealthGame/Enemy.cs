@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Interactable
 {
+    #region Fields
+
     public float speed = 5;
     public float waitTime = .3f;
     public float turnSpeed = 90;
@@ -16,11 +18,29 @@ public class Enemy : MonoBehaviour
 
     public Transform pathHolder;
     Transform player;
+    public GameObject item;
     Color originalSpotlightColor;
+    public StealthGameManager sgm;
+
+    public bool hasItem;
+
+    #endregion
+
+    #region Events
+
+    public static event System.Action OnPlayerSpotted;
+
+    #endregion
+
+    #region UnityMethods
 
     void Start()
     {
+        hasItem = false;
+        sgm = GameObject.Find("StealthGameManager").GetComponent<StealthGameManager>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        canInteract = true;
 
         originalSpotlightColor = spotLight.color;
         viewAngle = spotLight.spotAngle;
@@ -40,12 +60,23 @@ public class Enemy : MonoBehaviour
         if (CanSeePlayer())
         {
             spotLight.color = Color.red;
+            sgm.playerInput.DeactivateInput();
+            
+            if (OnPlayerSpotted != null)
+            {
+                OnPlayerSpotted();
+            }
+            Time.timeScale = 0;
         }
         else
         {
             spotLight.color = originalSpotlightColor;
         }
     }
+
+    #endregion
+
+    #region Methods
 
     bool CanSeePlayer()
     {
@@ -97,6 +128,27 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region InterfaceImplementation
+
+    public override void Interact()
+    {
+        if (canInteract)
+        {
+            canInteract = false;
+            sgm.playerHasItem = true;
+            Debug.Log("Collected: " + item.name, gameObject);
+            Destroy(item);
+            // Add one to collected info ui
+        }
+
+    }
+
+    #endregion
+
+    #region Debug
+
     void OnDrawGizmos()
     {
         Vector3 startPosition = pathHolder.GetChild(0).position;
@@ -113,4 +165,6 @@ public class Enemy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, transform.forward * viewDistance);
     }
+
+    #endregion
 }
