@@ -9,7 +9,7 @@ public class Interact : MonoBehaviour
 
     private StarterAssetsInputs inputs;
     public Transform playerCamRoot;
-
+    public GameObject contextPrompt;
     private bool isInteracting;
 
     #endregion
@@ -25,16 +25,36 @@ public class Interact : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckIfInteractable();
+
         if(inputs != null && inputs.interacting && isInteracting == false)
-        {
             isInteracting = true;
-            CheckIfInteracting();
-        }
+        else if (inputs != null && !inputs.interacting && isInteracting == true)
+            isInteracting = false;
     }
 
     #endregion
 
     #region Methods
+
+    void CheckIfInteractable()
+    {
+        Ray ray = new Ray(playerCamRoot.position, playerCamRoot.forward);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, 5))
+        {
+            if (hit.collider.TryGetComponent(out Interactable interactable))
+            {
+                contextPrompt.SetActive(true);
+                if(isInteracting == true)
+                    interactable.Interact();
+            }
+            else
+            {
+                contextPrompt.SetActive(false);
+            }
+        }
+    }
 
     void CheckIfInteracting()
     {
