@@ -225,7 +225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0}
   m_SizeDelta: {x: 0.000015258789, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &124954458
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 142142337}
   - component: {fileID: 142142336}
   m_Layer: 8
-  m_Name: Image
+  m_Name: SpeechBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1559,7 +1559,7 @@ GameObject:
   - component: {fileID: 1029427398}
   - component: {fileID: 1029427397}
   m_Layer: 8
-  m_Name: Text (TMP)
+  m_Name: DialogueTextBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4715,7 +4715,7 @@ GameObject:
   - component: {fileID: 1284555521}
   - component: {fileID: 1284555520}
   m_Layer: 8
-  m_Name: AutoResize
+  m_Name: DialogueCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4739,8 +4739,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1, y: 2.2}
-  m_SizeDelta: {x: 300, y: 200}
+  m_AnchoredPosition: {x: 1.2818, y: 2.2}
+  m_SizeDelta: {x: 402.9979, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1284555520
 MonoBehaviour:
@@ -4818,7 +4818,7 @@ GameObject:
   - component: {fileID: 1293394565}
   - component: {fileID: 1293394564}
   m_Layer: 8
-  m_Name: Image (1)
+  m_Name: SpeechBubblePointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4838,10 +4838,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1284555519}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -200}
-  m_SizeDelta: {x: 44.57, y: 41.36}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 100, y: 0}
+  m_SizeDelta: {x: 44.570007, y: 41.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1293394564
 MonoBehaviour:
