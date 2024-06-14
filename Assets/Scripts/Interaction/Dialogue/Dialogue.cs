@@ -10,7 +10,7 @@ public class Dialogue : Interactable
     [SerializeField] private new string name;
     [SerializeField] private int dialogueIdx;
     [SerializeField] private DialogueClass[] dialogues;
-
+    [SerializeField] private DialogueCanvas dialogueCanvas;
     #endregion
 
     #region Properties
@@ -34,6 +34,7 @@ public class Dialogue : Interactable
     private void Start()
     {
         canInteract = true;
+        dialogueCanvas.enabled = false;
     }
 
     #endregion

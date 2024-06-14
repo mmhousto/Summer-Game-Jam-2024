@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 18abe132068b54c4782fe011077f5c6d
+guid: 5d79d4bc75cbf214e8a2a934f1ae66fe
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,8 +48,8 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 28, y: 28, z: 28, w: 28}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 118, y: 123, z: 122, w: 114}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
