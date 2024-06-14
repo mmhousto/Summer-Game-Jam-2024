@@ -9,17 +9,15 @@ public class DialogueClass
     
     public string dialogue;
     public Feel feeling;
-    public bool isPlayer;
 
     #endregion
 
     #region Constructor
 
-    public DialogueClass(string dialogue, Feel feeling, bool isPlayer)
+    public DialogueClass(string dialogue, Feel feeling)
     {
         this.dialogue = dialogue;
         this.feeling = feeling;
-        this.isPlayer = isPlayer;
     }
 
     #endregion

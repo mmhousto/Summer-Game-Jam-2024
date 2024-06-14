@@ -44,7 +44,7 @@ public class Interact : MonoBehaviour
         {
             if (hit.collider.TryGetComponent(out Interactable interactable))
             {
-                interactable.Interact();
+                interactable.Interact(gameObject.transform);
             }
         }
 

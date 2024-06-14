@@ -17,16 +17,19 @@ public class Interactable : MonoBehaviour, IInteractable
         canInteract = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     #endregion
 
     #region Methods
 
     public virtual void Interact()
+    {
+        if (!canInteract) return;
+        canInteract = false;
+        Debug.Log("Interacted with: " + gameObject.name, gameObject);
+        StartCoroutine(EndInteract());
+    }
+    
+    public virtual void Interact(Transform interactedTaget)
     {
         if (!canInteract) return;
         canInteract = false;
@@ -42,7 +45,6 @@ public class Interactable : MonoBehaviour, IInteractable
     protected IEnumerator EndInteract()
     {
         yield return new WaitForSeconds(1);
-
         canInteract = true;
     }
 

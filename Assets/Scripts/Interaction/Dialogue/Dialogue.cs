@@ -34,45 +34,39 @@ public class Dialogue : Interactable
     private void Start()
     {
         canInteract = true;
-        dialogueCanvas.enabled = false;
+        dialogueCanvas.HideDialogue();
     }
 
     #endregion
 
     #region Methods
 
-    public override void Interact()
+    public override void Interact(Transform interactedTarget)
     {
-        if (!canInteract) return;
-        canInteract = false;
-        StartCoroutine(TalkPause());
-       
-        switch (dialogues[dialogueIdx].feeling)
+        if (dialogueCanvas.GetResetDialogue())
         {
-            case DialogueClass.Feel.Calm:
-                Debug.Log($"{dialogueIdx}->{name}: {dialogues[dialogueIdx].dialogue}");
-                break;
-            case DialogueClass.Feel.Mad:
-                Debug.Log($"{dialogueIdx}->{name}: !!!{dialogues[dialogueIdx].dialogue}!!!");
-                break;
-            case DialogueClass.Feel.Think:
-                Debug.Log($"{dialogueIdx}->{name}: ¿¿¿{dialogues[dialogueIdx].dialogue}???");
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
-        dialogueIdx++;
-        if (dialogueIdx >= dialogues.Length)
-        {
+            canInteract = true;
             dialogueIdx = FIRST_DIALOGUE;
         }
+        if (!canInteract) return;
+        canInteract = false;
+        if (dialogueIdx == FIRST_DIALOGUE)
+        {
+            StartDialogue(dialogues,interactedTarget);
+        }
     }
 
-    private IEnumerator TalkPause()
+    private void StartDialogue(IReadOnlyList<DialogueClass> dialogues)
     {
-        yield return new WaitForSeconds(0.5f);
-        canInteract = true;
+        dialogueCanvas.DisplayDialogue(dialogues[dialogueIdx].feeling,dialogues[dialogueIdx].dialogue);
+        dialogueCanvas.ShowDialogue();
     }
-
+    
+    private void StartDialogue(IReadOnlyList<DialogueClass> dialogues,Transform interactedTaget)
+    {
+        dialogueCanvas.setCameraFollow();
+        dialogueCanvas.DisplayDialogue(dialogues[dialogueIdx].feeling,dialogues[dialogueIdx].dialogue);
+        dialogueCanvas.ShowDialogue();
+    }
     #endregion
 }
