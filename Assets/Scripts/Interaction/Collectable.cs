@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Collectable : Interactable
 {
+    #region Unity Methods
+
     // Start is called before the first frame update
     void Start()
     {
         canInteract = true;
     }
+
+    #endregion
+
+    #region Methods
 
     public override void Interact()
     {
@@ -21,4 +27,6 @@ public class Collectable : Interactable
         }
 
     }
+
+    #endregion
 }

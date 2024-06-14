@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minutes: 0
   seconds: 5
+  _editingText: 0
