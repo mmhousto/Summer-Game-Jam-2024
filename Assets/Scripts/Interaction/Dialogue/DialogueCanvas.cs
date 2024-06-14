@@ -6,6 +6,8 @@ using Debug = UnityEngine.Debug;
 
 public class DialogueCanvas : MonoBehaviour
 {
+    #region Fields
+
     [SerializeField] private DialogueClass.Feel feel;
     [SerializeField] private Sprite pointer;
     [SerializeField] private Sprite bubble;
@@ -16,6 +18,10 @@ public class DialogueCanvas : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private bool resetDialogue;
 
+    #endregion
+
+    #region Constants
+
     private readonly Vector3 MIRROR_FLIP = new Vector3(0, 180, 0);
 
     private const string CALM_KEY = "Calm";
@@ -24,6 +30,9 @@ public class DialogueCanvas : MonoBehaviour
     private const string BUBBLE_CAT = "Dialogbubble";
     private const string POINTER_CAT = "Dialogpointer";
 
+    #endregion
+
+    #region UnityMethods
 
     private void Start()
     {
@@ -36,22 +45,26 @@ public class DialogueCanvas : MonoBehaviour
         FollowObject();
     }
 
+    #endregion
+
+    #region Methods
+
     private void FollowObject()
     {
         if (!followCamera) return;
         var camPos = mainCamera.transform.position;
         var position = transform.position;
-        
-        var targetPostition = new Vector3(camPos.x,position.y, camPos.z);
+
+        var targetPostition = new Vector3(camPos.x, position.y, camPos.z);
         transform.LookAt(targetPostition);
         transform.Rotate(MIRROR_FLIP);
-        
+
         var dist = Vector3.Distance(camPos, position);
-        if(dist<15)return;
+        if (dist < 15) return;
         BreakDialogue();
     }
 
-    public void setCameraFollow()
+    public void SetCameraFollow()
     {
         mainCamera = Camera.main;
         if (mainCamera != null)
@@ -84,7 +97,7 @@ public class DialogueCanvas : MonoBehaviour
         pointerImg.sprite = pointer;
     }
 
-    public void ChangeDialogueFeel(DialogueClass.Feel newfeel)
+    private void ChangeDialogueFeel(DialogueClass.Feel newfeel)
     {
         feel = newfeel;
         ChangeSpriteFeel();
@@ -110,7 +123,7 @@ public class DialogueCanvas : MonoBehaviour
         followCamera = false;
         dialogueText.text = "";
     }
-    
+
     public void BreakDialogue()
     {
         HideDialogue();
@@ -129,4 +142,6 @@ public class DialogueCanvas : MonoBehaviour
         ChangeDialogueFeel(newfeel);
         dialogueText.text = dialogue;
     }
+
+    #endregion
 }

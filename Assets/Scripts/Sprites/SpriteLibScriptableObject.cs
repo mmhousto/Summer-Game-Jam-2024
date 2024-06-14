@@ -7,14 +7,18 @@ using UnityEngine;
 public class SpriteLibScriptableObject : ScriptableObject
 {
     #region Fields
+
     [SerializeField] private SpriteElemClass[] spriteLib;
+
     #endregion
+
+    #region Methods
 
     public int GetSize()
     {
         return spriteLib.Length;
     }
-    
+
     public string[] GetStringArr()
     {
         var spritenames = spriteLib
@@ -22,7 +26,7 @@ public class SpriteLibScriptableObject : ScriptableObject
             .ToArray();
         return spritenames;
     }
-    
+
     public Sprite[] GetSpriteArr()
     {
         var spritenames = spriteLib
@@ -30,4 +34,6 @@ public class SpriteLibScriptableObject : ScriptableObject
             .ToArray();
         return spritenames;
     }
+
+    #endregion
 }

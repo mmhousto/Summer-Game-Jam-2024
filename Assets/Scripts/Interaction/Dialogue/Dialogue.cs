@@ -27,7 +27,6 @@ public class Dialogue : Interactable
     #region Constants
 
     private const int FIRST_DIALOGUE = 0;
-    private const int ArrayToLenght = 1;
 
     #endregion
 
@@ -55,7 +54,7 @@ public class Dialogue : Interactable
         canInteract = false;
         if (dialogueIdx == FIRST_DIALOGUE)
         {
-            StartDialogue(dialogues, interactedTarget);
+            StartDialogue();
         }
     }
 
@@ -66,6 +65,7 @@ public class Dialogue : Interactable
             EndDialogue();
             return;
         }
+
         dialogueCanvas.DisplayDialogue(dialogues[dialogueIdx].feeling, dialogues[dialogueIdx].dialogue);
         dialogueIdx++;
         StartCoroutine(waitForNextDialogue());
@@ -77,13 +77,13 @@ public class Dialogue : Interactable
         dialogueIdx = FIRST_DIALOGUE;
         StartCoroutine(TalkCooldown());
     }
-    
+
     IEnumerator TalkCooldown()
     {
         yield return new WaitForSeconds(2f);
         canInteract = true;
     }
-    
+
     IEnumerator waitForNextDialogue()
     {
         yield return new WaitForSeconds(0.2f);
@@ -91,12 +91,13 @@ public class Dialogue : Interactable
         {
             yield return null;
         }
+
         ContinueDialogue();
     }
 
-    private void StartDialogue(IReadOnlyList<DialogueClass> dialogues, Transform interactedTaget)
+    private void StartDialogue()
     {
-        dialogueCanvas.setCameraFollow();
+        dialogueCanvas.SetCameraFollow();
         dialogueCanvas.ShowDialogue();
         ContinueDialogue();
     }
