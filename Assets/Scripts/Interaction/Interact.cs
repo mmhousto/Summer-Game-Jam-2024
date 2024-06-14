@@ -47,7 +47,6 @@ public class Interact : MonoBehaviour
                 interactable.Interact(gameObject.transform);
             }
         }
-
         isInteracting = false;
     }
 

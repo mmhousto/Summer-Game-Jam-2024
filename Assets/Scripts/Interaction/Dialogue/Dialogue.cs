@@ -54,12 +54,16 @@ public class Dialogue : Interactable
         {
             StartDialogue(dialogues,interactedTarget);
         }
-    }
-
-    private void StartDialogue(IReadOnlyList<DialogueClass> dialogues)
-    {
-        dialogueCanvas.DisplayDialogue(dialogues[dialogueIdx].feeling,dialogues[dialogueIdx].dialogue);
-        dialogueCanvas.ShowDialogue();
+        Debug.Log($"BugHunt dialogueIdx {dialogueIdx} of {dialogues.Length}");
+        while (dialogueIdx<dialogues.Length)
+        {
+            // if (!Input.GetKeyDown(KeyCode.E)) continue;
+            dialogueIdx++;
+            Debug.Log($"BugHunt dialogueIdx {dialogueIdx}");
+            dialogueCanvas.DisplayDialogue(dialogues[dialogueIdx].feeling,dialogues[dialogueIdx].dialogue);
+        }
+        Debug.Log($"BugHunt dialogueIdx {dialogueIdx} of {dialogues.Length} leaving while");
+        dialogueCanvas.EndDialogue();
     }
     
     private void StartDialogue(IReadOnlyList<DialogueClass> dialogues,Transform interactedTaget)
