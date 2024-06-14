@@ -212,7 +212,6 @@ GameObject:
   - component: {fileID: 100540251}
   - component: {fileID: 100540250}
   - component: {fileID: 100540249}
-  - component: {fileID: 100540248}
   m_Layer: 5
   m_Name: Timerbtn
   m_TagString: Untagged
@@ -240,19 +239,6 @@ RectTransform:
   m_AnchoredPosition: {x: 307, y: -104}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &100540248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100540246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cecc8425649c334c8a8d57d631cc976, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerSo: {fileID: 11400000, guid: 2f61f8c09c57f3e40a626f963d1d1cab, type: 2}
 --- !u!114 &100540249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,8 +283,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 100540248}
-        m_TargetAssemblyTypeName: TimeTester, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: 2f61f8c09c57f3e40a626f963d1d1cab, type: 2}
+        m_TargetAssemblyTypeName: TimerScriptableObject, Assembly-CSharp
         m_MethodName: StartTimer
         m_Mode: 1
         m_Arguments:
@@ -1243,7 +1229,6 @@ GameObject:
   - component: {fileID: 927629622}
   - component: {fileID: 927629621}
   - component: {fileID: 927629620}
-  - component: {fileID: 927629623}
   m_Layer: 5
   m_Name: Timerbtn
   m_TagString: Untagged
@@ -1315,8 +1300,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 927629623}
-        m_TargetAssemblyTypeName: TimeTester, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: 0319aa0ea931a0b429911572b5f96cdb, type: 2}
+        m_TargetAssemblyTypeName: TimerSO, Assembly-CSharp
         m_MethodName: StartTimer
         m_Mode: 1
         m_Arguments:
@@ -1365,19 +1350,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927629618}
   m_CullTransparentMesh: 1
---- !u!114 &927629623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927629618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cecc8425649c334c8a8d57d631cc976, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerSo: {fileID: 11400000, guid: 0319aa0ea931a0b429911572b5f96cdb, type: 2}
 --- !u!1 &938115640
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,7 +2375,6 @@ GameObject:
   - component: {fileID: 1576800873}
   - component: {fileID: 1576800872}
   - component: {fileID: 1576800871}
-  - component: {fileID: 1576800870}
   m_Layer: 5
   m_Name: Timerbtn
   m_TagString: Untagged
@@ -2431,19 +2402,6 @@ RectTransform:
   m_AnchoredPosition: {x: 24, y: -104}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1576800870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576800868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cecc8425649c334c8a8d57d631cc976, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerSo: {fileID: 11400000, guid: cddf3241186f8774b81bb81db0cb8d32, type: 2}
 --- !u!114 &1576800871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2488,8 +2446,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1576800870}
-        m_TargetAssemblyTypeName: TimeTester, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: cddf3241186f8774b81bb81db0cb8d32, type: 2}
+        m_TargetAssemblyTypeName: TimerScriptableObject, Assembly-CSharp
         m_MethodName: StartTimer
         m_Mode: 1
         m_Arguments:

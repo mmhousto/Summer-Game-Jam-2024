@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "TimerSO", menuName = "ScriptableObjects/Timer")]
-public class TimerSO : ScriptableObject
+[CreateAssetMenu(fileName = "TimerScriptableObject", menuName = "ScriptableObjects/Timer")]
+public class TimerScriptableObject : ScriptableObject
 {
     #region Fields
 
@@ -38,6 +38,14 @@ public class TimerSO : ScriptableObject
 
     #endregion
 
+    #region Events
+    public delegate void StartAction(TimerScriptableObject timer);
+    public delegate void EndAction();
+
+    public static event StartAction OnStart;
+    public static event EndAction OnInterrupt;
+    #endregion
+    
     #region UnityMethods
 
     private void OnValidate()
@@ -59,6 +67,16 @@ public class TimerSO : ScriptableObject
         seconds %= MINUTE_TO_SECONDS;
         minutes += mins;
         minutes = Mathf.Min(minutes, MAX_MINUTES);
+    }
+    
+    public void StartTimer()
+    {
+        OnStart?.Invoke(this);
+    }
+    
+    public void EndTimer()
+    {
+        OnInterrupt?.Invoke();
     }
 
     #endregion

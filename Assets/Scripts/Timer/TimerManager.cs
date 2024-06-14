@@ -34,22 +34,22 @@ public class TimerManager : MonoBehaviour
 
     private void OnEnable()
     {
-        TimeInvoker.OnStart += StartTimer;
-        TimeInvoker.OnInterrupt += StopTimer;
+        TimerScriptableObject.OnStart += StartTimer;
+        TimerScriptableObject.OnInterrupt += StopTimer;
     }
 
 
     private void OnDisable()
     {
-        TimeInvoker.OnStart -= StartTimer;
-        TimeInvoker.OnInterrupt -= StopTimer;
+        TimerScriptableObject.OnStart -= StartTimer;
+        TimerScriptableObject.OnInterrupt -= StopTimer;
     }
 
     #endregion
 
     #region Methods
 
-    private void StartTimer(TimerSO timer)
+    private void StartTimer(TimerScriptableObject timer)
     {
         if (_activeTimer) return;
         _activeTimer = true;
