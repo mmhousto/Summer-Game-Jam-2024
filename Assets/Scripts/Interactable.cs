@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour, IInteractable
@@ -16,18 +15,17 @@ public class Interactable : MonoBehaviour, IInteractable
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public virtual void Interact()
     {
-        if(canInteract)
-        {
-            canInteract = false;
-            Debug.Log("Interacted with: " + gameObject.name, gameObject);
-            StartCoroutine(EndInteract());
-        }
-        
+        if (!canInteract) return;
+
+        canInteract = false;
+        Debug.Log("Interacted with: " + gameObject.name, gameObject);
+        StartCoroutine(EndInteract());
+
     }
 
     public bool CanInteract()
