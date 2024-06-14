@@ -45,11 +45,12 @@ public class Interact : MonoBehaviour
         {
             if (hit.collider.TryGetComponent(out Interactable interactable))
             {
-                contextPrompt.SetActive(true);
+                if(contextPrompt != null)
+                    contextPrompt.SetActive(true);
                 if(isInteracting == true)
                     interactable.Interact();
             }
-            else
+            else if(contextPrompt != null)
             {
                 contextPrompt.SetActive(false);
             }
