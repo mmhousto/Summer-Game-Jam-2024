@@ -126,10 +126,13 @@ MonoBehaviour:
   dialogues:
   - dialogue: This is Mad
     feeling: 1
+    dialogueSource: {fileID: 2274884455925815787}
   - dialogue: This is Think
     feeling: 2
+    dialogueSource: {fileID: 2274884455925815787}
   - dialogue: This is Calm
     feeling: 0
+    dialogueSource: {fileID: 2274884455925815787}
   dialogueCanvas: {fileID: 2070307069066655844}
 --- !u!1 &5244476931292957374
 GameObject:
