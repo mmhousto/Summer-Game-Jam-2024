@@ -20,7 +20,7 @@ public static class SceneLoader
     public static void LoadLevel(int level)
     {
         levelToLoad = level;
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadSceneAsync((int)Levels.Loading);
     }
 
     #endregion
