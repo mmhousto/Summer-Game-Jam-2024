@@ -1,3 +1,4 @@
+// Morgan Houston
 using System.Collections;
 using UnityEngine;
 
@@ -22,6 +23,15 @@ public class Interactable : MonoBehaviour, IInteractable
     #region Methods
 
     public virtual void Interact()
+    {
+        if (!canInteract) return;
+        canInteract = false;
+        Debug.Log("Interacted with: " + gameObject.name, gameObject);
+        StartCoroutine(EndInteract());
+
+    }
+
+    public virtual void Interact(Transform interactedTarget)
     {
         if (!canInteract) return;
         canInteract = false;
