@@ -1,3 +1,4 @@
+// Morgan Houston
 using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ public class Interact : MonoBehaviour
 
     private StarterAssetsInputs inputs;
     public Transform playerCamRoot;
-
+    public GameObject contextPrompt;
     private bool isInteracting;
 
     #endregion
@@ -25,16 +26,41 @@ public class Interact : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckIfInteractable();
+
         if(inputs != null && inputs.interacting && isInteracting == false)
-        {
             isInteracting = true;
-            CheckIfInteracting();
-        }
+        else if (inputs != null && !inputs.interacting && isInteracting == true)
+            isInteracting = false;
     }
 
     #endregion
 
     #region Methods
+
+    void CheckIfInteractable()
+    {
+        Ray ray = new Ray(playerCamRoot.position, playerCamRoot.forward);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, 5))
+        {
+            if (hit.collider.TryGetComponent(out Interactable interactable))
+            {
+                if(contextPrompt != null && !contextPrompt.activeInHierarchy)
+                    contextPrompt.SetActive(true);
+                if(isInteracting == true)
+                    interactable.Interact(gameObject.transform);
+            }
+            else if(contextPrompt != null && contextPrompt.activeInHierarchy)
+            {
+                contextPrompt.SetActive(false);
+            }
+        }
+        else if (contextPrompt != null && contextPrompt.activeInHierarchy)
+        {
+            contextPrompt.SetActive(false);
+        }
+    }
 
     void CheckIfInteracting()
     {
@@ -44,10 +70,9 @@ public class Interact : MonoBehaviour
         {
             if (hit.collider.TryGetComponent(out Interactable interactable))
             {
-                interactable.Interact();
+                interactable.Interact(gameObject.transform);
             }
         }
-
         isInteracting = false;
     }
 
