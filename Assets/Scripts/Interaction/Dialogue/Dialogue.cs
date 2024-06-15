@@ -78,6 +78,11 @@ public class Dialogue : Interactable
         StartCoroutine(TalkCooldown());
     }
 
+    public void SetManualDialogue(DialogueClass[] newDialogues)
+    {
+        dialogues = newDialogues;
+    }
+
     IEnumerator TalkCooldown()
     {
         yield return new WaitForSeconds(2f);

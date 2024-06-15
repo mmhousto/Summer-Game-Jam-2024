@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Collecting
   m_EditorClassIdentifier: 
   minutes: 2
-  seconds: 3
+  seconds: 0
