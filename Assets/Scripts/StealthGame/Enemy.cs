@@ -128,19 +128,25 @@ public class Enemy : Interactable
         }
     }
 
-    #endregion
-
-    #region InterfaceImplementation
-
-    public override void Interact()
+    public override void Interact(Transform transform)
     {
         if (canInteract)
         {
             canInteract = false;
-            sgm.playerHasItem = true;
-            Debug.Log("Collected: " + item.name, gameObject);
-            Destroy(item);
-            // Add one to collected info ui
+            if (hasItem)
+            {
+                hasItem = false;
+                sgm.playerHasItem = true;
+                Debug.Log("Collected: " + item.name, gameObject);
+                Destroy(item);
+                StartCoroutine(EndInteract());
+            }
+            else
+            {
+                Debug.Log("Enemy does not have item");
+                StartCoroutine(FaceTarget(player.position));
+                StartCoroutine(EndInteract());
+            }
         }
 
     }

@@ -192,7 +192,7 @@ MonoBehaviour:
   viewDistance: 10
   viewMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   pathHolder: {fileID: 2540389728792162065}
   item: {fileID: 6512600354886320505}
   sgm: {fileID: 0}
