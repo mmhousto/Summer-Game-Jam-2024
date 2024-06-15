@@ -17,7 +17,7 @@ public class Collectable : Interactable
 
     #region Methods
 
-    public override void Interact()
+    public override void Interact(Transform transform)
     {
         if (canInteract)
         {
