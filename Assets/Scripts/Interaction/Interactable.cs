@@ -37,7 +37,14 @@ public class Interactable : MonoBehaviour, IInteractable
         canInteract = false;
         Debug.Log("Interacted with: " + gameObject.name, gameObject);
         StartCoroutine(EndInteract());
-
+    }
+    
+    public virtual void Interact(Transform interactedTaget)
+    {
+        if (!canInteract) return;
+        canInteract = false;
+        Debug.Log("Interacted with: " + gameObject.name, gameObject);
+        StartCoroutine(EndInteract());
     }
 
     public bool CanInteract()
