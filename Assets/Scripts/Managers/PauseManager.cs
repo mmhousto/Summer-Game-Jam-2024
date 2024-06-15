@@ -60,7 +60,8 @@ public class PauseManager : MonoBehaviour
             inputs.pause = false;
         }
 
-        SetPauseMenu();
+        if(pauseMenu != null)
+            SetPauseMenu();
 
     }
 
