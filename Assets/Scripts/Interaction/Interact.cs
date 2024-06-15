@@ -1,3 +1,4 @@
+// Morgan Houston
 using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ public class Interact : MonoBehaviour
                 if(contextPrompt != null && !contextPrompt.activeInHierarchy)
                     contextPrompt.SetActive(true);
                 if(isInteracting == true)
-                    interactable.Interact();
+                    interactable.Interact(gameObject.transform);
             }
             else if(contextPrompt != null && contextPrompt.activeInHierarchy)
             {

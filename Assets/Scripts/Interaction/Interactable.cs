@@ -1,3 +1,4 @@
+// Morgan Houston
 using System.Collections;
 using UnityEngine;
 
@@ -17,12 +18,6 @@ public class Interactable : MonoBehaviour, IInteractable
         canInteract = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     #endregion
 
     #region Methods
@@ -30,7 +25,15 @@ public class Interactable : MonoBehaviour, IInteractable
     public virtual void Interact()
     {
         if (!canInteract) return;
+        canInteract = false;
+        Debug.Log("Interacted with: " + gameObject.name, gameObject);
+        StartCoroutine(EndInteract());
 
+    }
+
+    public virtual void Interact(Transform interactedTarget)
+    {
+        if (!canInteract) return;
         canInteract = false;
         Debug.Log("Interacted with: " + gameObject.name, gameObject);
         StartCoroutine(EndInteract());
@@ -45,7 +48,6 @@ public class Interactable : MonoBehaviour, IInteractable
     protected IEnumerator EndInteract()
     {
         yield return new WaitForSeconds(1);
-
         canInteract = true;
     }
 
