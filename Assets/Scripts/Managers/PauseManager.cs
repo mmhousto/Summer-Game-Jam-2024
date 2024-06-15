@@ -83,7 +83,8 @@ public class PauseManager : MonoBehaviour
         inputs.SetCursorState(false);
         playerInput.SwitchCurrentActionMap("UI");
         pauseMenu.SetActive(isGamePaused);
-        EventSystem.current.SetSelectedGameObject(resumeButton.gameObject);
+        if(resumeButton != null)
+            EventSystem.current.SetSelectedGameObject(resumeButton.gameObject);
     }
 
     private void Resume()
