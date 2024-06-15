@@ -1,5 +1,4 @@
 // Morgan Houston
-using System.ComponentModel;
 using UnityEngine.SceneManagement;
 
 public static class SceneLoader
@@ -7,6 +6,7 @@ public static class SceneLoader
     #region Fields
 
     public static int levelToLoad = 1;
+    public enum Levels { Loading, MainMenu, Castle, Scavenger, ScavengerMinigame, Magician, MagicianMinigame, Thieves, ThievesMinigame };
 
     #endregion
 
@@ -20,7 +20,7 @@ public static class SceneLoader
     public static void LoadLevel(int level)
     {
         levelToLoad = level;
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadSceneAsync((int)Levels.Loading);
     }
 
     #endregion

@@ -1,6 +1,5 @@
 // Morgan Houston
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,7 +13,9 @@ public class LoadLevel : MonoBehaviour
     public GameObject loadingBarEnd;
     [Tooltip("The loading bar.")]
     public Slider loadingBar;
+
     private float progress;
+    private const float ALMOST_COMPLETE = 0.9999f;
 
     #endregion
 
@@ -36,9 +37,9 @@ public class LoadLevel : MonoBehaviour
 
         AsyncOperation loading = SceneManager.LoadSceneAsync(index);
 
-        while(!loading.isDone)
+        while (!loading.isDone)
         {
-            progress = Mathf.Clamp(loading.progress / .9f, 0f, 0.9999f);
+            progress = Mathf.Clamp(loading.progress / .9f, 0f, ALMOST_COMPLETE);
 
             loadingBar.value = progress * 100f;
             player.transform.position = loadingBarEnd.transform.position;

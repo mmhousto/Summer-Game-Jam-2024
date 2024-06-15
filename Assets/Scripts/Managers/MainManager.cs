@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+// Morgan Houston
 using UnityEditor;
 using UnityEngine;
 
@@ -13,7 +12,7 @@ public class MainManager : MonoBehaviour
     {
         // Get last saved scene then load scene
         // loading castle scene for now
-        SceneLoader.LoadLevel(2);
+        SceneLoader.LoadLevel((int)SceneLoader.Levels.Castle);
     }
 
     public void Exit()
