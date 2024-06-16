@@ -1,11 +1,11 @@
+// Morgan Houston
 using StarterAssets;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Windows;
 
 public class AnimationPlayerManager : MonoBehaviour
 {
+    #region Fields
+
     private StarterAssetsInputs inputs;
     private FirstPersonController controller;
     private Animator anim;
@@ -13,27 +13,43 @@ public class AnimationPlayerManager : MonoBehaviour
     private float MoveSpeed = 4f;
     private float SprintSpeed = 6f;
 
+    #endregion
+
+    #region Unity Methods
+
     // Start is called before the first frame update
     void Start()
     {
         inputs = GetComponent<StarterAssetsInputs>();
         controller = GetComponent<FirstPersonController>();
-        anim = GetComponentInChildren<Animator>();
+        if(GetComponentInChildren<Animator>() != null)
+            anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        speed = inputs.sprint? SprintSpeed : MoveSpeed;
-        anim.SetFloat("Speed", speed);
-        anim.SetFloat("Vertical", inputs.move.y);
-        anim.SetFloat("Horizontal", inputs.move.x);
-        anim.SetBool("Jumping", inputs.jump);
-        anim.SetBool("Falling", !controller.Grounded);
+        speed = inputs.sprint ? SprintSpeed : MoveSpeed;
+        if (anim != null)
+        {
+            anim.SetFloat("Speed", speed);
+            anim.SetFloat("Vertical", inputs.move.y);
+            anim.SetFloat("Horizontal", inputs.move.x);
+            anim.SetBool("Jumping", inputs.jump);
+            anim.SetBool("Falling", !controller.Grounded);
+        }
+        
     }
+
+    #endregion
+
+    #region Methods
 
     public void PlayInteractAnimation()
     {
-        anim.SetTrigger("Interact");
+        if (anim != null)
+            anim.SetTrigger("Interact");
     }
+
+    #endregion
 }
