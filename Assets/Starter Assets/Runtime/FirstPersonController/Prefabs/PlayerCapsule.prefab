@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 5420857361349278248}
   - component: {fileID: 522542505659615515}
   - component: {fileID: 8616685848737228376}
+  - component: {fileID: 1026335276875777394}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -199,7 +200,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.25
+  m_StepOffset: 0.5
   m_SkinWidth: 0.02
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.93, z: 0}
@@ -228,7 +229,7 @@ MonoBehaviour:
   GroundedRadius: 0.5
   GroundLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 9
   CinemachineCameraTarget: {fileID: 4135013735270702863}
   TopClamp: 89
   BottomClamp: -89
@@ -246,9 +247,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pushLayers:
     serializedVersion: 2
-    m_Bits: 0
-  canPush: 0
-  strength: 1.1
+    m_Bits: 8
+  canPush: 1
+  strength: 0.5
 --- !u!114 &5420857361349278248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +267,7 @@ MonoBehaviour:
   jump: 0
   sprint: 0
   interacting: 0
+  pause: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -282,6 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamRoot: {fileID: 4135013735270702856}
+  contextPrompt: {fileID: 0}
 --- !u!114 &8616685848737228376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,3 +383,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1026335276875777394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2695040a2705a43a727bc30c6f5f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
+  resumeButton: {fileID: 0}
+  mainMenuButton: {fileID: 0}
+  isGamePaused: 0

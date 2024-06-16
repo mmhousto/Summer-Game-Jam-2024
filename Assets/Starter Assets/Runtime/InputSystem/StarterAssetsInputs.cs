@@ -13,6 +13,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 		public bool interacting;
+		public bool pause;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -49,6 +50,11 @@ namespace StarterAssets
         {
             InteractInput(value.isPressed);
         }
+
+        public void OnPause(InputValue value)
+        {
+            PauseInput(value.isPressed);
+        }
 #endif
 
 
@@ -77,12 +83,12 @@ namespace StarterAssets
             interacting = newState;
         }
 
-        private void OnApplicationFocus(bool hasFocus)
-		{
-			SetCursorState(cursorLocked);
-		}
+        public void PauseInput(bool newState)
+        {
+            pause = newState;
+        }
 
-		private void SetCursorState(bool newState)
+		public void SetCursorState(bool newState)
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
