@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd0f7a1ecbc1d14fafc29e65928e650, type: 3}
   m_Name: Collecting
   m_EditorClassIdentifier: 
-  minutes: 2
-  seconds: 0
+  minutes: 0
+  seconds: 40

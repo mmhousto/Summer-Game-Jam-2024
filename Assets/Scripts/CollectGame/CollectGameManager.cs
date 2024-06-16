@@ -33,7 +33,6 @@ public class CollectGameManager : MonoBehaviour
     private Dialogue _npcDialogue;
     private List<FakeCollectable> _compRemoveFc;
     private List<ScavengerItem> _compRemoveSi;
-    private bool _isNpcNull;
 
     #endregion
 
@@ -54,11 +53,6 @@ public class CollectGameManager : MonoBehaviour
     #endregion
 
     #region UnityMethods
-
-    private void Start()
-    {
-        _isNpcNull = npc == null;
-    }
 
     private void OnEnable()
     {
@@ -115,11 +109,10 @@ public class CollectGameManager : MonoBehaviour
 
     private void NpcDialogueRemaining()
     {
-        if (_isNpcNull) return;
         var singleDialogue = new DialogueClass(PrintNpcText(), DialogueClass.Feel.Calm, npc.transform);
 
         var newDialogues = new List<DialogueClass>();
-        if (wonOnce)
+        if (wonOnce && !gameIsActive)
         {
             newDialogues.Add(new DialogueClass(winningText, DialogueClass.Feel.Calm, npc.transform));
         }
