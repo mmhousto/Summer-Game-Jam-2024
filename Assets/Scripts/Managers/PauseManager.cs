@@ -3,6 +3,7 @@ using StarterAssets;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
@@ -14,8 +15,9 @@ public class PauseManager : MonoBehaviour
 
     private StarterAssetsInputs inputs;
     private PlayerInput playerInput;
-    [SerializeField]
     private bool isGamePaused;
+    private bool inMinigame;
+    private Scene currentScene;
 
     #endregion
 
@@ -28,6 +30,8 @@ public class PauseManager : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         isGamePaused = false;
         Cursor.lockState = CursorLockMode.Locked;
+        currentScene = SceneLoader.GetActiveScene();
+        inMinigame = (currentScene.name.Contains("Game") || currentScene.name.Contains("game"));
     }
 
     private void OnEnable()
@@ -60,7 +64,7 @@ public class PauseManager : MonoBehaviour
             inputs.pause = false;
         }
 
-        if(pauseMenu != null)
+        if (pauseMenu != null)
             SetPauseMenu();
 
     }
@@ -84,8 +88,9 @@ public class PauseManager : MonoBehaviour
         inputs.SetCursorState(false);
         playerInput.SwitchCurrentActionMap("UI");
         pauseMenu.SetActive(isGamePaused);
-        if(resumeButton != null)
+        if (resumeButton != null)
             EventSystem.current.SetSelectedGameObject(resumeButton.gameObject);
+        if (inMinigame) Time.timeScale = 0f;
     }
 
     private void Resume()
@@ -93,6 +98,15 @@ public class PauseManager : MonoBehaviour
         inputs.SetCursorState(true);
         playerInput.SwitchCurrentActionMap("Player");
         pauseMenu.SetActive(isGamePaused);
+        if (inMinigame) Time.timeScale = 1f;
+    }
+
+    /// <summary>
+    /// Restarts scene
+    /// </summary>
+    public void Restart()
+    {
+        SceneLoader.LoadLevel(currentScene.buildIndex);
     }
 
     public void ResumeGame()
@@ -102,6 +116,7 @@ public class PauseManager : MonoBehaviour
 
     public void MainMenu()
     {
+        if (inMinigame) Time.timeScale = 1f;
         SceneLoader.LoadLevel((int)SceneLoader.Levels.MainMenu);
     }
 
