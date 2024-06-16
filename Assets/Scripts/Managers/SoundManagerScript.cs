@@ -2,41 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    private static SoundManagerScript S; // this is the singleton!
+    private static SoundManagerScript Instance; // this is the singleton!
 
-    public AudioClip stealthMinigameBGM; // drag clips into this field
+    public AudioClip collectingMinigameBGM, stealthMinigameBGM, illusionMinigameBGM; // drag clips into this 
+    public enum BGM { CollectingMinigame, StealthMinigame, IllusionMinigame };
+    private AudioClip[] bgmArray;
+
     public AudioSource backgroundSource;
+
+    public AudioMixer masterMixer;
+
 
     void Awake()
     {
         // make sure there's only one singleton at all times
-        if (S)
+        if (Instance)
         {
             Destroy(this.gameObject);
         }
         else
         {
-            S = this;
+            Instance = this;
+            DontDestroyOnLoad(Instance.gameObject);
+            bgmArray = new AudioClip[] { collectingMinigameBGM, stealthMinigameBGM, illusionMinigameBGM };
         }
     }
 
     private void Start()
     {
-        StartBackgroundMusic(stealthMinigameBGM);
+        StartBackgroundMusic(BGM.StealthMinigame);
         Debug.Log("Testing w/ stealthminigame bgm");
+
     }
 
-    public void StartBackgroundMusic(AudioClip bgmClip)
+    public void StartBackgroundMusic(BGM bgm)
     {
-        backgroundSource.clip = bgmClip;
+        backgroundSource.clip = bgmArray[(int)bgm];
         backgroundSource.Play();
     }
 
     public void StopBackgroundMusic(AudioClip bgmClip)
     {
         backgroundSource.Stop();
+    }
+
+    public void setFloat(string parameter, float value)
+    {
+        masterMixer.SetFloat(parameter, value);
     }
 }
