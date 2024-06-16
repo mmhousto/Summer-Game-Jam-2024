@@ -27,9 +27,13 @@ public class Interact : MonoBehaviour
         CheckIfInteractable();
 
         if(inputs != null && inputs.interacting && isInteracting == false)
+        {
             isInteracting = true;
+            inputs.interacting = false;
+        }
         else if (inputs != null && !inputs.interacting && isInteracting == true)
             isInteracting = false;
+            
     }
 
     #endregion
