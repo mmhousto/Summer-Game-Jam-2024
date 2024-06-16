@@ -658,6 +658,7 @@ MonoBehaviour:
     feeling: 0
     dialogueSource: {fileID: 490962135}
   dialogueCanvas: {fileID: 1965898410}
+  dialogueStarted: 0
 --- !u!136 &490962132
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1083,14 +1084,15 @@ MonoBehaviour:
   dialogues:
   - dialogue: I'm marco
     feeling: 0
-    dialogueSource: {fileID: 119935833}
-  - dialogue: And this is Polo
-    feeling: 0
     dialogueSource: {fileID: 1027651602}
-  - dialogue: Hello!
+  - dialogue: And I am Polo
+    feeling: 0
+    dialogueSource: {fileID: 119935833}
+  - dialogue: Hello from up here!
     feeling: 0
     dialogueSource: {fileID: 1505608971}
   dialogueCanvas: {fileID: 130963035}
+  dialogueStarted: 0
 --- !u!136 &1027651599
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1989,6 +1991,7 @@ MonoBehaviour:
     feeling: 0
     dialogueSource: {fileID: 1560824806}
   dialogueCanvas: {fileID: 40215534}
+  dialogueStarted: 0
 --- !u!136 &1560824803
 CapsuleCollider:
   m_ObjectHideFlags: 0

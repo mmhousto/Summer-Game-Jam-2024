@@ -11,6 +11,7 @@ public class Dialogue : Interactable
     [SerializeField] private int dialogueIdx;
     [SerializeField] private DialogueClass[] dialogues;
     [SerializeField] private DialogueCanvas dialogueCanvas;
+    [SerializeField] private bool dialogueStarted;
 
     #endregion
 
@@ -34,6 +35,7 @@ public class Dialogue : Interactable
 
     private void Start()
     {
+        dialogueStarted = false;
         canInteract = true;
         dialogueCanvas.HideDialogue();
     }
@@ -47,18 +49,32 @@ public class Dialogue : Interactable
         if (dialogueCanvas.GetResetDialogue())
         {
             canInteract = true;
+            dialogueStarted = false;
             dialogueIdx = FIRST_DIALOGUE;
         }
 
         if (!canInteract) return;
         canInteract = false;
-        if (dialogueIdx == FIRST_DIALOGUE)
+        if (!dialogueStarted)
         {
-            StartDialogue();
+            dialogueStarted = true;
+            InitializeDialogue();
+            ShowDialogue();
+        }
+        else
+        {
+            ShowDialogue();
         }
     }
 
-    private void ContinueDialogue()
+    private void InitializeDialogue()
+    {
+        dialogueCanvas.SetCameraFollow();
+        dialogueCanvas.ShowDialogue();
+        canInteract = true;
+    }
+
+    private void ShowDialogue()
     {
         if (dialogueIdx >= dialogues.Length)
         {
@@ -66,45 +82,23 @@ public class Dialogue : Interactable
             return;
         }
 
-        dialogueCanvas.DisplayDialogue(dialogues[dialogueIdx].feeling, dialogues[dialogueIdx].dialogue, dialogues[dialogueIdx].dialogueSource);
+        dialogueCanvas.DisplayDialogue(dialogues[dialogueIdx].feeling, dialogues[dialogueIdx].dialogue,
+            dialogues[dialogueIdx].dialogueSource);
         dialogueIdx++;
-        StartCoroutine(waitForNextDialogue());
+        canInteract = true;
     }
 
     private void EndDialogue()
     {
         dialogueCanvas.EndDialogue();
+        dialogueStarted = false;
         dialogueIdx = FIRST_DIALOGUE;
-        StartCoroutine(TalkCooldown());
+        canInteract = true;
     }
 
     public void SetManualDialogue(DialogueClass[] newDialogues)
     {
         dialogues = newDialogues;
-    }
-
-    IEnumerator TalkCooldown()
-    {
-        yield return new WaitForSeconds(2f);
-        canInteract = true;
-    }
-
-    IEnumerator waitForNextDialogue()
-    {
-        yield return new WaitForSeconds(0.2f);
-        while (!Input.GetKeyDown(KeyCode.E))
-        {
-            yield return null;
-        }
-
-        ContinueDialogue();
-    }
-
-    private void StartDialogue()
-    {
-        dialogueCanvas.SetCameraFollow();
-        dialogueCanvas.ShowDialogue();
-        ContinueDialogue();
     }
 
     #endregion
