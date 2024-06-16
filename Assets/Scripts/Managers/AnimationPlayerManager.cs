@@ -31,4 +31,9 @@ public class AnimationPlayerManager : MonoBehaviour
         anim.SetBool("Jumping", inputs.jump);
         anim.SetBool("Falling", !controller.Grounded);
     }
+
+    public void PlayInteractAnimation()
+    {
+        anim.SetTrigger("Interact");
+    }
 }

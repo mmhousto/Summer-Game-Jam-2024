@@ -5,10 +5,11 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
     #region Fields
-
-    private StarterAssetsInputs inputs;
     public Transform playerCamRoot;
     public GameObject contextPrompt;
+
+    private StarterAssetsInputs inputs;
+    private AnimationPlayerManager animManager;
     private bool isInteracting;
 
     #endregion
@@ -19,6 +20,8 @@ public class Interact : MonoBehaviour
     void Start()
     {
         inputs = GetComponent<StarterAssetsInputs>();
+        if(GetComponent<AnimationPlayerManager>() != null)
+            animManager = GetComponent<AnimationPlayerManager>();
     }
 
     // Update is called once per frame
@@ -50,8 +53,12 @@ public class Interact : MonoBehaviour
             {
                 if(contextPrompt != null && !contextPrompt.activeInHierarchy)
                     contextPrompt.SetActive(true);
+                
+                if (isInteracting == true && animManager != null) animManager.PlayInteractAnimation(); // Play Interaction animation
+
                 if(isInteracting == true)
                     interactable.Interact(gameObject.transform);
+                
             }
             else if(contextPrompt != null && contextPrompt.activeInHierarchy)
             {
