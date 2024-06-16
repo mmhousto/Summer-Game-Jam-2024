@@ -40,9 +40,11 @@ public class TimerScriptableObject : ScriptableObject
 
     #region Events
     public delegate void StartAction(TimerScriptableObject timer);
+    public delegate void StartGameAction();
     public delegate void EndAction();
 
     public static event StartAction OnStart;
+    
     public static event EndAction OnInterrupt;
     #endregion
     

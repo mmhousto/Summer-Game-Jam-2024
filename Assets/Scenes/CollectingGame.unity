@@ -179,7 +179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Complete
+  m_text: You Won
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2817,10 +2817,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3439179b44a456f45b2d812cd3d6af0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxItems: 1
+  maxItems: 2
   collectListParent: {fileID: 132987473}
-  onDestroyDispatchers: []
-  deletedItems: 
+  onCollectDispatchers: []
+  collectedItems: 
   remainingItems: 0
   NPC: {fileID: 1274768664411813718}
 --- !u!1001 &1436587202
@@ -4445,7 +4445,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You've been spotted!
+  m_text: You lost
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4753,9 +4753,9 @@ SceneRoots:
   - {fileID: 1490867553}
   - {fileID: 132987473}
   - {fileID: 4644887225327112323}
+  - {fileID: 1138030811}
   - {fileID: 264644484}
   - {fileID: 1418551513}
   - {fileID: 1436587202}
   - {fileID: 1551163286}
   - {fileID: 2058039056}
-  - {fileID: 1138030811}

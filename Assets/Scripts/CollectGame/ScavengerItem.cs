@@ -6,10 +6,10 @@ public class ScavengerItem : MonoBehaviour
 {
     public int ID { get; set; }
 
-    public event System.Action<int, ScavengerItem> OnObjectDestroyed;
+    public event System.Action<int, ScavengerItem> OnObjectDisabled;
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        OnObjectDestroyed?.Invoke(ID, this);
+        OnObjectDisabled?.Invoke(ID, this);
     }
 }

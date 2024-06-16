@@ -14,9 +14,9 @@ public class CollectGameManager : MonoBehaviour
 
     [SerializeField] private Transform collectListParent;
 
-    [SerializeField] private ScavengerItem[] onDestroyDispatchers;
+    [SerializeField] private ScavengerItem[] onCollectDispatchers;
 
-    [SerializeField] private bool[] deletedItems;
+    [SerializeField] private bool[] collectedItems;
 
     [SerializeField] private int remainingItems;
 
@@ -26,6 +26,8 @@ public class CollectGameManager : MonoBehaviour
 
     private Transform[] collectListElements;
     private Dialogue NPCDialogue;
+    private List<FakeCollectable> CompRemoveFc;
+    private List<ScavengerItem> CompRemoveSi;
 
     #endregion
 
@@ -34,42 +36,69 @@ public class CollectGameManager : MonoBehaviour
     private const int NO_REMAINING = 0;
     private const int ARRAY_START = 0;
     private const int SINGLE_DIALOGUE = 1;
+    private const float RESTART_TIME = 1;
+
+    #endregion
+
+    #region Events
+
+    public delegate void EndTimerAction();
+
+    public static event EndTimerAction OnFinished;
 
     #endregion
 
     #region UnityMethods
 
-    private void Start()
+    private void OnEnable()
     {
-        InitializeList();
-        NPCDialogue = NPC.GetComponent<Dialogue>();
-        NpcDialogueRemaining();
+        TimerManager.OnTimeStart += StartGame;
+        TimerManager.OnTimeOver += GameOver;
+    }
+
+
+    private void OnDisable()
+    {
+        TimerManager.OnTimeStart -= StartGame;
+        TimerManager.OnTimeOver -= GameOver;
     }
 
     #endregion
 
     #region Methods
 
+    private void StartGame()
+    {
+        InitializeList();
+        NPCDialogue = NPC.GetComponent<Dialogue>();
+        NpcDialogueRemaining();
+    }
+
     private void InitializeList()
     {
+        
+        CompRemoveFc = new List<FakeCollectable>();
+        CompRemoveSi = new List<ScavengerItem>();
         collectListElements = collectListParent.GetComponentsInChildren<Transform>()
             .Where(x => x != collectListParent.transform).ToArray();
 
         collectListElements = RearrangeArray(maxItems, collectListElements);
-        deletedItems = new bool[collectListElements.Length];
-        onDestroyDispatchers = new ScavengerItem[collectListElements.Length];
+        collectedItems = new bool[collectListElements.Length];
+        onCollectDispatchers = new ScavengerItem[collectListElements.Length];
         for (var ii = ARRAY_START; ii < collectListElements.Length; ii++)
         {
-            collectListElements[ii].AddComponent<Collectable>();
-            var myC = collectListElements[ii].AddComponent<ScavengerItem>();
-            onDestroyDispatchers[ii] = myC;
-            myC.ID = ii;
+            var componentFc = collectListElements[ii].AddComponent<FakeCollectable>();
+            CompRemoveFc.Add(componentFc);
+            var componentSi = collectListElements[ii].AddComponent<ScavengerItem>();
+            CompRemoveSi.Add(componentSi);
+            onCollectDispatchers[ii] = componentSi;
+            componentSi.ID = ii;
         }
 
         remainingItems = collectListElements.Length;
-        foreach (var t in onDestroyDispatchers)
+        foreach (var t in onCollectDispatchers)
         {
-            t.OnObjectDestroyed += OnObjectCollected;
+            t.OnObjectDisabled += OnObjectCollected;
         }
     }
 
@@ -98,9 +127,9 @@ public class CollectGameManager : MonoBehaviour
 
     private void OnObjectCollected(int id, ScavengerItem t)
     {
-        t.OnObjectDestroyed -= OnObjectCollected;
+        t.OnObjectDisabled -= OnObjectCollected;
         remainingItems--;
-        deletedItems[id] = true;
+        collectedItems[id] = true;
         CheckAllObjectsAreCollected();
     }
 
@@ -108,14 +137,14 @@ public class CollectGameManager : MonoBehaviour
     {
         var dialogue = "The remaining items are:";
         var remainingList = new List<string>();
-        for (var ii = ARRAY_START; ii < deletedItems.Length; ii++)
+        for (var ii = ARRAY_START; ii < collectedItems.Length; ii++)
         {
-            if (deletedItems[ii]) continue;
+            if (collectedItems[ii]) continue;
             remainingList.Add(collectListElements[ii].name);
         }
-        
-        dialogue += string.Join( ",", remainingList )+".";
-        
+
+        dialogue += string.Join(",", remainingList) + ".";
+
         if (remainingList.Count <= NO_REMAINING)
         {
             dialogue = "You collected all the items";
@@ -127,11 +156,35 @@ public class CollectGameManager : MonoBehaviour
     private void CheckAllObjectsAreCollected()
     {
         NpcDialogueRemaining();
-        if (remainingItems <= NO_REMAINING)
+        if (remainingItems > NO_REMAINING) return;
+        OnFinished?.Invoke();
+        StartCoroutine(WaitAndRestart());
+    }
+
+    private IEnumerator WaitAndRestart()
+    {
+        yield return new WaitForSeconds(RESTART_TIME);
+        foreach (var component in CompRemoveFc)
         {
-            //TODO: End the minigame
-            Debug.Log("All items collected");
+            Destroy (component);
         }
+        
+        
+        foreach (var component in CompRemoveSi)
+        {
+            Destroy (component);
+        }
+        
+        foreach (var item in onCollectDispatchers)
+        {
+            item.gameObject.SetActive(true);
+        }
+    }
+
+    private void GameOver()
+    {
+        //TODO: Make a game over, and a restart
+        Debug.Log("Times up, you lost");
     }
 
     #endregion
