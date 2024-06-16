@@ -9,6 +9,7 @@ public class AnimationPlayerManager : MonoBehaviour
     private StarterAssetsInputs inputs;
     private FirstPersonController controller;
     private Animator anim;
+    private bool moving = false;
     private float speed = 4;
     private float MoveSpeed = 4f;
     private float SprintSpeed = 6f;
@@ -30,6 +31,8 @@ public class AnimationPlayerManager : MonoBehaviour
     void Update()
     {
         speed = inputs.sprint ? SprintSpeed : MoveSpeed;
+        moving = (inputs.move != Vector2.zero) ? true : false;
+
         if (anim != null)
         {
             anim.SetFloat("Speed", speed);
@@ -37,6 +40,7 @@ public class AnimationPlayerManager : MonoBehaviour
             anim.SetFloat("Horizontal", inputs.move.x);
             anim.SetBool("Jumping", inputs.jump);
             anim.SetBool("Falling", !controller.Grounded);
+            anim.SetBool("Moving", moving);
         }
         
     }
