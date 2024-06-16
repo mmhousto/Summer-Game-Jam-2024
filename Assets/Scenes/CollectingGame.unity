@@ -3455,7 +3455,8 @@ MonoBehaviour:
   npc: {fileID: 1274768664411813718}
   gameIsActive: 0
   wonOnce: 0
-  winningText: Congratulations, you found all the items
+  winningText: Congratulations, you found all the items, you can keep going on your
+    adventure
 --- !u!1 &1436176076
 GameObject:
   m_ObjectHideFlags: 0
