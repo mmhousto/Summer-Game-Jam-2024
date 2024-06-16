@@ -135,7 +135,9 @@ public class DialogueCanvas : MonoBehaviour
 
     public bool GetResetDialogue()
     {
-        return resetDialogue;
+        if (!resetDialogue) return false;
+        resetDialogue = false;
+        return true;
     }
 
     private void RepositionDialogue(Transform dialogueSource)
