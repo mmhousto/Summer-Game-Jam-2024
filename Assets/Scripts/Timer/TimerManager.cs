@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class TimerManager : MonoBehaviour
 {
@@ -73,26 +70,23 @@ public class TimerManager : MonoBehaviour
         _remainingtime = _totaltime;
         clock.TimerTextUpdate(_totaltime);
         clock.TimerFillImgUpdate(FILLED_IMG);
-        Invoke(nameof(UpdateTimer), A_SECOND);
+        StartCoroutine(UpdateTimer());
         OnTimeStart?.Invoke();
     }
 
-    private void UpdateTimer()
+    private IEnumerator UpdateTimer()
     {
-        _remainingtime--;
-        if (_remainingtime > TIME_ENDED)
+        while (_remainingtime>TIME_ENDED)
         {
             clock.TimerTextUpdate(_remainingtime);
             var percentageTime = (float)_remainingtime / _totaltime;
             clock.TimerFillImgUpdate(percentageTime);
-            Invoke(nameof(UpdateTimer), A_SECOND);
+            yield return new WaitForSeconds(A_SECOND);
+            _remainingtime--;
         }
-        else
-        {
-            EndTimer();
-        }
+        EndTimer();
     }
-
+    
     private void EndTimer()
     {
         clock.EndTimerUI();

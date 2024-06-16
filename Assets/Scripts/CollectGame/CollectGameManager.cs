@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,14 +19,21 @@ public class CollectGameManager : MonoBehaviour
 
     [SerializeField] private int remainingItems;
 
-    [SerializeField] private Transform NPC;
+    [SerializeField] private Transform npc;
+
+    [SerializeField] private bool gameIsActive;
+
+    [SerializeField] private bool wonOnce;
+
+    [SerializeField] private string winningText;
 
     private DialogueClass[] _manualDialogues;
 
-    private Transform[] collectListElements;
-    private Dialogue NPCDialogue;
-    private List<FakeCollectable> CompRemoveFc;
-    private List<ScavengerItem> CompRemoveSi;
+    private Transform[] _collectListElements;
+    private Dialogue _npcDialogue;
+    private List<FakeCollectable> _compRemoveFc;
+    private List<ScavengerItem> _compRemoveSi;
+    private bool _isNpcNull;
 
     #endregion
 
@@ -35,8 +41,7 @@ public class CollectGameManager : MonoBehaviour
 
     private const int NO_REMAINING = 0;
     private const int ARRAY_START = 0;
-    private const int SINGLE_DIALOGUE = 1;
-    private const float RESTART_TIME = 1;
+    private const float RESTART_TIME = 2;
 
     #endregion
 
@@ -49,6 +54,11 @@ public class CollectGameManager : MonoBehaviour
     #endregion
 
     #region UnityMethods
+
+    private void Start()
+    {
+        _isNpcNull = npc == null;
+    }
 
     private void OnEnable()
     {
@@ -69,33 +79,34 @@ public class CollectGameManager : MonoBehaviour
 
     private void StartGame()
     {
+        if (gameIsActive) return;
+        gameIsActive = true;
         InitializeList();
-        NPCDialogue = NPC.GetComponent<Dialogue>();
+        _npcDialogue = npc.GetComponent<Dialogue>();
         NpcDialogueRemaining();
     }
 
     private void InitializeList()
     {
-        
-        CompRemoveFc = new List<FakeCollectable>();
-        CompRemoveSi = new List<ScavengerItem>();
-        collectListElements = collectListParent.GetComponentsInChildren<Transform>()
+        _compRemoveFc = new List<FakeCollectable>();
+        _compRemoveSi = new List<ScavengerItem>();
+        _collectListElements = collectListParent.GetComponentsInChildren<Transform>()
             .Where(x => x != collectListParent.transform).ToArray();
 
-        collectListElements = RearrangeArray(maxItems, collectListElements);
-        collectedItems = new bool[collectListElements.Length];
-        onCollectDispatchers = new ScavengerItem[collectListElements.Length];
-        for (var ii = ARRAY_START; ii < collectListElements.Length; ii++)
+        _collectListElements = RearrangeArray(maxItems, _collectListElements);
+        collectedItems = new bool[_collectListElements.Length];
+        onCollectDispatchers = new ScavengerItem[_collectListElements.Length];
+        for (var ii = ARRAY_START; ii < _collectListElements.Length; ii++)
         {
-            var componentFc = collectListElements[ii].AddComponent<FakeCollectable>();
-            CompRemoveFc.Add(componentFc);
-            var componentSi = collectListElements[ii].AddComponent<ScavengerItem>();
-            CompRemoveSi.Add(componentSi);
+            var componentFc = _collectListElements[ii].AddComponent<FakeCollectable>();
+            _compRemoveFc.Add(componentFc);
+            var componentSi = _collectListElements[ii].AddComponent<ScavengerItem>();
+            _compRemoveSi.Add(componentSi);
             onCollectDispatchers[ii] = componentSi;
             componentSi.ID = ii;
         }
 
-        remainingItems = collectListElements.Length;
+        remainingItems = _collectListElements.Length;
         foreach (var t in onCollectDispatchers)
         {
             t.OnObjectDisabled += OnObjectCollected;
@@ -104,16 +115,22 @@ public class CollectGameManager : MonoBehaviour
 
     private void NpcDialogueRemaining()
     {
-        if (NPC == null) return;
-        var singleDialogue = new DialogueClass(PrintRemainingItems(), DialogueClass.Feel.Calm, NPC.transform);
-        var newDialogues = new DialogueClass[SINGLE_DIALOGUE];
-        newDialogues[ARRAY_START] = singleDialogue;
-        NPCDialogue.SetManualDialogue(newDialogues);
+        if (_isNpcNull) return;
+        var singleDialogue = new DialogueClass(PrintNpcText(), DialogueClass.Feel.Calm, npc.transform);
+
+        var newDialogues = new List<DialogueClass>();
+        if (wonOnce)
+        {
+            newDialogues.Add(new DialogueClass(winningText, DialogueClass.Feel.Calm, npc.transform));
+        }
+
+        newDialogues.Add(singleDialogue);
+        _npcDialogue.SetManualDialogue(newDialogues.ToArray());
     }
 
     private Transform[] RearrangeArray(int size, Transform[] collectList)
     {
-        if (size < ARRAY_START || size >= this.collectListElements.Length) return collectList;
+        if (size < ARRAY_START || size >= this._collectListElements.Length) return collectList;
         for (var ii = ARRAY_START; ii < collectList.Length; ii++)
         {
             var tmp = collectList[ii];
@@ -133,21 +150,31 @@ public class CollectGameManager : MonoBehaviour
         CheckAllObjectsAreCollected();
     }
 
-    private string PrintRemainingItems()
+    private string PrintNpcText()
     {
-        var dialogue = "The remaining items are:";
-        var remainingList = new List<string>();
-        for (var ii = ARRAY_START; ii < collectedItems.Length; ii++)
+        var dialogue = "";
+        if (!gameIsActive)
         {
-            if (collectedItems[ii]) continue;
-            remainingList.Add(collectListElements[ii].name);
+            dialogue = wonOnce
+                ? "You can keep playing if you want, start on the sign"
+                : "Wanna try again? start on the sign";
         }
-
-        dialogue += string.Join(",", remainingList) + ".";
-
-        if (remainingList.Count <= NO_REMAINING)
+        else
         {
-            dialogue = "You collected all the items";
+            dialogue = "The remaining items are:";
+            var remainingList = new List<string>();
+            for (var ii = ARRAY_START; ii < collectedItems.Length; ii++)
+            {
+                if (collectedItems[ii]) continue;
+                remainingList.Add(_collectListElements[ii].name);
+            }
+
+            dialogue += string.Join(",", remainingList) + ".";
+
+            if (remainingList.Count <= NO_REMAINING)
+            {
+                dialogue = "You collected all the items";
+            }
         }
 
         return dialogue;
@@ -155,36 +182,40 @@ public class CollectGameManager : MonoBehaviour
 
     private void CheckAllObjectsAreCollected()
     {
+        if (!gameIsActive) return;
         NpcDialogueRemaining();
         if (remainingItems > NO_REMAINING) return;
         OnFinished?.Invoke();
+        wonOnce = true;
+        gameIsActive = false;
+        NpcDialogueRemaining();
         StartCoroutine(WaitAndRestart());
     }
 
     private IEnumerator WaitAndRestart()
     {
+        foreach (var component in _compRemoveFc)
+        {
+            Destroy(component);
+        }
+
         yield return new WaitForSeconds(RESTART_TIME);
-        foreach (var component in CompRemoveFc)
-        {
-            Destroy (component);
-        }
-        
-        
-        foreach (var component in CompRemoveSi)
-        {
-            Destroy (component);
-        }
-        
         foreach (var item in onCollectDispatchers)
         {
             item.gameObject.SetActive(true);
+        }
+
+        foreach (var component in _compRemoveSi)
+        {
+            Destroy(component);
         }
     }
 
     private void GameOver()
     {
-        //TODO: Make a game over, and a restart
-        Debug.Log("Times up, you lost");
+        gameIsActive = false;
+        NpcDialogueRemaining();
+        StartCoroutine(WaitAndRestart());
     }
 
     #endregion

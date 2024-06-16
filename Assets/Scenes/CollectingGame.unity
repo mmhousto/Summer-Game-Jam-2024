@@ -1289,7 +1289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342f183385ff73e4fa22976b1908be79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerSo: {fileID: 11400000, guid: cddf3241186f8774b81bb81db0cb8d32, type: 2}
+  timerSo: {fileID: 11400000, guid: 0319aa0ea931a0b429911572b5f96cdb, type: 2}
 --- !u!1001 &534636482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2822,7 +2822,10 @@ MonoBehaviour:
   onCollectDispatchers: []
   collectedItems: 
   remainingItems: 0
-  NPC: {fileID: 1274768664411813718}
+  npc: {fileID: 1274768664411813718}
+  gameIsActive: 0
+  wonOnce: 0
+  winningText: Congratulations, you found all the items
 --- !u!1001 &1436587202
 PrefabInstance:
   m_ObjectHideFlags: 0

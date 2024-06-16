@@ -1,6 +1,4 @@
-// Morgan Houston
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StartTimer : Interactable
@@ -11,12 +9,16 @@ public class StartTimer : Interactable
 
     #endregion
     
+    #region Constants
+
+    private const float RESTART_TIME = 3;
+
+    #endregion
+    
     #region Unity Methods
 
-    // Start is called before the first frame update
     private void Start()
     {
-        Debug.Log($"Start timer script");
         canInteract = true;
     }
     private void OnEnable()
@@ -44,6 +46,12 @@ public class StartTimer : Interactable
 
     private void RestartInteraction()
     {
+        StartCoroutine(WaitAndRestart());
+    }
+    
+    private IEnumerator WaitAndRestart()
+    {
+        yield return new WaitForSeconds(RESTART_TIME);
         canInteract = true;
     }
     
