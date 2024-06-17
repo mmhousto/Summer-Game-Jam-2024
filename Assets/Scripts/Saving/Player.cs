@@ -68,11 +68,9 @@ public class Player : MonoBehaviour
         if (data != null)
         {
             SetData(data);
-            Debug.Log("Data Set");
         }
         else
         {
-            Debug.Log("No data found");
             scavengerRespect = false;
             magiciansRespect = false;
             thievesRespect = false;
