@@ -200,5 +200,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9451927866fc5794389c957bdbfc3fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptyImg: {fileID: 0}
-  fullImg: {fileID: 0}
+  emptyImg: {fileID: 923148935552070197}
+  fullImg: {fileID: 9126640798316239233}

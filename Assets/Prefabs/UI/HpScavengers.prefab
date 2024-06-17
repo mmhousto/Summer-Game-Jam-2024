@@ -50,8 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9451927866fc5794389c957bdbfc3fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptyImg: {fileID: 0}
-  fullImg: {fileID: 0}
+  emptyImg: {fileID: 8091676425292261251}
+  fullImg: {fileID: 832272867222866883}
 --- !u!1 &7016181473446409354
 GameObject:
   m_ObjectHideFlags: 0
