@@ -13,6 +13,8 @@ public class LoadLevel : MonoBehaviour
     public GameObject loadingBarEnd;
     [Tooltip("The loading bar.")]
     public Slider loadingBar;
+    [Tooltip("Loading Bar image.")]
+    public Image loadingImage;
 
     private float progress;
     private const float ALMOST_COMPLETE = 0.9999f;
@@ -42,6 +44,7 @@ public class LoadLevel : MonoBehaviour
             progress = Mathf.Clamp(loading.progress / .9f, 0f, ALMOST_COMPLETE);
 
             loadingBar.value = progress * 100f;
+            loadingImage.fillAmount = progress * 100f;
             player.transform.position = loadingBarEnd.transform.position;
 
             yield return null;
