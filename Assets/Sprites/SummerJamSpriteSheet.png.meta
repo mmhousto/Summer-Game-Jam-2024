@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,13 +37,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -132,20 +132,555 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Settings Icon
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 2652
+        width: 256
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea3f3443b09569d49888830fbc489e44
+      internalID: -1380253253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 2657
+        width: 918
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd5de7d0c3f36747bb1d45e332fc129
+      internalID: 843111416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Magician\u2019s Grotto"
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 2469
+        width: 393
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48cf04559404bee4b8b5f0b0968f115d
+      internalID: -630580029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Exit
+      rect:
+        serializedVersion: 2
+        x: 2099
+        y: 2645
+        width: 240
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18714c103c61dd1418b59a630f5d3d5c
+      internalID: -2126664709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thieves Icon
+      rect:
+        serializedVersion: 2
+        x: 2369
+        y: 2624
+        width: 283
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6390f9ac5360f0e42b27b02e82a52e6c
+      internalID: 1182714801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quest Icon
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 2122
+        width: 132
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5329fca177ee8c8488f00b6079d63c09
+      internalID: 407249881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grabbing Icon
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 2369
+        width: 224
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c614a43c091536c4b8d7ed8b503e8cbb
+      internalID: 1510911118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grab Icon
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 2328
+        width: 271
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def25438679300a44b59cf90a9c33ab8
+      internalID: 978774785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Icon
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 2366
+        width: 235
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8b602d98021f848a12b423f250903f
+      internalID: 469331945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Speech Dot
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 2457
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d77094b27a2a28e4d98f8ebc732b384a
+      internalID: 155602952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Icon
+      rect:
+        serializedVersion: 2
+        x: 2070
+        y: 2352
+        width: 291
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11418c494c6834d46b024e533f9bd380
+      internalID: -1543634908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magician Icon
+      rect:
+        serializedVersion: 2
+        x: 2371
+        y: 2336
+        width: 274
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1671d9854ec594aacbeeed2e3570e3
+      internalID: 260438193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thieves Holt
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 1880
+        width: 516
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec2328aa7d2787468a7524d94283264
+      internalID: -33982701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King's Rest
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 1880
+        width: 359
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9c2446eafad81243b901b61d72a9e7f
+      internalID: -418937005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Scavenger\u2019s Glen"
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 1583
+        width: 965
+        height: 594
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50c0c690f86da94ea896d7c7c1d5b50
+      internalID: 1484636547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thieves Icon Wood
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 849
+        width: 298
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bfbba0cc48c32341a2e5f381923516c
+      internalID: 1126379134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Icon Wood
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 564
+        width: 291
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca95c2038f0b6004d93c09384837fa1b
+      internalID: 1796919249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magician Icon Wood
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 554
+        width: 276
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6ce1308b8410c5409462e084a8d7be7
+      internalID: -1353249776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Path
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1441
+        width: 1204
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65ac351c58913c46b6c9a592accc673
+      internalID: -1315856241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Loading Bar
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1144
+        width: 1989
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e383f668a165dd43a92ec5674ec0a9e
+      internalID: -1708760167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thieves Path
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 874
+        width: 677
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acac02a20cced1748a9148b99d89dba2
+      internalID: 1732333139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magicians Path
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 602
+        width: 776
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c473e3f38a982b941b4360be9658c153
+      internalID: 1793665720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0a788966f0689a143bd68df77cb356d6
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Button: 843111416
+      Exit: -2126664709
+      Grab Icon: 978774785
+      Grabbing Icon: 1510911118
+      King's Rest: -418937005
+      Loading Bar: -1708760167
+      Magician Icon: 260438193
+      Magician Icon Wood: -1353249776
+      Magicians Path: 1793665720
+      "Magician\u2019s Grotto": -630580029
+      Quest Icon: 407249881
+      Scavenger Icon: -1543634908
+      Scavenger Icon Wood: 1796919249
+      Scavenger Path: -1315856241
+      "Scavenger\u2019s Glen": 1484636547
+      Settings Icon: -1380253253
+      Speech Dot: 155602952
+      Speech Icon: 469331945
+      SummerJamSpriteSheet_12: -207275069
+      SummerJamSpriteSheet_17: -101698979
+      SummerJamSpriteSheet_18: -1218592971
+      SummerJamSpriteSheet_19: 373347579
+      SummerJamSpriteSheet_20: -298965623
+      SummerJamSpriteSheet_21: 1575060915
+      SummerJamSpriteSheet_22: -616539290
+      SummerJamSpriteSheet_23: -1719255035
+      SummerJamSpriteSheet_24: 836403300
+      SummerJamSpriteSheet_25: 665471245
+      SummerJamSpriteSheet_26: -1415432385
+      SummerJamSpriteSheet_27: -1414730794
+      SummerJamSpriteSheet_28: -1620176904
+      SummerJamSpriteSheet_29: -848486034
+      SummerJamSpriteSheet_30: -1285672155
+      SummerJamSpriteSheet_31: 160539672
+      SummerJamSpriteSheet_32: 1064042968
+      SummerJamSpriteSheet_33: -32722657
+      SummerJamSpriteSheet_34: 469158814
+      SummerJamSpriteSheet_35: -1866725590
+      SummerJamSpriteSheet_36: 1367226378
+      SummerJamSpriteSheet_37: -1198356318
+      SummerJamSpriteSheet_38: 2085362873
+      SummerJamSpriteSheet_39: 932674435
+      SummerJamSpriteSheet_40: -183252609
+      SummerJamSpriteSheet_41: -1036007931
+      SummerJamSpriteSheet_42: 770713183
+      SummerJamSpriteSheet_43: -1011282675
+      SummerJamSpriteSheet_44: -333661679
+      SummerJamSpriteSheet_45: 2079774212
+      SummerJamSpriteSheet_47: 220846044
+      SummerJamSpriteSheet_48: 1000661303
+      SummerJamSpriteSheet_49: -1023012894
+      SummerJamSpriteSheet_50: 390486332
+      SummerJamSpriteSheet_51: 1715181769
+      SummerJamSpriteSheet_52: -1492655129
+      SummerJamSpriteSheet_53: -1424233312
+      SummerJamSpriteSheet_56: -1117128511
+      Thieves Holt: -33982701
+      Thieves Icon: 1182714801
+      Thieves Icon Wood: 1126379134
+      Thieves Path: 1732333139
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
