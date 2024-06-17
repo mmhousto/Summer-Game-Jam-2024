@@ -12,7 +12,7 @@ public class MainManager : MonoBehaviour
     {
         // Get last saved scene then load scene
         // loading castle scene for now
-        SceneLoader.LoadLevel((int)SceneLoader.Levels.Castle);
+        SceneLoader.LoadLevel(Player.Instance.lastLocation);
     }
 
     public void Exit()
