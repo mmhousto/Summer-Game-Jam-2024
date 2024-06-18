@@ -29480,6 +29480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager
       objectReference: {fileID: 0}
+    - target: {fileID: 6465313575947159639, guid: 2bc3eb77598cf6a41b862d33e350e9ff, type: 3}
+      propertyPath: m_TagString
+      value: Quest
+      objectReference: {fileID: 0}
     - target: {fileID: 7271982361280247107, guid: 2bc3eb77598cf6a41b862d33e350e9ff, type: 3}
       propertyPath: m_Enabled
       value: 1
