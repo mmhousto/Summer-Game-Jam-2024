@@ -15,10 +15,4 @@ public class SoundPrefs : MonoBehaviour
         SoundManagerScript.Instance.setFloat("MyExposedParam", PlayerPrefs.GetFloat("SFXVolume", 1f));
         SoundManagerScript.Instance.setFloat("MyExposedParam 6", PlayerPrefs.GetFloat("FSVolume", 1f));
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
