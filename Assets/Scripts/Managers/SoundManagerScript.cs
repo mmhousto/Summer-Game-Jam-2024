@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    private static SoundManagerScript Instance; // this is the singleton!
+    public static SoundManagerScript Instance; // this is the singleton!
 
     public AudioClip collectingMinigameBGM, stealthMinigameBGM, illusionMinigameBGM; // drag clips into this 
     public enum BGM { CollectingMinigame, StealthMinigame, IllusionMinigame };

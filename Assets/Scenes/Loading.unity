@@ -1107,10 +1107,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: masterMixer
-      value: 
-      objectReference: {fileID: 24100000, guid: b78401dbc7075cc4ab24e939c9897e29, type: 2}
     - target: {fileID: 2877180567585225782, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
       propertyPath: m_Name
       value: Sound Manager
