@@ -76,12 +76,12 @@ public class IllusionGameManager : MonoBehaviour
 
     private void NpcDialogueRemaining()
     {
-        var singleDialogue = new DialogueClass(PrintNpcText(), DialogueClass.Feel.Calm, npc.transform);
+        var singleDialogue = new DialogueClass(PrintNpcText(), DialogueClass.Feel.Calm, npc.GetChild(2));
 
         var newDialogues = new List<DialogueClass>();
         if (wonOnce && !gameIsActive)
         {
-            newDialogues.Add(new DialogueClass(winningText, DialogueClass.Feel.Calm, npc.transform));
+            newDialogues.Add(new DialogueClass(winningText, DialogueClass.Feel.Calm, npc.GetChild(2)));
         }
 
         newDialogues.Add(singleDialogue);
