@@ -18,9 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Dialogue.unity
     guid: 63339d4f8c2e6db419dc63e9f83eb3f1
   - enabled: 1
+    path: Assets/Scenes/CollectingGame.unity
+    guid: 4958a1e182181de4ba6f54a7f0c014e5
+  - enabled: 1
     path: Assets/Scenes/StealthGame.unity
     guid: f8a32b55d5d242143bb23e2f9b1cbe82
   - enabled: 1
-    path: Assets/Scenes/CollectingGame.unity
-    guid: 4958a1e182181de4ba6f54a7f0c014e5
+    path: Assets/Scenes/IllusionGame.unity
+    guid: d82615fb8030c0343bac3103b361127d
   m_configObjects: {}
