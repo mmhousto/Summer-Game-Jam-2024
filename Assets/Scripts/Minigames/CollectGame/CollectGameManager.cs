@@ -50,6 +50,7 @@ public class CollectGameManager : MonoBehaviour
 
     public static event ChangeGameStatusAction OnFinished;
     public static event ChangeGameStatusAction OnStarted;
+    public static event ChangeGameStatusAction OnFailed;
 
     #endregion
 
@@ -59,6 +60,7 @@ public class CollectGameManager : MonoBehaviour
     {
         TimerManager.OnTimeStart += StartGame;
         TimerManager.OnTimeOver += GameOver;
+        HealthManager.OnDeath += GameOver;
     }
 
 
@@ -66,6 +68,7 @@ public class CollectGameManager : MonoBehaviour
     {
         TimerManager.OnTimeStart -= StartGame;
         TimerManager.OnTimeOver -= GameOver;
+        HealthManager.OnDeath -= GameOver;
     }
 
     #endregion
@@ -120,7 +123,7 @@ public class CollectGameManager : MonoBehaviour
         }
 
         newDialogues.Add(singleDialogue);
-        _npcDialogue.SetManualDialogue(newDialogues.ToArray());
+        if (_npcDialogue != null) _npcDialogue.SetManualDialogue(newDialogues.ToArray());
     }
 
     private Transform[] RearrangeArray(int size, Transform[] collectList)
@@ -189,10 +192,11 @@ public class CollectGameManager : MonoBehaviour
 
     private IEnumerator WaitAndRestart()
     {
-        foreach (var component in _compRemoveFc)
-        {
-            Destroy(component);
-        }
+        if (_compRemoveFc != null)
+            foreach (var component in _compRemoveFc)
+            {
+                Destroy(component);
+            }
 
         yield return new WaitForSeconds(RESTART_TIME);
         foreach (var item in onCollectDispatchers)
@@ -200,14 +204,16 @@ public class CollectGameManager : MonoBehaviour
             item.gameObject.SetActive(true);
         }
 
-        foreach (var component in _compRemoveSi)
-        {
-            Destroy(component);
-        }
+        if (_compRemoveSi != null)
+            foreach (var component in _compRemoveSi)
+            {
+                Destroy(component);
+            }
     }
 
     private void GameOver()
     {
+        OnFailed?.Invoke();
         gameIsActive = false;
         NpcDialogueRemaining();
         StartCoroutine(WaitAndRestart());

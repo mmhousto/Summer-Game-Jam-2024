@@ -46,14 +46,15 @@ public class TimerManager : MonoBehaviour
         TimerScriptableObject.OnStart += StartTimer;
         TimerScriptableObject.OnInterrupt += StopTimer;
         CollectGameManager.OnFinished += StopTimer;
+        CollectGameManager.OnFailed += StopTimer;
     }
-
 
     private void OnDisable()
     {
         TimerScriptableObject.OnStart -= StartTimer;
         TimerScriptableObject.OnInterrupt -= StopTimer;
         CollectGameManager.OnFinished -= StopTimer;
+        CollectGameManager.OnFailed += StopTimer;
     }
 
     #endregion

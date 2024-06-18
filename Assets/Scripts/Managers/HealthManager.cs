@@ -55,6 +55,7 @@ public class HealthManager : MonoBehaviour
     {
         CollectGameManager.OnStarted += StartGame;
         CollectGameManager.OnFinished += EndGame;
+        CollectGameManager.OnFailed += EndGame;
     }
 
 
@@ -62,6 +63,7 @@ public class HealthManager : MonoBehaviour
     {
         CollectGameManager.OnStarted -= StartGame;
         CollectGameManager.OnFinished -= EndGame;
+        CollectGameManager.OnFailed -= EndGame;
     }
 
     #endregion
@@ -70,6 +72,7 @@ public class HealthManager : MonoBehaviour
 
     public void StartGame()
     {
+        isdead = false;
         _initialHp = gameHp;
         if (_initialHp < MIN_HEALTH)
         {
@@ -81,7 +84,9 @@ public class HealthManager : MonoBehaviour
 
     public void EndGame()
     {
+        if(isplaying==false||maxHp<=NO_HEALTH)return;
         isplaying = false;
+        
         while (maxHp > NO_HEALTH)
         {
             RemoveHeartContainer();
@@ -123,7 +128,6 @@ public class HealthManager : MonoBehaviour
                 isdead = true;
                 OnDeath?.Invoke();
             }
-
             currentHp = NO_HEALTH;
             UpdateHealth();
             return;
@@ -158,7 +162,6 @@ public class HealthManager : MonoBehaviour
 
     public void RemoveHeartContainer()
     {
-        if (isdead) return;
         if (maxHp <= MIN_CONTAINERS) return;
         var go = HeartPooling.SharedInstance.GetPooledObjectToRemove();
         if (go == null) return;
