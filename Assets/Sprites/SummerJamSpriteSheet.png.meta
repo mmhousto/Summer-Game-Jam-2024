@@ -216,7 +216,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2099
-        y: 2645
+        y: 2647
         width: 240
         height: 235
       alignment: 0
@@ -233,11 +233,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thieves Icon
+      name: Thieves Icon Life
       rect:
         serializedVersion: 2
         x: 2369
-        y: 2624
+        y: 2626
         width: 283
         height: 289
       alignment: 0
@@ -359,11 +359,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scavenger Icon
+      name: Scavenger Icon Life
       rect:
         serializedVersion: 2
         x: 2070
-        y: 2352
+        y: 2357
         width: 291
         height: 236
       alignment: 0
@@ -380,11 +380,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Magician Icon
+      name: Magician Icon Life
       rect:
         serializedVersion: 2
         x: 2371
-        y: 2336
+        y: 2338
         width: 274
         height: 274
       alignment: 0
@@ -610,6 +610,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Scavenger Timer
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 5
+        width: 493
+        height: 543
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d62ab04234ce34e85b3d4ee8cb8192
+      internalID: 2032617957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magician TImer
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 17
+        width: 550
+        height: 519
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a3bfd012fd801541a8c622d7d15151c
+      internalID: -519935810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thieves Icon Black
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 844
+        width: 291
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257c40f4847b09441a45dc69ec2f14a6
+      internalID: -1063107631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Icon
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 848
+        width: 304
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e6e08fa301a3ff4e8d4caffd245c8cf
+      internalID: 1479814333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magician Icon
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 848
+        width: 279
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924b45f9922b16d46a95e61e67eb041c
+      internalID: 678213716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -627,14 +732,18 @@ TextureImporter:
       Grabbing Icon: 1510911118
       King's Rest: -418937005
       Loading Bar: -1708760167
-      Magician Icon: 260438193
+      Magician Icon: 678213716
+      Magician Icon Life: 260438193
       Magician Icon Wood: -1353249776
+      Magician TImer: -519935810
       Magicians Path: 1793665720
       "Magician\u2019s Grotto": -630580029
       Quest Icon: 407249881
-      Scavenger Icon: -1543634908
+      Scavenger Icon: 1479814333
+      Scavenger Icon Life: -1543634908
       Scavenger Icon Wood: 1796919249
       Scavenger Path: -1315856241
+      Scavenger Timer: 2032617957
       "Scavenger\u2019s Glen": 1484636547
       Settings Icon: -1380253253
       Speech Dot: 155602952
@@ -678,7 +787,8 @@ TextureImporter:
       SummerJamSpriteSheet_53: -1424233312
       SummerJamSpriteSheet_56: -1117128511
       Thieves Holt: -33982701
-      Thieves Icon: 1182714801
+      Thieves Icon Black: -1063107631
+      Thieves Icon Life: 1182714801
       Thieves Icon Wood: 1126379134
       Thieves Path: 1732333139
   mipmapLimitGroupName: 
