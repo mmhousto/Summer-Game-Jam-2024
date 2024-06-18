@@ -1,12 +1,11 @@
 // Morgan Houston
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Loading : MonoBehaviour
 {
     [Tooltip("The level to be loaded.")]
-    public int levelToLoad;
+    //public int levelToLoad;
+    public SceneLoader.Levels levelToLoad;
 
     /// <summary>
     /// Once player enters trigger area load loading scene and level to load.
@@ -14,8 +13,8 @@ public class Loading : MonoBehaviour
     /// <param name="other">The object that triggered</param>
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
-            SceneLoader.LoadLevel(levelToLoad);
+        if (other.CompareTag("Player"))
+            SceneLoader.LoadLevel((int)levelToLoad);
     }
 
 }
