@@ -4,12 +4,17 @@ public class HealthManager : MonoBehaviour
 {
     #region Fields
 
+    [Header("-----Choose initial HP-----")]
+    [SerializeField] private int initialHp;
     [SerializeField] private Transform heartContainersParent;
-    [SerializeField] private int maxContainers;
-    [SerializeField] private int currentContainers;
-    [SerializeField] private int currentHealth;
-    [SerializeField] private HeartContainer[] pooledHealthContainers;
+
+    [Header("-----Readonly-----")]
+    [SerializeField] private HeartContainer[] maxPooledHpContainers;
+    [SerializeField] private int maxHp;
+    [SerializeField] private int currentHp;
     [SerializeField] private bool isdead;
+
+    private int _maxContainers;
 
     #endregion
 
@@ -34,10 +39,12 @@ public class HealthManager : MonoBehaviour
 
     private void Start()
     {
-        maxContainers = HeartPooling.SharedInstance.amountToPool;
+        maxHp = NO_HEALTH;
+        _maxContainers = HeartPooling.SharedInstance.amountToPool;
         InitializeHeartContainers();
-        pooledHealthContainers = HeartPooling.SharedInstance.GetPooledArray();
-        currentHealth = currentContainers;
+        currentHp = initialHp;
+        maxPooledHpContainers = HeartPooling.SharedInstance.GetPooledArray();
+        isdead = false;
     }
 
     #endregion
@@ -46,52 +53,63 @@ public class HealthManager : MonoBehaviour
 
     private void InitializeHeartContainers()
     {
-        if (currentContainers < MIN_CONTAINERS)
-            currentContainers = MIN_CONTAINERS;
-        for (var i = FIRST_INDEX; i < currentContainers; i++)
+        if (initialHp < MIN_CONTAINERS)
+            initialHp = MIN_CONTAINERS;
+        if (initialHp > _maxContainers)
+            initialHp = _maxContainers;
+        for (var i = FIRST_INDEX; i < initialHp; i++)
         {
             AddHeartPooled();
         }
     }
 
-    private void AddHeartPooled()
+    public void AddHeartPooled()
     {
-        if (currentContainers >= maxContainers) return;
+        if (initialHp > _maxContainers) return;
         var go = HeartPooling.SharedInstance.GetPooledObject();
         if (go == null) return;
         go.transform.SetParent(heartContainersParent);
         go.SetActive(true);
-        currentHealth++;
+        maxHp++;
+        currentHp++;
         UpdateHealth();
     }
 
     public void TakeDamage()
     {
         if (isdead) return;
-        if (currentHealth <= MIN_HEALTH)
+        if (currentHp <= MIN_HEALTH)
         {
             isdead = true;
             OnDeath?.Invoke();
-            currentHealth = NO_HEALTH;
+            currentHp = NO_HEALTH;
             UpdateHealth();
             return;
         }
 
-        currentHealth--;
+        currentHp--;
         UpdateHealth();
     }
     
+    public void Heal()
+    {
+        if (isdead) return;
+        if (currentHp >= maxHp) return;
+        currentHp++;
+        UpdateHealth();
+    }
+
     private void UpdateHealth()
     {
-        for (var index = FIRST_INDEX; index < pooledHealthContainers.Length; index++)
+        for (var index = FIRST_INDEX; index < maxPooledHpContainers.Length; index++)
         {
-            if (index < currentHealth)
+            if (index < currentHp)
             {
-                pooledHealthContainers[index].Healed();
+                maxPooledHpContainers[index].Healed();
             }
             else
             {
-                pooledHealthContainers[index].Damaged();
+                maxPooledHpContainers[index].Damaged();
             }
         }
     }
