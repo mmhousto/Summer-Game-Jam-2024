@@ -4868,6 +4868,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5666084549889006431, guid: 80c43b7ee124416468352393b74f7bfa, type: 3}
+      propertyPath: gameHp
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5666084549889006431, guid: 80c43b7ee124416468352393b74f7bfa, type: 3}
       propertyPath: initialHP
       value: 3
       objectReference: {fileID: 0}

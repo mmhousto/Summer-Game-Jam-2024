@@ -4,8 +4,9 @@ public class HealthManager : MonoBehaviour
 {
     #region Fields
 
-    [Header("-----Choose initial HP-----")]
-    [SerializeField] private int initialHp;
+    [Header("-----Choose minigame HP-----")] [SerializeField]
+    private int gameHp;
+
     [SerializeField] private Transform heartContainersParent;
 
     [Header("-----Readonly-----")]
@@ -13,14 +14,16 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private int maxHp;
     [SerializeField] private int currentHp;
     [SerializeField] private bool isdead;
+    [SerializeField] private bool isplaying;
 
+    private int _initialHp;
     private int _maxContainers;
 
     #endregion
 
     #region Constants
 
-    private const int MIN_CONTAINERS = 1;
+    private const int MIN_CONTAINERS = 0;
     private const int MIN_HEALTH = 1;
     private const int FIRST_INDEX = 0;
     private const int NO_HEALTH = 0;
@@ -40,24 +43,59 @@ public class HealthManager : MonoBehaviour
     private void Start()
     {
         maxHp = NO_HEALTH;
+        _initialHp = NO_HEALTH;
         _maxContainers = HeartPooling.SharedInstance.amountToPool;
         InitializeHeartContainers();
-        currentHp = initialHp;
-        maxPooledHpContainers = HeartPooling.SharedInstance.GetPooledArray();
+        currentHp = _initialHp;
         isdead = false;
+        maxPooledHpContainers = HeartPooling.SharedInstance.GetPooledArray();
+    }
+
+    private void OnEnable()
+    {
+        CollectGameManager.OnStarted += StartGame;
+        CollectGameManager.OnFinished += EndGame;
+    }
+
+
+    private void OnDisable()
+    {
+        CollectGameManager.OnStarted -= StartGame;
+        CollectGameManager.OnFinished -= EndGame;
     }
 
     #endregion
 
     #region Methods
 
+    public void StartGame()
+    {
+        _initialHp = gameHp;
+        if (_initialHp < MIN_HEALTH)
+        {
+            _initialHp = MIN_HEALTH;
+        }
+        InitializeHeartContainers();
+        isplaying = true;
+    }
+
+    public void EndGame()
+    {
+        isplaying = false;
+        while (maxHp > NO_HEALTH)
+        {
+            RemoveHeartContainer();
+        }
+    }
+
     private void InitializeHeartContainers()
     {
-        if (initialHp < MIN_CONTAINERS)
-            initialHp = MIN_CONTAINERS;
-        if (initialHp > _maxContainers)
-            initialHp = _maxContainers;
-        for (var i = FIRST_INDEX; i < initialHp; i++)
+        if (_initialHp < MIN_CONTAINERS)
+            _initialHp = MIN_CONTAINERS;
+        if (_initialHp == MIN_CONTAINERS) return;
+        if (_initialHp > _maxContainers)
+            _initialHp = _maxContainers;
+        for (var i = FIRST_INDEX; i < _initialHp; i++)
         {
             AddHeartPooled();
         }
@@ -65,7 +103,7 @@ public class HealthManager : MonoBehaviour
 
     public void AddHeartPooled()
     {
-        if (initialHp > _maxContainers) return;
+        if (_initialHp > _maxContainers) return;
         var go = HeartPooling.SharedInstance.GetPooledObject();
         if (go == null) return;
         go.transform.SetParent(heartContainersParent);
@@ -80,8 +118,12 @@ public class HealthManager : MonoBehaviour
         if (isdead) return;
         if (currentHp <= MIN_HEALTH)
         {
-            isdead = true;
-            OnDeath?.Invoke();
+            if (isplaying)
+            {
+                isdead = true;
+                OnDeath?.Invoke();
+            }
+
             currentHp = NO_HEALTH;
             UpdateHealth();
             return;
@@ -90,7 +132,7 @@ public class HealthManager : MonoBehaviour
         currentHp--;
         UpdateHealth();
     }
-    
+
     public void Heal()
     {
         if (isdead) return;
@@ -112,6 +154,19 @@ public class HealthManager : MonoBehaviour
                 maxPooledHpContainers[index].Damaged();
             }
         }
+    }
+
+    public void RemoveHeartContainer()
+    {
+        if (isdead) return;
+        if (maxHp <= MIN_CONTAINERS) return;
+        var go = HeartPooling.SharedInstance.GetPooledObjectToRemove();
+        if (go == null) return;
+        go.SetActive(false);
+        maxHp--;
+        if (currentHp <= maxHp) return;
+        currentHp = maxHp;
+        UpdateHealth();
     }
 
     #endregion

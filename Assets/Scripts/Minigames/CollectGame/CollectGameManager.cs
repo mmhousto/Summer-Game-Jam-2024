@@ -46,9 +46,10 @@ public class CollectGameManager : MonoBehaviour
 
     #region Events
 
-    public delegate void EndTimerAction();
+    public delegate void ChangeGameStatusAction();
 
-    public static event EndTimerAction OnFinished;
+    public static event ChangeGameStatusAction OnFinished;
+    public static event ChangeGameStatusAction OnStarted;
 
     #endregion
 
@@ -77,6 +78,7 @@ public class CollectGameManager : MonoBehaviour
         gameIsActive = true;
         InitializeList();
         _npcDialogue = npc.GetComponent<Dialogue>();
+        OnStarted?.Invoke();
         NpcDialogueRemaining();
     }
 

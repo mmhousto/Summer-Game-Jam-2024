@@ -29,5 +29,23 @@ public class HealthManagerEditor : Editor
             var myTarget = (HealthManager)target;
             myTarget.AddHeartPooled();
         }
+        
+        if(GUILayout.Button("Remove Container"))
+        {
+            var myTarget = (HealthManager)target;
+            myTarget.RemoveHeartContainer();
+        }
+        
+        if(GUILayout.Button("Simulate Start Game"))
+        {
+            var myTarget = (HealthManager)target;
+            myTarget.StartGame();
+        }
+        
+        if(GUILayout.Button("Simulate End Game"))
+        {
+            var myTarget = (HealthManager)target;
+            myTarget.EndGame();
+        }
     }
 }
