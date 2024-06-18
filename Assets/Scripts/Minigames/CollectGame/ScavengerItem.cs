@@ -4,19 +4,20 @@ public class ScavengerItem : MonoBehaviour
 {
     #region Fields
 
-    private bool _quitting = false;
+    private bool _quitting;
 
     #endregion
 
     #region Properties
 
-    public int ID { get; set; }
+    public int Id { get; set; }
+    public bool DoesDamage { get; set; }
 
     #endregion
 
     #region Events
 
-    public event System.Action<int, ScavengerItem> OnObjectDisabled;
+    public event System.Action<int,bool, ScavengerItem> OnObjectDisabled;
 
     #endregion
 
@@ -25,7 +26,7 @@ public class ScavengerItem : MonoBehaviour
     private void OnDisable()
     {
         if (_quitting) return;
-        OnObjectDisabled?.Invoke(ID, this);
+        OnObjectDisabled?.Invoke(Id, DoesDamage ,this);
     }
 
     private void OnApplicationQuit()

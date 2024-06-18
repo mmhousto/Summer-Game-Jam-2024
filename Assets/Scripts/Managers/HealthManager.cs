@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
     #region Fields
 
+   
+    
     [Header("-----Choose minigame HP-----")] [SerializeField]
     private int gameHp;
 
@@ -16,11 +19,18 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private bool isdead;
     [SerializeField] private bool isplaying;
 
+    
+    
     private int _initialHp;
     private int _maxContainers;
 
     #endregion
 
+    #region Properties
+
+    public static HealthManager Instance { get; set; }
+
+    #endregion
     #region Constants
 
     private const int MIN_CONTAINERS = 0;
@@ -40,6 +50,20 @@ public class HealthManager : MonoBehaviour
 
     #region UnityMethods
 
+    private void Awake()
+    {
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(this);
+            }
+        }
+    }
+
     private void Start()
     {
         maxHp = NO_HEALTH;
@@ -56,6 +80,7 @@ public class HealthManager : MonoBehaviour
         CollectGameManager.OnStarted += StartGame;
         CollectGameManager.OnFinished += EndGame;
         CollectGameManager.OnFailed += EndGame;
+        CollectGameManager.OnDamage += TakeDamage;
     }
 
 
@@ -64,6 +89,7 @@ public class HealthManager : MonoBehaviour
         CollectGameManager.OnStarted -= StartGame;
         CollectGameManager.OnFinished -= EndGame;
         CollectGameManager.OnFailed -= EndGame;
+        CollectGameManager.OnDamage -= TakeDamage;
     }
 
     #endregion
@@ -120,6 +146,7 @@ public class HealthManager : MonoBehaviour
 
     public void TakeDamage()
     {
+        Debug.Log("Invoked Take Damage");
         if (isdead) return;
         if (currentHp <= MIN_HEALTH)
         {

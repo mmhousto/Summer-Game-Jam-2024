@@ -9,13 +9,13 @@ public class CollectGameManager : MonoBehaviour
 {
     #region Fields
 
-    [SerializeField] private int maxItems;
+    [SerializeField] private int maxSearchableItems;
 
     [SerializeField] private Transform collectListParent;
 
     [SerializeField] private ScavengerItem[] onCollectDispatchers;
 
-    [SerializeField] private bool[] collectedItems;
+    [SerializeField] private bool[] mustCollectItems;
 
     [SerializeField] private int remainingItems;
 
@@ -50,6 +50,8 @@ public class CollectGameManager : MonoBehaviour
 
     public static event ChangeGameStatusAction OnFinished;
     public static event ChangeGameStatusAction OnStarted;
+    
+    public static event ChangeGameStatusAction OnDamage;
     public static event ChangeGameStatusAction OnFailed;
 
     #endregion
@@ -92,9 +94,11 @@ public class CollectGameManager : MonoBehaviour
         _collectListElements = collectListParent.GetComponentsInChildren<Transform>()
             .Where(x => x != collectListParent.transform).ToArray();
 
-        _collectListElements = RearrangeArray(maxItems, _collectListElements);
-        collectedItems = new bool[_collectListElements.Length];
+        _collectListElements = RearrangeArray(_collectListElements);
+        
+        mustCollectItems = new bool[maxSearchableItems];
         onCollectDispatchers = new ScavengerItem[_collectListElements.Length];
+        
         for (var ii = ARRAY_START; ii < _collectListElements.Length; ii++)
         {
             var componentFc = _collectListElements[ii].AddComponent<FakeCollectable>();
@@ -102,10 +106,11 @@ public class CollectGameManager : MonoBehaviour
             var componentSi = _collectListElements[ii].AddComponent<ScavengerItem>();
             _compRemoveSi.Add(componentSi);
             onCollectDispatchers[ii] = componentSi;
-            componentSi.ID = ii;
+            componentSi.Id = ii;
+            componentSi.DoesDamage = ii >= maxSearchableItems;
         }
 
-        remainingItems = _collectListElements.Length;
+        remainingItems = maxSearchableItems;
         foreach (var t in onCollectDispatchers)
         {
             t.OnObjectDisabled += OnObjectCollected;
@@ -126,9 +131,9 @@ public class CollectGameManager : MonoBehaviour
         if (_npcDialogue != null) _npcDialogue.SetManualDialogue(newDialogues.ToArray());
     }
 
-    private Transform[] RearrangeArray(int size, Transform[] collectList)
+    private static Transform[] RearrangeArray(Transform[] collectList)
     {
-        if (size < ARRAY_START || size >= this._collectListElements.Length) return collectList;
+        //if (size < ARRAY_START || size >= this._collectListElements.Length) return collectList;
         for (var ii = ARRAY_START; ii < collectList.Length; ii++)
         {
             var tmp = collectList[ii];
@@ -137,14 +142,22 @@ public class CollectGameManager : MonoBehaviour
             collectList[r] = tmp;
         }
 
-        return collectList.Where((e, i) => i < size).ToArray();
+        return collectList.ToArray();
     }
 
-    private void OnObjectCollected(int id, ScavengerItem t)
+    private void OnObjectCollected(int id, bool doesDamage, ScavengerItem t)
     {
+        Debug.Log($"Object {id} damages {doesDamage}");
+        if (doesDamage)
+        {
+            OnDamage?.Invoke();
+        }
+        else
+        {
+            mustCollectItems[id] = true;
+            remainingItems--;
+        }
         t.OnObjectDisabled -= OnObjectCollected;
-        remainingItems--;
-        collectedItems[id] = true;
         CheckAllObjectsAreCollected();
     }
 
@@ -159,15 +172,15 @@ public class CollectGameManager : MonoBehaviour
         }
         else
         {
-            dialogue = "The remaining items are:";
+            dialogue = "The remaining items are:<br>-";
             var remainingList = new List<string>();
-            for (var ii = ARRAY_START; ii < collectedItems.Length; ii++)
+            for (var ii = ARRAY_START; ii < mustCollectItems.Length; ii++)
             {
-                if (collectedItems[ii]) continue;
+                if (mustCollectItems[ii]) continue;
                 remainingList.Add(_collectListElements[ii].name);
             }
 
-            dialogue += string.Join(",", remainingList) + ".";
+            dialogue += string.Join("<br>-", remainingList) + "<br>";
 
             if (remainingList.Count <= NO_REMAINING)
             {
