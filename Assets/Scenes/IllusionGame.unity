@@ -21054,7 +21054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8945373514118622561, guid: 9e4f4dca33135774c9e88cd04f455f9f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 25
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 8945373514118622561, guid: 9e4f4dca33135774c9e88cd04f455f9f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -29479,6 +29479,10 @@ PrefabInstance:
     - target: {fileID: 6465313575947159639, guid: 2bc3eb77598cf6a41b862d33e350e9ff, type: 3}
       propertyPath: m_Name
       value: Villager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465313575947159639, guid: 2bc3eb77598cf6a41b862d33e350e9ff, type: 3}
+      propertyPath: m_TagString
+      value: Quest
       objectReference: {fileID: 0}
     - target: {fileID: 7271982361280247107, guid: 2bc3eb77598cf6a41b862d33e350e9ff, type: 3}
       propertyPath: m_Enabled

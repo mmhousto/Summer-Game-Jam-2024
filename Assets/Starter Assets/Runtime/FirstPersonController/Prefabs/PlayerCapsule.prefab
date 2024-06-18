@@ -287,6 +287,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamRoot: {fileID: 4135013735270702856}
   contextPrompt: {fileID: 0}
+  contextPromptImages:
+  - {fileID: 1510911118, guid: 065b19211d2c5284b9e568a1ac00748c, type: 3}
+  - {fileID: 469331945, guid: 065b19211d2c5284b9e568a1ac00748c, type: 3}
+  - {fileID: 407249881, guid: 065b19211d2c5284b9e568a1ac00748c, type: 3}
 --- !u!114 &8616685848737228376
 MonoBehaviour:
   m_ObjectHideFlags: 0
