@@ -3145,7 +3145,7 @@ PrefabInstance:
     - target: {fileID: 2911639936799053976, guid: f493b4157b33b364395879a2543322bf, type: 3}
       propertyPath: spriteLib
       value: 
-      objectReference: {fileID: 11400000, guid: adf06dc6b4428944db0048b66c11e5ca, type: 2}
+      objectReference: {fileID: 11400000, guid: 6720ac60310523a46934af5cd0be91d4, type: 2}
     - target: {fileID: 7750862965999992681, guid: f493b4157b33b364395879a2543322bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.74
