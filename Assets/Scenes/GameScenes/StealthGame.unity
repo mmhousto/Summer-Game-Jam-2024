@@ -2119,7 +2119,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: START
+  m_text: Find Item
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -2146,7 +2146,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11.95
+  m_fontSize: 15.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6548,7 +6548,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TASK
+  m_text: Find Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -6575,7 +6575,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.05
+  m_fontSize: 17.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9104,11 +9104,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3617788172314617988, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3617788172314617988, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3617788172314617988, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
       propertyPath: m_SizeDelta.x
@@ -9120,7 +9120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3617788172314617988, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3617788172314617988, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9240,11 +9240,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6733875039723995635, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6733875039723995635, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6733875039723995635, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
       propertyPath: m_SizeDelta.x
@@ -9256,7 +9256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6733875039723995635, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 260
       objectReference: {fileID: 0}
     - target: {fileID: 6733875039723995635, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9265,6 +9265,10 @@ PrefabInstance:
     - target: {fileID: 6759426536944189032, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
       propertyPath: m_Name
       value: GoldClock
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759426536944189032, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
