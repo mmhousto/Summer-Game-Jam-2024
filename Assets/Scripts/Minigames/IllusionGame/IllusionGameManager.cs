@@ -6,11 +6,15 @@ public class IllusionGameManager : MonoBehaviour
 {
     #region Fields
 
+    public GameObject clock;
+
     public GameObject[] items;
     
     public Transform[] itemSpawnPoints;
     
     private HealthManager healthManager;
+
+    [SerializeField] private TimerScriptableObject timerSo;
 
     [SerializeField] private Transform npc;
 
@@ -32,6 +36,7 @@ public class IllusionGameManager : MonoBehaviour
 
     private void Start()
     {
+        clock.SetActive(false);
         healthManager = GameObject.Find("HealthManager").GetComponent<HealthManager>();
         gameIsActive = false;
         _npcDialogue = npc.GetComponent<Dialogue>();
@@ -44,14 +49,14 @@ public class IllusionGameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        TimerManager.OnTimeOver += GameOver;
         HealthManager.OnDeath += GameOver;
     }
 
 
     private void OnDisable()
     {
-        
+        TimerManager.OnTimeOver -= GameOver;
         HealthManager.OnDeath -= GameOver;
     }
 
@@ -67,8 +72,11 @@ public class IllusionGameManager : MonoBehaviour
     public void StartGame()
     {
         if (gameIsActive) return;
+        clock.SetActive(true);
+        timerSo.StartTimer();
 
-        GameManagerScript.Instance.setGameState(GameManagerScript.GameState.IllusionGame);
+        if(GameManagerScript.Instance != null)
+            GameManagerScript.Instance.setGameState(GameManagerScript.GameState.IllusionGame);
 
         SetObjects();
         gameIsActive = true;
@@ -112,9 +120,12 @@ public class IllusionGameManager : MonoBehaviour
     {
         healthManager.EndGame();
         gameIsActive = false;
+        timerSo.EndTimer();
+        clock.SetActive(false);
         NpcDialogueRemaining();
 
-        GameManagerScript.Instance.setGameState(GameManagerScript.GameState.MagiciansFaction);
+        if (GameManagerScript.Instance != null)
+            GameManagerScript.Instance.setGameState(GameManagerScript.GameState.MagiciansFaction);
 
         foreach (var item in items)
         {

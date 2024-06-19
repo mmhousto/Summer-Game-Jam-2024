@@ -30,12 +30,12 @@ public class IllusionItem : Interactable
             canInteract = false;
             if (correctItem)
             {
-                SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.illusionWin);
+                SoundManagerScript.Instance?.PlaySFXSound(SoundManagerScript.Instance.illusionWin);
                 illusionGameManager.WonGame();
             }
             else
             {
-                SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.illusionDeath);
+                SoundManagerScript.Instance?.PlaySFXSound(SoundManagerScript.Instance.illusionDeath);
                 illusionGameManager.SetObjects();
                 healthManager.TakeDamage();
             }

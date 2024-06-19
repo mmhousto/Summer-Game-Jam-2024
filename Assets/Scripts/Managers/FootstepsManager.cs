@@ -23,7 +23,6 @@ public class FootstepsManager : MonoBehaviour
             case "Dirt":
                 int randDirt = Random.Range(0, dirt.Length);
                 audioSource.PlayOneShot(dirt[randDirt]);
-                Debug.Log(dirt[randDirt]);
                 break;
             case "Grass":
                 int randGrass = Random.Range(0, grass.Length);

@@ -3,7 +3,27 @@ guid: b48dc912db5f11647a8cb4fbf05ce4a5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: 3d57c627a1e04ca42a39f41921f3c7e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass
+    second: {fileID: 2100000, guid: 9633aec97c140444c8930f49797f1e8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Path
+    second: {fileID: 2100000, guid: e2ba13d396bfb8840b67d4d7e26e3ab9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Water
+    second: {fileID: 2100000, guid: 9a3ccde548b36c241976f3c086f22cda, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

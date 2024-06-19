@@ -19,7 +19,7 @@ public class SliderManager : MonoBehaviour
     private void OnEnable()
     {
         if(slider == null) slider = GetComponent<Slider>();
-        if(slider != null) slider.value = PlayerPrefs.GetFloat(SliderPrefName, 1f);
+        if(slider != null) slider.value = SliderPrefName != "MusicVolume" ? PlayerPrefs.GetFloat(SliderPrefName, 1f) : PlayerPrefs.GetFloat(SliderPrefName, -20f);
     }
 
     #endregion
