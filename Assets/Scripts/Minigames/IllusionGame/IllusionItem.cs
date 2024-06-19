@@ -28,9 +28,14 @@ public class IllusionItem : Interactable
         if (canInteract)
         {
             canInteract = false;
-            if (correctItem) illusionGameManager.WonGame();
+            if (correctItem)
+            {
+                SoundManagerScript.Instance?.PlaySFXSound(SoundManagerScript.Instance.illusionWin);
+                illusionGameManager.WonGame();
+            }
             else
             {
+                SoundManagerScript.Instance?.PlaySFXSound(SoundManagerScript.Instance.illusionDeath);
                 illusionGameManager.SetObjects();
                 healthManager.TakeDamage();
             }

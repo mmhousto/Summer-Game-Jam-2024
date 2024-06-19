@@ -6,11 +6,15 @@ public class IllusionGameManager : MonoBehaviour
 {
     #region Fields
 
+    public GameObject clock;
+
     public GameObject[] items;
     
     public Transform[] itemSpawnPoints;
     
     private HealthManager healthManager;
+
+    [SerializeField] private TimerScriptableObject timerSo;
 
     [SerializeField] private Transform npc;
 
@@ -32,6 +36,7 @@ public class IllusionGameManager : MonoBehaviour
 
     private void Start()
     {
+        clock.SetActive(false);
         healthManager = GameObject.Find("HealthManager").GetComponent<HealthManager>();
         gameIsActive = false;
         _npcDialogue = npc.GetComponent<Dialogue>();
@@ -44,14 +49,14 @@ public class IllusionGameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        TimerManager.OnTimeOver += GameOver;
         HealthManager.OnDeath += GameOver;
     }
 
 
     private void OnDisable()
     {
-        
+        TimerManager.OnTimeOver -= GameOver;
         HealthManager.OnDeath -= GameOver;
     }
 
@@ -67,6 +72,12 @@ public class IllusionGameManager : MonoBehaviour
     public void StartGame()
     {
         if (gameIsActive) return;
+        clock.SetActive(true);
+        timerSo.StartTimer();
+
+        if(GameManagerScript.Instance != null)
+            GameManagerScript.Instance.setGameState(GameManagerScript.GameState.IllusionGame);
+
         SetObjects();
         gameIsActive = true;
         
@@ -94,8 +105,8 @@ public class IllusionGameManager : MonoBehaviour
         if (!gameIsActive)
         {
             dialogue = wonOnce
-                ? "You can keep playing if you want, start on the podium"
-                : "Wanna try again? start on the podium";
+                ? "Would you like to try my game again? Well of course you do."
+                : "Ready to try again? I admire your tenacity!";
         }
         else
         {
@@ -109,7 +120,12 @@ public class IllusionGameManager : MonoBehaviour
     {
         healthManager.EndGame();
         gameIsActive = false;
+        timerSo.EndTimer();
+        clock.SetActive(false);
         NpcDialogueRemaining();
+
+        if (GameManagerScript.Instance != null)
+            GameManagerScript.Instance.setGameState(GameManagerScript.GameState.MagiciansFaction);
 
         foreach (var item in items)
         {

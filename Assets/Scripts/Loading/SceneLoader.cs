@@ -6,7 +6,7 @@ public static class SceneLoader
     #region Fields
 
     public static int levelToLoad = 1;
-    public enum Levels { Loading, MainMenu, Castle, Scavenger, ScavengerMinigame, Magician, MagicianMinigame, Thieves, ThievesMinigame };
+    public enum Levels { MainMenu, Loading, Castle, Scavenger, Magician, Thieves };
 
     #endregion
 

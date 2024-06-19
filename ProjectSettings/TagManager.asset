@@ -9,6 +9,16 @@ TagManager:
   - Grab
   - Talk
   - Quest
+  - Barrell
+  - Box
+  - Fork
+  - Hammer
+  - Potion
+  - Keychain
+  - Compass
+  - Book
+  - Dollhouse
+  - Goldbar
   layers:
   - Default
   - TransparentFX
@@ -16,12 +26,12 @@ TagManager:
   - Pushable
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Dirt
+  - Grass
+  - Stone
+  - Wood
   - Obstacle
-  - 
+  - Player
   - 
   - 
   - 
