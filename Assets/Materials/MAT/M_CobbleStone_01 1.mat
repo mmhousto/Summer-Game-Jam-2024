@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_CobbleStone_01
+  m_Name: M_CobbleStone_01 1
   m_Shader: {fileID: 4800000, guid: 2e676947039d29a4584b72b277a0bd47, type: 3}
   m_Parent: {fileID: 2100000, guid: 5c5035f3ab3497d4b81661f98216822a, type: 2}
   m_ModifiedSerializedProperties: 0
@@ -29,7 +29,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _RimStep: 0.496
+    - _OutlineWidth: 0.005
+    - _RimStep: 0.476
     - _SpecularStep: 0
     - _SpecularStepSmooth: 0
     m_Colors: []

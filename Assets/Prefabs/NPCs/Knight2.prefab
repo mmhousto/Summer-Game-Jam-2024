@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight2
       objectReference: {fileID: 0}
+    - target: {fileID: 5768079336932159432, guid: 70d4aafba3d812742a63004b99288338, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09df4c6b8834c3945895c69d5148f5fe, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

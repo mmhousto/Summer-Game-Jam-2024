@@ -668,6 +668,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5651097458099781563, guid: 7c5817d35faf5dc4d9b95babf8e9f487, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 192014b2d5e9a4e449561c2aefaf0f5a, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c5817d35faf5dc4d9b95babf8e9f487, type: 3}
       propertyPath: m_Name
       value: Villager In Barrel
@@ -770,10 +774,11 @@ MonoBehaviour:
   name: NPC
   dialogueIdx: 0
   dialogues:
-  - dialogue: What do you want?
+  - dialogue: Psst... Over here!
     feeling: 0
     dialogueSource: {fileID: 3070429868886814325}
-  - dialogue: You should talk to the king about that!
+  - dialogue: Watch out for a shady merchant, he broke my knees and put me in this
+      barrel.
     feeling: 0
     dialogueSource: {fileID: 3070429868886814325}
   dialogueCanvas: {fileID: 369642401975398028}
