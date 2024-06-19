@@ -53,7 +53,13 @@ MonoBehaviour:
   scavengersTheme: {fileID: 8300000, guid: 69d174253f256460b994547d74c3c30e, type: 3}
   thievesTheme: {fileID: 8300000, guid: 22a9c75a11f0843ffbe835f00f2e5cfa, type: 3}
   magiciansTheme: {fileID: 8300000, guid: 818d04729c80546fcb7aa7d7033f4f5b, type: 3}
+  illusionDeath: {fileID: 8300000, guid: e8c1a888e777b482cb67e37d52ef7a24, type: 3}
+  illusionWin: {fileID: 8300000, guid: 5f879250d2a5c4f83a3555eb84dc49d7, type: 3}
+  startGameSFX: {fileID: 8300000, guid: 3702f9e84dcc74a98b349a010baedf7b, type: 3}
+  backSFX: {fileID: 8300000, guid: 3154bef7a473d4535a06085216504ffa, type: 3}
+  selectSFX: {fileID: 8300000, guid: 029ac9412cf68473c87e73da503568e3, type: 3}
   backgroundSource: {fileID: 8544113614812959796}
+  sfxSource: {fileID: 7596342253123134350}
   masterMixer: {fileID: 24100000, guid: b78401dbc7075cc4ab24e939c9897e29, type: 2}
 --- !u!1 &3960432401119807216
 GameObject:
@@ -101,7 +107,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -133,7 +133,6 @@ public class CollectGameManager : MonoBehaviour
 
     private static Transform[] RearrangeArray(Transform[] collectList)
     {
-        //if (size < ARRAY_START || size >= this._collectListElements.Length) return collectList;
         for (var ii = ARRAY_START; ii < collectList.Length; ii++)
         {
             var tmp = collectList[ii];
@@ -172,7 +171,7 @@ public class CollectGameManager : MonoBehaviour
         }
         else
         {
-            dialogue = "The remaining items are:<br>-";
+            dialogue = "Missing items:<br>-";
             var remainingList = new List<string>();
             for (var ii = ARRAY_START; ii < mustCollectItems.Length; ii++)
             {
@@ -198,6 +197,7 @@ public class CollectGameManager : MonoBehaviour
         if (remainingItems > NO_REMAINING) return;
         OnFinished?.Invoke();
         wonOnce = true;
+        Player.Instance.scavengerRespect = true;
         gameIsActive = false;
         NpcDialogueRemaining();
         StartCoroutine(WaitAndRestart());

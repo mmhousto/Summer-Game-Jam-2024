@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -53,8 +50,33 @@ public class Player : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(scene.buildIndex > 1)
+        if (scene.buildIndex > 1)
             SetLastLocation(scene.buildIndex);
+
+        switch (scene.buildIndex)
+        {
+            case 0:
+                GameManagerScript.Instance.setGameState(GameManagerScript.GameState.MainMenu);
+                break;
+            case 1:
+                GameManagerScript.Instance.setGameState(GameManagerScript.GameState.MainMenu);
+                break;
+            case 2:
+                GameManagerScript.Instance.setGameState(GameManagerScript.GameState.MainMenu);
+                break;
+            case 3:
+                GameManagerScript.Instance.setGameState(GameManagerScript.GameState.ScavengersFaction);
+                break;
+            case 4:
+                GameManagerScript.Instance.setGameState(GameManagerScript.GameState.MagiciansFaction);
+                break;
+            case 5:
+                GameManagerScript.Instance.setGameState(GameManagerScript.GameState.ThievesFaction);
+                break;
+            default:
+                GameManagerScript.Instance.setGameState(GameManagerScript.GameState.MainMenu);
+                break;
+        }
 
         SaveSystem.SavePlayer(this);
     }
