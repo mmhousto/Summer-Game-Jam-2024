@@ -1,14 +1,19 @@
 // Morgan Houston
 using StarterAssets;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Interact : MonoBehaviour
 {
     #region Fields
-
-    private StarterAssetsInputs inputs;
     public Transform playerCamRoot;
     public GameObject contextPrompt;
+    public Sprite[] contextPromptImages;
+
+    private StarterAssetsInputs inputs;
+    private AnimationPlayerManager animManager;
+    private Image contextImage;
+    private Animator contextAnim;
     private bool isInteracting;
 
     #endregion
@@ -19,6 +24,10 @@ public class Interact : MonoBehaviour
     void Start()
     {
         inputs = GetComponent<StarterAssetsInputs>();
+        if(GetComponent<AnimationPlayerManager>() != null)
+            animManager = GetComponent<AnimationPlayerManager>();
+        contextImage = contextPrompt.GetComponent<Image>();
+        contextAnim = contextPrompt.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -48,10 +57,37 @@ public class Interact : MonoBehaviour
         {
             if (hit.collider.TryGetComponent(out Interactable interactable))
             {
+                if (interactable.CanInteract() == false)
+                {
+                    contextPrompt.SetActive(false);
+                    return;
+                }
+
                 if(contextPrompt != null && !contextPrompt.activeInHierarchy)
+                {
                     contextPrompt.SetActive(true);
+                    switch (interactable.tag)
+                    {
+                        case "Grab":
+                            contextAnim.SetFloat("State", 0);
+                            break;
+                        case "Talk":
+                            contextAnim.SetFloat("State", 1);
+                            break;
+                        case "Quest":
+                            contextAnim.SetFloat("State", 2);
+                            break;
+                        default:
+
+                            break;
+                    }
+                }
+                    
+                if (isInteracting == true && animManager != null) animManager.PlayInteractAnimation(); // Play Interaction animation
+
                 if(isInteracting == true)
                     interactable.Interact(gameObject.transform);
+                
             }
             else if(contextPrompt != null && contextPrompt.activeInHierarchy)
             {

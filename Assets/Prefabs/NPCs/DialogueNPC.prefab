@@ -134,6 +134,7 @@ MonoBehaviour:
     feeling: 0
     dialogueSource: {fileID: 2274884455925815787}
   dialogueCanvas: {fileID: 2070307069066655844}
+  dialogueStarted: 0
 --- !u!1 &5244476931292957374
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +263,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 30, y: 30, z: 30, w: 35}
+  m_margin: {x: 60, y: 30, z: 60, w: 30}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
