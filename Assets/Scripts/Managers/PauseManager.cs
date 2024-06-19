@@ -85,6 +85,8 @@ public class PauseManager : MonoBehaviour
 
     private void Pause()
     {
+        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.selectSFX);
+
         inputs.SetCursorState(false);
         playerInput.SwitchCurrentActionMap("UI");
         pauseMenu.SetActive(isGamePaused);
@@ -111,11 +113,13 @@ public class PauseManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.selectSFX);
         isGamePaused = false;
     }
 
     public void MainMenu()
     {
+        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.selectSFX);
         if (inMinigame) Time.timeScale = 1f;
         SceneLoader.LoadLevel((int)SceneLoader.Levels.MainMenu);
     }
