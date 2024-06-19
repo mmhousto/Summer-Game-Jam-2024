@@ -105,7 +105,7 @@ public class IllusionGameManager : MonoBehaviour
         if (!gameIsActive)
         {
             dialogue = wonOnce
-                ? "Would you like to try my game again? Well of course you do. These dolls are truly a work of art!"
+                ? "Would you like to try my game again? Well of course you do."
                 : "Ready to try again? I admire your tenacity!";
         }
         else

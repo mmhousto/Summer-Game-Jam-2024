@@ -32741,8 +32741,7 @@ MonoBehaviour:
   npc: {fileID: 2077862134}
   gameIsActive: 0
   wonOnce: 0
-  winningText: You have my respect! That one truly is the most handsome of all. You
-    have a good eye!
+  winningText: You have my respect! That one truly is the most handsome of all!
 --- !u!4 &1921975571
 Transform:
   m_ObjectHideFlags: 0
@@ -43170,12 +43169,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
       propertyPath: dialogues.Array.size
-      value: 8
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
       propertyPath: dialogues.Array.data[0].dialogue
-      value: 'No need to waste your breath! For I, the most handsome and cleverest
-        in the lands, already know exactly why you are. '
+      value: 'For I, the most handsome and cleverest in the lands, already know who
+        you are. '
       objectReference: {fileID: 0}
     - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
       propertyPath: dialogues.Array.data[1].dialogue
@@ -43183,31 +43182,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
       propertyPath: dialogues.Array.data[2].dialogue
-      value: Say no more! Ah, but I do have a reputation to uphold, so you understand
-        that I can't just agree so easily?
+      value: Say no more! Ah, but I do have a reputation to uphold...
       objectReference: {fileID: 0}
     - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
       propertyPath: dialogues.Array.data[3].dialogue
-      value: "It was a grave insult to my beauty and that drove me away in the first
-        place. So I can\u2019t just go crawling back."
+      value: So you understand that I can't just agree so easily?
       objectReference: {fileID: 0}
     - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
       propertyPath: dialogues.Array.data[4].dialogue
-      value: "Let\u2019s see if you can beat my puzzle. Win this challenge, and I
-        shall happily agree to go back to <b>King\u2019s Rest</b>."
+      value: It was a grave insult to my beauty and that drove me away in the first
+        place.
       objectReference: {fileID: 0}
     - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
       propertyPath: dialogues.Array.data[5].dialogue
-      value: I will show you a couple of NEARLY identical dolls. You must tell me
-        which is the most handsome and beautiful of them all.
+      value: "So I can\u2019t just go crawling back. Let\u2019s see if you can beat
+        my puzzle."
       objectReference: {fileID: 0}
     - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
       propertyPath: dialogues.Array.data[6].dialogue
-      value: "If you guess correctly, then you pass! If not, well, you can try again
-        at least two more times. After that though, it\u2019s game over!"
+      value: "Win this challenge, and I shall happily agree to go back to <b>King\u2019s
+        Rest</b>."
       objectReference: {fileID: 0}
     - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
       propertyPath: dialogues.Array.data[7].dialogue
+      value: I will show you a couple of NEARLY identical dolls.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
+      propertyPath: dialogues.Array.data[8].dialogue
+      value: You must tell me which is the most handsome and beautiful of them all.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
+      propertyPath: dialogues.Array.data[9].dialogue
+      value: If you guess correctly, then you pass!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
+      propertyPath: dialogues.Array.data[10].dialogue
+      value: If not, well, you can try again at least two more times.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
+      propertyPath: dialogues.Array.data[11].dialogue
+      value: "After that though, it\u2019s game over!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
+      propertyPath: dialogues.Array.data[12].dialogue
       value: To start touch any of the podiums.
       objectReference: {fileID: 0}
     - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
@@ -43232,6 +43249,26 @@ PrefabInstance:
       objectReference: {fileID: 616167940}
     - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
       propertyPath: dialogues.Array.data[7].dialogueSource
+      value: 
+      objectReference: {fileID: 616167940}
+    - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
+      propertyPath: dialogues.Array.data[8].dialogueSource
+      value: 
+      objectReference: {fileID: 616167940}
+    - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
+      propertyPath: dialogues.Array.data[9].dialogueSource
+      value: 
+      objectReference: {fileID: 616167940}
+    - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
+      propertyPath: dialogues.Array.data[10].dialogueSource
+      value: 
+      objectReference: {fileID: 616167940}
+    - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
+      propertyPath: dialogues.Array.data[11].dialogueSource
+      value: 
+      objectReference: {fileID: 616167940}
+    - target: {fileID: 3826635539347586801, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
+      propertyPath: dialogues.Array.data[12].dialogueSource
       value: 
       objectReference: {fileID: 616167940}
     - target: {fileID: 4241522496277832059, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
