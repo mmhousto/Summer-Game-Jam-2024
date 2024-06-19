@@ -58,6 +58,7 @@ MonoBehaviour:
   startGameSFX: {fileID: 8300000, guid: 3702f9e84dcc74a98b349a010baedf7b, type: 3}
   backSFX: {fileID: 8300000, guid: 3154bef7a473d4535a06085216504ffa, type: 3}
   selectSFX: {fileID: 8300000, guid: 029ac9412cf68473c87e73da503568e3, type: 3}
+  hoverSFX: {fileID: 8300000, guid: 9051c88aa2c0a41e1a29967272bdbd0f, type: 3}
   backgroundSource: {fileID: 8544113614812959796}
   sfxSource: {fileID: 7596342253123134350}
   masterMixer: {fileID: 24100000, guid: b78401dbc7075cc4ab24e939c9897e29, type: 2}
