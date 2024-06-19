@@ -29,11 +29,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _OutlineWidth: 0.032
+    - _OutlineWidth: 0.081
     - _RimStep: 0.253
     - _RimStepSmooth: 0.09
-    - _SpecularStep: 0
-    - _SpecularStepSmooth: 0
+    - _SpecularStep: 0.011
+    - _SpecularStepSmooth: 0.4
     m_Colors:
     - _OutlineColor: {r: 0.6792453, g: 0.41201413, b: 0.21573508, a: 1}
     - _RimColor: {r: 0.47798735, g: 0.31357637, b: 0.26905575, a: 1}

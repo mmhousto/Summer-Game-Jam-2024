@@ -32,7 +32,7 @@ Material:
     - _OutlineWidth: 0.05
     - _RimStep: 0.5
     - _RimStepSmooth: 0.251
-    - _SpecularStep: 0
-    - _SpecularStepSmooth: 0
+    - _SpecularStep: 0.1
+    - _SpecularStepSmooth: 0.4
     m_Colors: []
   m_BuildTextureStacks: []

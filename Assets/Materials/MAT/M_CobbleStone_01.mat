@@ -30,7 +30,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _RimStep: 0.496
-    - _SpecularStep: 0
-    - _SpecularStepSmooth: 0
+    - _SpecularStep: 0.065
+    - _SpecularStepSmooth: 0.4
     m_Colors: []
   m_BuildTextureStacks: []
