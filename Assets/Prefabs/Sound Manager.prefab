@@ -46,10 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664f7f250594c664a9fc51afb509ed59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleTheme: {fileID: 8300000, guid: 8692232be706dc846bd25f6b482188c8, type: 3}
-  collectingMinigameBGM: {fileID: 8300000, guid: 641c7fd4ec93e284581a21be1d91ee88, type: 3}
-  stealthMinigameBGM: {fileID: 8300000, guid: 6553fd0d8e95f9e4996259b98280543a, type: 3}
-  illusionMinigameBGM: {fileID: 8300000, guid: b69b646aae6c2fd4c8137238e52e7952, type: 3}
+  titleTheme: {fileID: 8300000, guid: cd53c5ae4d04e4b00ae41203d9145b0a, type: 3}
+  collectingMinigameBGM: {fileID: 8300000, guid: 011a31327e1b942ada0c0fdaa7b7ce24, type: 3}
+  stealthMinigameBGM: {fileID: 8300000, guid: 4b3853925f5da420eb7e4f83df887a98, type: 3}
+  illusionMinigameBGM: {fileID: 8300000, guid: 581429b55bccc499cbf23bedda6ed4d6, type: 3}
+  scavengersTheme: {fileID: 8300000, guid: 69d174253f256460b994547d74c3c30e, type: 3}
+  thievesTheme: {fileID: 8300000, guid: 22a9c75a11f0843ffbe835f00f2e5cfa, type: 3}
+  magiciansTheme: {fileID: 8300000, guid: 818d04729c80546fcb7aa7d7033f4f5b, type: 3}
   backgroundSource: {fileID: 8544113614812959796}
   masterMixer: {fileID: 24100000, guid: b78401dbc7075cc4ab24e939c9897e29, type: 2}
 --- !u!1 &3960432401119807216

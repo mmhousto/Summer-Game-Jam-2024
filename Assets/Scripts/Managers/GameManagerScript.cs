@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public enum GameState { MainMenu, MapScreen, StealthGame, CollectionGame, IllusionGame, LoadingScreen, Pause, FailScreen };
+    public enum GameState { MainMenu, MapScreen, ThievesFaction, StealthGame, ScavengersFaction, CollectionGame, MagiciansFaction, IllusionGame, LoadingScreen, Pause, FailScreen };
 
     public static GameManagerScript Instance;
     GameState currentState;

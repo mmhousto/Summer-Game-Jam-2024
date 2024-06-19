@@ -8,7 +8,7 @@ public class SoundManagerScript : MonoBehaviour
     public static SoundManagerScript Instance; // this is the singleton!
 
     public AudioClip titleTheme, collectingMinigameBGM, stealthMinigameBGM, illusionMinigameBGM; // drag clips into this 
-
+    public AudioClip scavengersTheme, thievesTheme, magiciansTheme;
 
     //public enum BGM { CollectingMinigame, StealthMinigame, IllusionMinigame };
     //private AudioClip[] bgmArray;
@@ -41,6 +41,9 @@ public class SoundManagerScript : MonoBehaviour
         //Debug.Log("Testing w/ stealthminigame bgm");
         bgmDict = new Dictionary<GameManagerScript.GameState, AudioClip>() {
                 { GameManagerScript.GameState.MainMenu, titleTheme},
+                { GameManagerScript.GameState.ScavengersFaction, scavengersTheme},
+                { GameManagerScript.GameState.ThievesFaction, thievesTheme},
+                {GameManagerScript.GameState.MagiciansFaction, magiciansTheme },
                 { GameManagerScript.GameState.CollectionGame, collectingMinigameBGM},
                 { GameManagerScript.GameState.StealthGame, stealthMinigameBGM},
                 { GameManagerScript.GameState.IllusionGame, illusionMinigameBGM} };
