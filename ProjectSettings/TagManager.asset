@@ -16,12 +16,12 @@ TagManager:
   - Pushable
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Dirt
+  - Grass
+  - Stone
+  - Wood
   - Obstacle
-  - 
+  - Player
   - 
   - 
   - 
