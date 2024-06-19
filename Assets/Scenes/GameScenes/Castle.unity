@@ -12518,6 +12518,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6465313575947159639, guid: 2bc3eb77598cf6a41b862d33e350e9ff, type: 3}
+      propertyPath: m_TagString
+      value: Talk
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13181,6 +13185,10 @@ PrefabInstance:
     - target: {fileID: 6465313575947159639, guid: 2bc3eb77598cf6a41b862d33e350e9ff, type: 3}
       propertyPath: m_Name
       value: Villager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465313575947159639, guid: 2bc3eb77598cf6a41b862d33e350e9ff, type: 3}
+      propertyPath: m_TagString
+      value: Talk
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15678,6 +15686,10 @@ PrefabInstance:
     - target: {fileID: 6465313575947159639, guid: 2bc3eb77598cf6a41b862d33e350e9ff, type: 3}
       propertyPath: m_Name
       value: Villager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465313575947159639, guid: 2bc3eb77598cf6a41b862d33e350e9ff, type: 3}
+      propertyPath: m_TagString
+      value: Talk
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24092,6 +24104,10 @@ PrefabInstance:
     - target: {fileID: 384841797937015633, guid: 6026e3b9aa6b2f34eabb04c56dcc5762, type: 3}
       propertyPath: m_Name
       value: Gissiping Maid
+      objectReference: {fileID: 0}
+    - target: {fileID: 384841797937015633, guid: 6026e3b9aa6b2f34eabb04c56dcc5762, type: 3}
+      propertyPath: m_TagString
+      value: Talk
       objectReference: {fileID: 0}
     - target: {fileID: 1016946272205173227, guid: 6026e3b9aa6b2f34eabb04c56dcc5762, type: 3}
       propertyPath: m_LocalPosition.x
