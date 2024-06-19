@@ -206,6 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8756811}
+  - component: {fileID: 8756813}
   - component: {fileID: 8756812}
   m_Layer: 0
   m_Name: MainManager
@@ -239,6 +240,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0c22da0ce2884d4a9203d4034c09cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8756813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8756810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e9ab1a3715461a4499af88018ba8cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &16913988
@@ -2797,6 +2810,7 @@ GameObject:
   m_Component:
   - component: {fileID: 535979192}
   - component: {fileID: 535979193}
+  - component: {fileID: 535979194}
   m_Layer: 5
   m_Name: FootSlider
   m_TagString: Untagged
@@ -2878,7 +2892,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8756812}
         m_TargetAssemblyTypeName: MainManager, Assembly-CSharp
         m_MethodName: SetFootstepsVolume
         m_Mode: 0
@@ -2890,6 +2904,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &535979194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535979191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd519d01f2e8ecf499b8b04b1f06603e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SliderPrefName: FSVolume
 --- !u!1 &563652858
 GameObject:
   m_ObjectHideFlags: 0
@@ -5374,6 +5401,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
+      propertyPath: book
+      value: 
+      objectReference: {fileID: 8300000, guid: 120ce27abd0af47be989c88a5ab85c95, type: 3}
+    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
+      propertyPath: fork
+      value: 
+      objectReference: {fileID: 8300000, guid: dfd4450489ec74d28863cb7bf2dcdd44, type: 3}
+    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
+      propertyPath: wood
+      value: 
+      objectReference: {fileID: 8300000, guid: dcdc1904b1ecf47549afd9184e768c50, type: 3}
+    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
+      propertyPath: hammer
+      value: 
+      objectReference: {fileID: 8300000, guid: 0cca43e81b5f248e1ab71df8c4c9ccdc, type: 3}
+    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
+      propertyPath: potion
+      value: 
+      objectReference: {fileID: 8300000, guid: 495279906dc3541039eb2c31235dc3a5, type: 3}
+    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
+      propertyPath: compass
+      value: 
+      objectReference: {fileID: 8300000, guid: 2ae7091bb73114aaba3d5e2141b2729e, type: 3}
+    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
+      propertyPath: goldbar
+      value: 
+      objectReference: {fileID: 8300000, guid: bab469db8ec994193aa6fb0243e87dec, type: 3}
+    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
+      propertyPath: keychain
+      value: 
+      objectReference: {fileID: 8300000, guid: 10fb8c8f53b584595a22baa504ea7755, type: 3}
+    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
+      propertyPath: dollhouse
+      value: 
+      objectReference: {fileID: 8300000, guid: b98503e426530471f8ad19ab78ab8a24, type: 3}
+    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
+      propertyPath: collectingWin
+      value: 
+      objectReference: {fileID: 8300000, guid: dcdc1904b1ecf47549afd9184e768c50, type: 3}
+    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
+      propertyPath: collectingDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 54a8df5759f454ee69b3af345cc0a8c7, type: 3}
     - target: {fileID: 2877180567585225782, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
       propertyPath: m_Name
       value: Sound Manager
@@ -6281,6 +6352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1210266059}
   - component: {fileID: 1210266060}
+  - component: {fileID: 1210266061}
   m_Layer: 5
   m_Name: SFX Slider
   m_TagString: Untagged
@@ -6362,7 +6434,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8756812}
         m_TargetAssemblyTypeName: MainManager, Assembly-CSharp
         m_MethodName: SetSFXVolume
         m_Mode: 0
@@ -6374,6 +6446,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1210266061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210266058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd519d01f2e8ecf499b8b04b1f06603e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SliderPrefName: SFXVolume
 --- !u!1001 &1221871230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8322,6 +8407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1593956465}
   - component: {fileID: 1593956466}
+  - component: {fileID: 1593956467}
   m_Layer: 5
   m_Name: MasterSlider
   m_TagString: Untagged
@@ -8403,7 +8489,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8756812}
         m_TargetAssemblyTypeName: MainManager, Assembly-CSharp
         m_MethodName: SetMasterVolume
         m_Mode: 0
@@ -8415,6 +8501,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1593956467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593956464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd519d01f2e8ecf499b8b04b1f06603e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SliderPrefName: MasterVolume
 --- !u!1 &1621082963
 GameObject:
   m_ObjectHideFlags: 0
@@ -9106,6 +9205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1789661754}
   - component: {fileID: 1789661755}
+  - component: {fileID: 1789661756}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -9187,7 +9287,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8756812}
         m_TargetAssemblyTypeName: MainManager, Assembly-CSharp
         m_MethodName: SetMusicVolume
         m_Mode: 0
@@ -9199,6 +9299,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1789661756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789661753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd519d01f2e8ecf499b8b04b1f06603e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SliderPrefName: MusicVolume
 --- !u!1 &1802275346
 GameObject:
   m_ObjectHideFlags: 0

@@ -80,6 +80,10 @@ public class CollectGameManager : MonoBehaviour
     private void StartGame()
     {
         if (gameIsActive) return;
+
+        if (GameManagerScript.Instance != null)
+            GameManagerScript.Instance.setGameState(GameManagerScript.GameState.CollectionGame);
+
         gameIsActive = true;
         InitializeList();
         _npcDialogue = npc.GetComponent<Dialogue>();
@@ -150,9 +154,52 @@ public class CollectGameManager : MonoBehaviour
         if (doesDamage)
         {
             OnDamage?.Invoke();
+            if (SoundManagerScript.Instance != null)
+                SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.collectingDeath);
         }
         else
         {
+            if (SoundManagerScript.Instance != null)
+            {
+                switch (t.tag)
+                {
+                    case "Barrell":
+                        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.wood);
+                        break;
+                    case "Box":
+                        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.wood);
+                        break;
+                    case "Fork":
+                        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.fork);
+                        break;
+                    case "Hammer":
+                        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.hammer);
+                        break;
+                    case "Potion":
+                        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.potion);
+                        break;
+                    case "Keychain":
+                        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.keychain);
+                        break;
+                    case "Compass":
+                        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.compass);
+                        break;
+                    case "Book":
+                        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.book);
+                        break;
+                    case "Dollhouse":
+                        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.dollhouse);
+                        break;
+                    case "Goldbar":
+                        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.goldbar);
+                        break;
+                    default:
+                        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.collectingWin);
+                        break;
+                }
+            }
+                
+
             mustCollectItems[id] = true;
             remainingItems--;
         }
@@ -226,6 +273,9 @@ public class CollectGameManager : MonoBehaviour
 
     private void GameOver()
     {
+        if (GameManagerScript.Instance != null)
+            GameManagerScript.Instance.setGameState(GameManagerScript.GameState.ScavengersFaction);
+
         OnFailed?.Invoke();
         gameIsActive = false;
         NpcDialogueRemaining();

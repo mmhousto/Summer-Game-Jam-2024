@@ -12,6 +12,10 @@ public class SoundManagerScript : MonoBehaviour
 
     public AudioClip illusionDeath, illusionWin;
 
+    public AudioClip collectingDeath, collectingWin;
+
+    public AudioClip wood, fork, hammer, potion, keychain, compass, book, dollhouse, goldbar;
+
     public AudioClip startGameSFX, backSFX, selectSFX, hoverSFX;
 
     //public enum BGM { CollectingMinigame, StealthMinigame, IllusionMinigame };
