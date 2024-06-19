@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94e3d6900157f9948b7eab34f1be7144, type: 3}
-  m_Name: SpriteLibScriptableObject
+  m_Name: NewBubbleStyle
   m_EditorClassIdentifier: 
   spriteLib:
   - name: DialogbubbleCalm
-    sprite: {fileID: 21300000, guid: b13b83a32b312814c935707a5c480913, type: 3}
+    sprite: {fileID: 1721066154, guid: 75c44a87e59880c479b7ae7fea1f023a, type: 3}
   - name: DialogbubbleMad
-    sprite: {fileID: 21300000, guid: 5d79d4bc75cbf214e8a2a934f1ae66fe, type: 3}
+    sprite: {fileID: 1843276045, guid: 75c44a87e59880c479b7ae7fea1f023a, type: 3}
   - name: DialogbubbleThink
-    sprite: {fileID: 21300000, guid: 83bfcd28e60ff11479272a094cf20f68, type: 3}
+    sprite: {fileID: 1068449744, guid: 75c44a87e59880c479b7ae7fea1f023a, type: 3}
   - name: DialogpointerCalm
-    sprite: {fileID: 21300000, guid: 103575cffaa11f14f829b19d9aa75e30, type: 3}
+    sprite: {fileID: 1168684504, guid: 75c44a87e59880c479b7ae7fea1f023a, type: 3}
   - name: DialogpointerMad
-    sprite: {fileID: 21300000, guid: 7047cc6761794eb4ab7fc9576141d276, type: 3}
+    sprite: {fileID: 1168684504, guid: 75c44a87e59880c479b7ae7fea1f023a, type: 3}
   - name: DialogpointerThink
-    sprite: {fileID: 21300000, guid: 5ec2d3092b5f68e4b96aaddf485f030c, type: 3}
+    sprite: {fileID: 297682523, guid: 75c44a87e59880c479b7ae7fea1f023a, type: 3}
   - name: PixelWhite
     sprite: {fileID: 21300000, guid: c05ec6a8eeabf284f862f758656f0f32, type: 3}
