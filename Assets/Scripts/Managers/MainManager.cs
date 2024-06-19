@@ -48,7 +48,7 @@ public class MainManager : MonoBehaviour
 
     public void SetMasterVolume(float newVolume)
     {
-        SoundManagerScript.Instance.setFloat("MyExposedParam 4", newVolume);
+        SoundManagerScript.Instance.setFloat("MyExposedParam", newVolume);
         PlayerPrefs.SetFloat("MasterVolume", newVolume);
     }
 
@@ -60,7 +60,7 @@ public class MainManager : MonoBehaviour
 
     public void SetSFXVolume(float newVolume)
     {
-        SoundManagerScript.Instance.setFloat("MyExposedParam", newVolume);
+        SoundManagerScript.Instance.setFloat("MyExposedParam 4", newVolume);
         PlayerPrefs.SetFloat("SFXVolume", newVolume);
     }
 

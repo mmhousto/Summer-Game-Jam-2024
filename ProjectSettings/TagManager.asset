@@ -19,6 +19,7 @@ TagManager:
   - Book
   - Dollhouse
   - Goldbar
+  - Prop
   layers:
   - Default
   - TransparentFX

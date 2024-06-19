@@ -55,6 +55,19 @@ MonoBehaviour:
   magiciansTheme: {fileID: 8300000, guid: 818d04729c80546fcb7aa7d7033f4f5b, type: 3}
   illusionDeath: {fileID: 8300000, guid: e8c1a888e777b482cb67e37d52ef7a24, type: 3}
   illusionWin: {fileID: 8300000, guid: 5f879250d2a5c4f83a3555eb84dc49d7, type: 3}
+  collectingDeath: {fileID: 8300000, guid: 54a8df5759f454ee69b3af345cc0a8c7, type: 3}
+  collectingWin: {fileID: 8300000, guid: dcdc1904b1ecf47549afd9184e768c50, type: 3}
+  propHit: {fileID: 8300000, guid: 99a97cede63e74ed19bf473d73dcbf8e, type: 3}
+  propHitProp: {fileID: 8300000, guid: 92fa54c319a024545a5ce038b3faa990, type: 3}
+  wood: {fileID: 8300000, guid: dcdc1904b1ecf47549afd9184e768c50, type: 3}
+  fork: {fileID: 8300000, guid: dfd4450489ec74d28863cb7bf2dcdd44, type: 3}
+  hammer: {fileID: 8300000, guid: 0cca43e81b5f248e1ab71df8c4c9ccdc, type: 3}
+  potion: {fileID: 8300000, guid: 495279906dc3541039eb2c31235dc3a5, type: 3}
+  keychain: {fileID: 8300000, guid: 10fb8c8f53b584595a22baa504ea7755, type: 3}
+  compass: {fileID: 8300000, guid: 2ae7091bb73114aaba3d5e2141b2729e, type: 3}
+  book: {fileID: 8300000, guid: 120ce27abd0af47be989c88a5ab85c95, type: 3}
+  dollhouse: {fileID: 8300000, guid: b98503e426530471f8ad19ab78ab8a24, type: 3}
+  goldbar: {fileID: 8300000, guid: bab469db8ec994193aa6fb0243e87dec, type: 3}
   startGameSFX: {fileID: 8300000, guid: 3702f9e84dcc74a98b349a010baedf7b, type: 3}
   backSFX: {fileID: 8300000, guid: 3154bef7a473d4535a06085216504ffa, type: 3}
   selectSFX: {fileID: 8300000, guid: 029ac9412cf68473c87e73da503568e3, type: 3}
@@ -233,7 +246,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1095421059954759537, guid: b78401dbc7075cc4ab24e939c9897e29, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

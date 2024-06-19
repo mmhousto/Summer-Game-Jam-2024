@@ -6762,7 +6762,7 @@ PrefabInstance:
     - target: {fileID: 8929317846787674979, guid: e4881dc289ee5494d9d5fb17338495ac, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 20c78b52c1f6d2946b8063e8ad774a8f, type: 2}
+      objectReference: {fileID: 2100000, guid: 3005fb86845577944b7ac43e22bc6f7c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14061,6 +14061,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1851471705}
     m_Modifications:
+    - target: {fileID: 4781711972099628805, guid: ce0fbeae05936d94792993e4ce2049ed, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 87a0a28e1aadc7c4f8e8ee5965edf42e, type: 2}
     - target: {fileID: 7039246816743291140, guid: ce0fbeae05936d94792993e4ce2049ed, type: 3}
       propertyPath: m_Name
       value: Villager2
@@ -19645,6 +19649,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3852219591202414255, guid: 41475b2ae11d597499d536f26013360a, type: 3}
+      propertyPath: m_TagString
+      value: Talk
+      objectReference: {fileID: 0}
     - target: {fileID: 4485028749021791253, guid: 41475b2ae11d597499d536f26013360a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.78541
@@ -20111,6 +20119,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1851471705}
     m_Modifications:
+    - target: {fileID: 1661706722385578571, guid: 70c39009ebaa91043b09c650f15ee8d7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d270f41af3e4cf141baa1682727f53f7, type: 2}
     - target: {fileID: 8104558453354483007, guid: 70c39009ebaa91043b09c650f15ee8d7, type: 3}
       propertyPath: m_Name
       value: Villager4
@@ -22614,10 +22626,6 @@ PrefabInstance:
       propertyPath: mainMenuButton
       value: 
       objectReference: {fileID: 1265681539}
-    - target: {fileID: 2569801494109283934, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 6953186022635211824, guid: b78401dbc7075cc4ab24e939c9897e29, type: 2}
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
@@ -22662,10 +22670,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9210115824193394658, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 6953186022635211824, guid: b78401dbc7075cc4ab24e939c9897e29, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24149,6 +24153,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7013359409569193910, guid: 6026e3b9aa6b2f34eabb04c56dcc5762, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2d8a0d44f209cb4a913acb5cf412f5f, type: 2}
     - target: {fileID: 9001588018089596268, guid: 6026e3b9aa6b2f34eabb04c56dcc5762, type: 3}
       propertyPath: dialogueCanvas
       value: 
@@ -25330,6 +25338,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1851471705}
     m_Modifications:
+    - target: {fileID: 1661706722385578571, guid: 70c39009ebaa91043b09c650f15ee8d7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d270f41af3e4cf141baa1682727f53f7, type: 2}
     - target: {fileID: 8104558453354483007, guid: 70c39009ebaa91043b09c650f15ee8d7, type: 3}
       propertyPath: m_Name
       value: Villager4
@@ -39081,6 +39093,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight2
       objectReference: {fileID: 0}
+    - target: {fileID: 3852219591202414255, guid: 41475b2ae11d597499d536f26013360a, type: 3}
+      propertyPath: m_TagString
+      value: Talk
+      objectReference: {fileID: 0}
     - target: {fileID: 4485028749021791253, guid: 41475b2ae11d597499d536f26013360a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.78541
@@ -39720,6 +39736,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1851471705}
     m_Modifications:
+    - target: {fileID: 1661706722385578571, guid: 70c39009ebaa91043b09c650f15ee8d7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d270f41af3e4cf141baa1682727f53f7, type: 2}
     - target: {fileID: 8104558453354483007, guid: 70c39009ebaa91043b09c650f15ee8d7, type: 3}
       propertyPath: m_Name
       value: Villager4
@@ -39975,6 +39995,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7013359409569193910, guid: 6026e3b9aa6b2f34eabb04c56dcc5762, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2d8a0d44f209cb4a913acb5cf412f5f, type: 2}
     - target: {fileID: 9001588018089596268, guid: 6026e3b9aa6b2f34eabb04c56dcc5762, type: 3}
       propertyPath: dialogueCanvas
       value: 
@@ -40436,6 +40460,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1851471705}
     m_Modifications:
+    - target: {fileID: 4781711972099628805, guid: ce0fbeae05936d94792993e4ce2049ed, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 87a0a28e1aadc7c4f8e8ee5965edf42e, type: 2}
     - target: {fileID: 7039246816743291140, guid: ce0fbeae05936d94792993e4ce2049ed, type: 3}
       propertyPath: m_Name
       value: Villager2
