@@ -7223,7 +7223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0ee779ed9b8a04fb3dd893db4ef214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 4
+  levelToLoad: 3
 --- !u!65 &538653349
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21753,10 +21753,6 @@ PrefabInstance:
       propertyPath: contextPrompt
       value: 
       objectReference: {fileID: 660646944915455830}
-    - target: {fileID: 972013578299050113, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5f258ea9d14b4004999850cf068d209d, type: 2}
     - target: {fileID: 1026335276875777394, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: pauseMenu
       value: 
@@ -29386,7 +29382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0ee779ed9b8a04fb3dd893db4ef214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 6
+  levelToLoad: 4
 --- !u!65 &1909407279
 BoxCollider:
   m_ObjectHideFlags: 0
