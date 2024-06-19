@@ -26,6 +26,21 @@ public class MainManager : MonoBehaviour
 #endif
     }
 
+    public void PlayStartGameSFX()
+    {
+        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.startGameSFX);
+    }
+
+    public void PlayBackSFX()
+    {
+        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.backSFX);
+    }
+
+    public void PlaySelectSFX()
+    {
+        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.selectSFX);
+    }
+
     public void SetMasterVolume(float newVolume)
     {
         SoundManagerScript.Instance.setFloat("MyExposedParam 4", newVolume);

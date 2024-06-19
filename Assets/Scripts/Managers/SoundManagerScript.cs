@@ -12,6 +12,8 @@ public class SoundManagerScript : MonoBehaviour
 
     public AudioClip illusionDeath, illusionWin;
 
+    public AudioClip startGameSFX, backSFX, selectSFX;
+
     //public enum BGM { CollectingMinigame, StealthMinigame, IllusionMinigame };
     //private AudioClip[] bgmArray;
 
