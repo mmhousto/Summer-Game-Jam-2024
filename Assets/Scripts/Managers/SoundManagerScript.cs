@@ -33,12 +33,7 @@ public class SoundManagerScript : MonoBehaviour
             DontDestroyOnLoad(Instance.gameObject);
             //bgmArray = new AudioClip[] { collectingMinigameBGM, stealthMinigameBGM, illusionMinigameBGM 
         }
-    }
 
-    private void Start()
-    {
-        //StartBackgroundMusic(bgmDict[GameManager.GameState.StealthGame]);
-        //Debug.Log("Testing w/ stealthminigame bgm");
         bgmDict = new Dictionary<GameManagerScript.GameState, AudioClip>() {
                 { GameManagerScript.GameState.MainMenu, titleTheme},
                 { GameManagerScript.GameState.ScavengersFaction, scavengersTheme},
@@ -47,7 +42,6 @@ public class SoundManagerScript : MonoBehaviour
                 { GameManagerScript.GameState.CollectionGame, collectingMinigameBGM},
                 { GameManagerScript.GameState.StealthGame, stealthMinigameBGM},
                 { GameManagerScript.GameState.IllusionGame, illusionMinigameBGM} };
-
     }
 
     public void StartBackgroundMusic(GameManagerScript.GameState gamestate)

@@ -7223,7 +7223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0ee779ed9b8a04fb3dd893db4ef214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 4
+  levelToLoad: 3
 --- !u!65 &538653349
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29386,7 +29386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0ee779ed9b8a04fb3dd893db4ef214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 6
+  levelToLoad: 4
 --- !u!65 &1909407279
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -20,17 +20,21 @@ public class GameManagerScript : MonoBehaviour
         {
             Instance = this;
         }
+        DontDestroyOnLoad(this.gameObject);
+
+        currentState = GameState.MapScreen;
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        currentState = GameState.MainMenu;
+        
     }
 
     public void setGameState(GameState gameState)
     {
+        if (currentState == gameState) { return; }
         currentState = gameState;
         SoundManagerScript.Instance.StartBackgroundMusic(currentState);
     }
