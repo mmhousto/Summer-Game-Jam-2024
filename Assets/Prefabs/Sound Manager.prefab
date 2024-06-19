@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 439129646998395079}
   - component: {fileID: 1326602414072542442}
+  - component: {fileID: 5633513455807391856}
   m_Layer: 0
   m_Name: Sound Manager
   m_TagString: Untagged
@@ -50,7 +51,19 @@ MonoBehaviour:
   stealthMinigameBGM: {fileID: 8300000, guid: 29bfc040535c97d4d81a546245b13d59, type: 3}
   illusionMinigameBGM: {fileID: 0}
   backgroundSource: {fileID: 8544113614812959796}
-  masterMixer: {fileID: 0}
+  masterMixer: {fileID: 24100000, guid: b78401dbc7075cc4ab24e939c9897e29, type: 2}
+--- !u!114 &5633513455807391856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2877180567585225782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e9ab1a3715461a4499af88018ba8cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3960432401119807216
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +110,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
