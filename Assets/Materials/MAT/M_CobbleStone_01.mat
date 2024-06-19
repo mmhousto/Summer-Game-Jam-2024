@@ -29,7 +29,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _RimStep: 0.496
+    - _RimStep: 0.4
+    - _RimStepSmooth: 0.5
     - _SpecularStep: 0.065
     - _SpecularStepSmooth: 0.4
     m_Colors: []
