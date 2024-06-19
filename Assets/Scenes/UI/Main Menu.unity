@@ -5374,17 +5374,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: hoverSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 9051c88aa2c0a41e1a29967272bdbd0f, type: 3}
     - target: {fileID: 2877180567585225782, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
       propertyPath: m_Name
       value: Sound Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 8544113614812959796, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: Loop
-      value: 1
+    - target: {fileID: 7596342253123134350, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -18,8 +18,7 @@ public class FootstepsManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject);
-        switch (other.tag)
+        switch (LayerMask.LayerToName(other.gameObject.layer))
         {
             case "Dirt":
                 int randDirt = Random.Range(0, dirt.Length);
@@ -37,6 +36,10 @@ public class FootstepsManager : MonoBehaviour
             case "Wood":
                 int randWood = Random.Range(0, wood.Length);
                 audioSource.PlayOneShot(wood[randWood]);
+                break;
+            case "Pushable":
+                int randWood2 = Random.Range(0, wood.Length);
+                audioSource.PlayOneShot(wood[randWood2]);
                 break;
             default:
                 audioSource.PlayOneShot(dirt[6], 0.5f);
