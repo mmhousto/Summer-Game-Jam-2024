@@ -14,6 +14,8 @@ public class SoundManagerScript : MonoBehaviour
 
     public AudioClip collectingDeath, collectingWin;
 
+    public AudioClip propHit, propHitProp;
+
     public AudioClip wood, fork, hammer, potion, keychain, compass, book, dollhouse, goldbar;
 
     public AudioClip startGameSFX, backSFX, selectSFX, hoverSFX;

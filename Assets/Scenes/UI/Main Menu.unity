@@ -3268,7 +3268,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &658966229
@@ -5401,57 +5401,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: book
-      value: 
-      objectReference: {fileID: 8300000, guid: 120ce27abd0af47be989c88a5ab85c95, type: 3}
-    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: fork
-      value: 
-      objectReference: {fileID: 8300000, guid: dfd4450489ec74d28863cb7bf2dcdd44, type: 3}
-    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: wood
-      value: 
-      objectReference: {fileID: 8300000, guid: dcdc1904b1ecf47549afd9184e768c50, type: 3}
-    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: hammer
-      value: 
-      objectReference: {fileID: 8300000, guid: 0cca43e81b5f248e1ab71df8c4c9ccdc, type: 3}
-    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: potion
-      value: 
-      objectReference: {fileID: 8300000, guid: 495279906dc3541039eb2c31235dc3a5, type: 3}
-    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: compass
-      value: 
-      objectReference: {fileID: 8300000, guid: 2ae7091bb73114aaba3d5e2141b2729e, type: 3}
-    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: goldbar
-      value: 
-      objectReference: {fileID: 8300000, guid: bab469db8ec994193aa6fb0243e87dec, type: 3}
-    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: keychain
-      value: 
-      objectReference: {fileID: 8300000, guid: 10fb8c8f53b584595a22baa504ea7755, type: 3}
-    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: dollhouse
-      value: 
-      objectReference: {fileID: 8300000, guid: b98503e426530471f8ad19ab78ab8a24, type: 3}
-    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: collectingWin
-      value: 
-      objectReference: {fileID: 8300000, guid: dcdc1904b1ecf47549afd9184e768c50, type: 3}
-    - target: {fileID: 1326602414072542442, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: collectingDeath
-      value: 
-      objectReference: {fileID: 8300000, guid: 54a8df5759f454ee69b3af345cc0a8c7, type: 3}
     - target: {fileID: 2877180567585225782, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
       propertyPath: m_Name
       value: Sound Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7596342253123134350, guid: 7583b8d1d312c0c40aaeb1fc24e515a1, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
