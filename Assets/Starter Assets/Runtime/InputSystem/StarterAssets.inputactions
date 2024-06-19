@@ -239,6 +239,17 @@
                 },
                 {
                     "name": "",
+                    "id": "bad63f6f-e2e8-4629-a0b0-e0874dd33da8",
+                    "path": "<Gamepad>/leftStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e9c34a0c-ee24-46eb-97c2-3d5413cb622d",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -255,6 +266,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e830d15-0352-4ecd-8ba2-470224bde4ca",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false

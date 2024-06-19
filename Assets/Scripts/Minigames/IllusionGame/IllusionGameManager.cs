@@ -1,0 +1,150 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class IllusionGameManager : MonoBehaviour
+{
+    #region Fields
+
+    public GameObject[] items;
+    
+    public Transform[] itemSpawnPoints;
+    
+    private HealthManager healthManager;
+
+    [SerializeField] private Transform npc;
+
+    [SerializeField] private bool gameIsActive;
+
+    [SerializeField] private bool wonOnce;
+
+    [SerializeField] private string winningText;
+
+    private DialogueClass[] _manualDialogues;
+
+    private Dialogue _npcDialogue;
+
+    private Player player;
+
+    #endregion
+
+    #region UnityMethods
+
+    private void Start()
+    {
+        healthManager = GameObject.Find("HealthManager").GetComponent<HealthManager>();
+        gameIsActive = false;
+        _npcDialogue = npc.GetComponent<Dialogue>();
+
+        if (Player.Instance != null) player = Player.Instance;
+
+        wonOnce = (player) ? player.magiciansRespect : false;
+        if (wonOnce) NpcDialogueRemaining();
+    }
+
+    private void OnEnable()
+    {
+        
+        HealthManager.OnDeath += GameOver;
+    }
+
+
+    private void OnDisable()
+    {
+        
+        HealthManager.OnDeath -= GameOver;
+    }
+
+    #endregion
+
+    #region Methods
+
+    public bool IsGameActive()
+    {
+        return gameIsActive;
+    }
+
+    public void StartGame()
+    {
+        if (gameIsActive) return;
+        SetObjects();
+        gameIsActive = true;
+        
+        healthManager.StartGame();
+        NpcDialogueRemaining();
+    }
+
+    private void NpcDialogueRemaining()
+    {
+        var singleDialogue = new DialogueClass(PrintNpcText(), DialogueClass.Feel.Calm, npc.GetChild(2));
+
+        var newDialogues = new List<DialogueClass>();
+        if (wonOnce && !gameIsActive)
+        {
+            newDialogues.Add(new DialogueClass(winningText, DialogueClass.Feel.Calm, npc.GetChild(2)));
+        }
+
+        newDialogues.Add(singleDialogue);
+        if (_npcDialogue != null) _npcDialogue.SetManualDialogue(newDialogues.ToArray());
+    }
+
+    private string PrintNpcText()
+    {
+        var dialogue = "";
+        if (!gameIsActive)
+        {
+            dialogue = wonOnce
+                ? "You can keep playing if you want, start on the podium"
+                : "Wanna try again? start on the podium";
+        }
+        else
+        {
+            dialogue = "You can do it! Pick which is not like the others.";
+        }
+
+        return dialogue;
+    }
+
+    private void GameOver()
+    {
+        healthManager.EndGame();
+        gameIsActive = false;
+        NpcDialogueRemaining();
+
+        foreach (var item in items)
+        {
+            item.gameObject.SetActive(false);
+        }
+    }
+
+    public void WonGame()
+    {
+        wonOnce = true;
+        if(player)
+            player.magiciansRespect = true;
+
+        GameOver();
+    }
+
+    public void SetObjects()
+    {
+        List<int> spawnPointsTaken = new List<int>();
+
+        foreach (var item in items)
+        {
+            int i = Random.Range(0, itemSpawnPoints.Length);
+            while(spawnPointsTaken.Contains(i))
+            {
+                i = Random.Range(0, itemSpawnPoints.Length);
+            }
+            spawnPointsTaken.Add(i);
+
+            item.gameObject.SetActive(true);
+            item.transform.position = itemSpawnPoints[i].position;
+
+            item.GetComponent<IllusionItem>().EnableInteract();
+        }
+    }
+
+    #endregion
+}
