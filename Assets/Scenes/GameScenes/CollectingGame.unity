@@ -172,7 +172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 182963410992924053, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
       propertyPath: m_Name
-      value: FactionLord
+      value: mixamorig:Hips
       objectReference: {fileID: 0}
     - target: {fileID: 539906986824903145, guid: bfbbbe356949cf942a0df7ce53cf68ed, type: 3}
       propertyPath: m_Enabled
@@ -892,6 +892,18 @@ PrefabInstance:
       propertyPath: m_Padding.m_Left
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2419092028271013187, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2032617957, guid: 065b19211d2c5284b9e568a1ac00748c, type: 3}
+    - target: {fileID: 2419092028271013187, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
+      propertyPath: m_FillMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419092028271013187, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
+      propertyPath: m_FillOrigin
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3617788172314617988, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1060,6 +1072,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8601616923515243218, guid: 6e1c90ebac0fb4e44ac32cd3af4af177, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2032617957, guid: 065b19211d2c5284b9e568a1ac00748c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8607,6 +8623,10 @@ PrefabInstance:
       propertyPath: dialogueCanvas
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5859059586746345996, guid: 481b15461a885eb4b9aaa7961c37859c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 192014b2d5e9a4e449561c2aefaf0f5a, type: 2}
     - target: {fileID: 6450172578854850478, guid: 481b15461a885eb4b9aaa7961c37859c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8701,7 +8721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7790561851628607256, guid: 481b15461a885eb4b9aaa7961c37859c, type: 3}
       propertyPath: m_Name
-      value: Villager (1)
+      value: Acorn
       objectReference: {fileID: 0}
     - target: {fileID: 7790561851628607256, guid: 481b15461a885eb4b9aaa7961c37859c, type: 3}
       propertyPath: m_TagString
@@ -8709,7 +8729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8059697270065050691, guid: 481b15461a885eb4b9aaa7961c37859c, type: 3}
       propertyPath: m_Name
-      value: Accorn
+      value: mixamorig:Hips
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5320190462057079041, guid: 481b15461a885eb4b9aaa7961c37859c, type: 3}
