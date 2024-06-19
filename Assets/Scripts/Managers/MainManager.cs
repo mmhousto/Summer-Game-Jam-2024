@@ -41,6 +41,11 @@ public class MainManager : MonoBehaviour
         SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.selectSFX);
     }
 
+    public void PlayHoverSFX()
+    {
+        SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.hoverSFX);
+    }
+
     public void SetMasterVolume(float newVolume)
     {
         SoundManagerScript.Instance.setFloat("MyExposedParam 4", newVolume);
