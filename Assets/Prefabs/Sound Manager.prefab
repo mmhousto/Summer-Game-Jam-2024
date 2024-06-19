@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 439129646998395079}
   - component: {fileID: 1326602414072542442}
-  - component: {fileID: 5633513455807391856}
   m_Layer: 0
   m_Name: Sound Manager
   m_TagString: Untagged
@@ -47,23 +46,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664f7f250594c664a9fc51afb509ed59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectingMinigameBGM: {fileID: 0}
-  stealthMinigameBGM: {fileID: 8300000, guid: 29bfc040535c97d4d81a546245b13d59, type: 3}
-  illusionMinigameBGM: {fileID: 0}
+  titleTheme: {fileID: 8300000, guid: cd53c5ae4d04e4b00ae41203d9145b0a, type: 3}
+  collectingMinigameBGM: {fileID: 8300000, guid: 011a31327e1b942ada0c0fdaa7b7ce24, type: 3}
+  stealthMinigameBGM: {fileID: 8300000, guid: 4b3853925f5da420eb7e4f83df887a98, type: 3}
+  illusionMinigameBGM: {fileID: 8300000, guid: 581429b55bccc499cbf23bedda6ed4d6, type: 3}
+  scavengersTheme: {fileID: 8300000, guid: 69d174253f256460b994547d74c3c30e, type: 3}
+  thievesTheme: {fileID: 8300000, guid: 22a9c75a11f0843ffbe835f00f2e5cfa, type: 3}
+  magiciansTheme: {fileID: 8300000, guid: 818d04729c80546fcb7aa7d7033f4f5b, type: 3}
+  illusionDeath: {fileID: 8300000, guid: e8c1a888e777b482cb67e37d52ef7a24, type: 3}
+  illusionWin: {fileID: 8300000, guid: 5f879250d2a5c4f83a3555eb84dc49d7, type: 3}
+  startGameSFX: {fileID: 8300000, guid: 3702f9e84dcc74a98b349a010baedf7b, type: 3}
+  backSFX: {fileID: 8300000, guid: 3154bef7a473d4535a06085216504ffa, type: 3}
+  selectSFX: {fileID: 8300000, guid: 029ac9412cf68473c87e73da503568e3, type: 3}
   backgroundSource: {fileID: 8544113614812959796}
+  sfxSource: {fileID: 7596342253123134350}
   masterMixer: {fileID: 24100000, guid: b78401dbc7075cc4ab24e939c9897e29, type: 2}
---- !u!114 &5633513455807391856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2877180567585225782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e9ab1a3715461a4499af88018ba8cee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3960432401119807216
 GameObject:
   m_ObjectHideFlags: 0

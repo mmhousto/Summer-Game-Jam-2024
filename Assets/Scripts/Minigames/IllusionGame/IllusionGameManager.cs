@@ -67,6 +67,9 @@ public class IllusionGameManager : MonoBehaviour
     public void StartGame()
     {
         if (gameIsActive) return;
+
+        GameManagerScript.Instance.setGameState(GameManagerScript.GameState.IllusionGame);
+
         SetObjects();
         gameIsActive = true;
         
@@ -110,6 +113,8 @@ public class IllusionGameManager : MonoBehaviour
         healthManager.EndGame();
         gameIsActive = false;
         NpcDialogueRemaining();
+
+        GameManagerScript.Instance.setGameState(GameManagerScript.GameState.MagiciansFaction);
 
         foreach (var item in items)
         {

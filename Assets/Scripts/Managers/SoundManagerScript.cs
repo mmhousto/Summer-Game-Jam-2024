@@ -7,11 +7,21 @@ public class SoundManagerScript : MonoBehaviour
 {
     public static SoundManagerScript Instance; // this is the singleton!
 
-    public AudioClip collectingMinigameBGM, stealthMinigameBGM, illusionMinigameBGM; // drag clips into this 
-    public enum BGM { CollectingMinigame, StealthMinigame, IllusionMinigame };
-    private AudioClip[] bgmArray;
+    public AudioClip titleTheme, collectingMinigameBGM, stealthMinigameBGM, illusionMinigameBGM; // drag clips into this 
+    public AudioClip scavengersTheme, thievesTheme, magiciansTheme;
+
+    public AudioClip illusionDeath, illusionWin;
+
+    public AudioClip startGameSFX, backSFX, selectSFX, hoverSFX;
+
+    //public enum BGM { CollectingMinigame, StealthMinigame, IllusionMinigame };
+    //private AudioClip[] bgmArray;
+
+    private Dictionary<GameManagerScript.GameState, AudioClip> bgmDict;
 
     public AudioSource backgroundSource;
+
+    public AudioSource sfxSource;
 
     public AudioMixer masterMixer;
 
@@ -27,26 +37,38 @@ public class SoundManagerScript : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(Instance.gameObject);
-            bgmArray = new AudioClip[] { collectingMinigameBGM, stealthMinigameBGM, illusionMinigameBGM };
+            //bgmArray = new AudioClip[] { collectingMinigameBGM, stealthMinigameBGM, illusionMinigameBGM 
+        }
+
+        bgmDict = new Dictionary<GameManagerScript.GameState, AudioClip>() {
+                { GameManagerScript.GameState.MainMenu, titleTheme},
+                { GameManagerScript.GameState.ScavengersFaction, scavengersTheme},
+                { GameManagerScript.GameState.ThievesFaction, thievesTheme},
+                {GameManagerScript.GameState.MagiciansFaction, magiciansTheme },
+                { GameManagerScript.GameState.CollectionGame, collectingMinigameBGM},
+                { GameManagerScript.GameState.StealthGame, stealthMinigameBGM},
+                { GameManagerScript.GameState.IllusionGame, illusionMinigameBGM} };
+    }
+
+    public void StartBackgroundMusic(GameManagerScript.GameState gamestate)
+    {
+        if (bgmDict.ContainsKey(gamestate))
+        {
+            AudioClip bgmClip = bgmDict[gamestate];
+            backgroundSource.clip = bgmClip; // bgmArray[(int)bgm];
+            backgroundSource.Play();
         }
     }
 
-    private void Start()
-    {
-        StartBackgroundMusic(BGM.StealthMinigame);
-        Debug.Log("Testing w/ stealthminigame bgm");
-
-    }
-
-    public void StartBackgroundMusic(BGM bgm)
-    {
-        backgroundSource.clip = bgmArray[(int)bgm];
-        backgroundSource.Play();
-    }
-
-    public void StopBackgroundMusic(AudioClip bgmClip)
+    public void StopBackgroundMusic()
     {
         backgroundSource.Stop();
+    }
+
+    public void PlaySFXSound(AudioClip clip)
+    {
+        sfxSource.clip = clip;
+        sfxSource.Play();
     }
 
     public void setFloat(string parameter, float value)

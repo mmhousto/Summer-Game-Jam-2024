@@ -28,6 +28,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _RimStep: 0.4
+    - _RimStepSmooth: 0.5
+    - _SpecularStep: 0.065
+    - _SpecularStepSmooth: 0.4
     m_Colors: []
   m_BuildTextureStacks: []
