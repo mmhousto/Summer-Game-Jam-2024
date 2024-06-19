@@ -105,8 +105,8 @@ public class IllusionGameManager : MonoBehaviour
         if (!gameIsActive)
         {
             dialogue = wonOnce
-                ? "You can keep playing if you want, start on the podium"
-                : "Wanna try again? start on the podium";
+                ? "Would you like to try my game again? Well of course you do. These dolls are truly a work of art!"
+                : "Ready to try again? I admire your tenacity!";
         }
         else
         {
