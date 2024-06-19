@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 25129146}
   - component: {fileID: 25129145}
   - component: {fileID: 25129144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grotto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19493,7 +19493,7 @@ GameObject:
   - component: {fileID: 863311795}
   - component: {fileID: 863311794}
   - component: {fileID: 863311799}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22037,7 +22037,7 @@ GameObject:
   - component: {fileID: 1151176165}
   - component: {fileID: 1151176164}
   - component: {fileID: 1151176168}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33346,7 +33346,7 @@ GameObject:
   - component: {fileID: 1993140734}
   - component: {fileID: 1993140733}
   - component: {fileID: 1993140732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
