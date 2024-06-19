@@ -10,12 +10,16 @@ public class SoundManagerScript : MonoBehaviour
     public AudioClip titleTheme, collectingMinigameBGM, stealthMinigameBGM, illusionMinigameBGM; // drag clips into this 
     public AudioClip scavengersTheme, thievesTheme, magiciansTheme;
 
+    public AudioClip illusionDeath, illusionWin;
+
     //public enum BGM { CollectingMinigame, StealthMinigame, IllusionMinigame };
     //private AudioClip[] bgmArray;
 
     private Dictionary<GameManagerScript.GameState, AudioClip> bgmDict;
 
     public AudioSource backgroundSource;
+
+    public AudioSource sfxSource;
 
     public AudioMixer masterMixer;
 
@@ -57,6 +61,12 @@ public class SoundManagerScript : MonoBehaviour
     public void StopBackgroundMusic()
     {
         backgroundSource.Stop();
+    }
+
+    public void PlaySFXSound(AudioClip clip)
+    {
+        sfxSource.clip = clip;
+        sfxSource.Play();
     }
 
     public void setFloat(string parameter, float value)

@@ -21753,10 +21753,6 @@ PrefabInstance:
       propertyPath: contextPrompt
       value: 
       objectReference: {fileID: 660646944915455830}
-    - target: {fileID: 972013578299050113, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5f258ea9d14b4004999850cf068d209d, type: 2}
     - target: {fileID: 1026335276875777394, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: pauseMenu
       value: 

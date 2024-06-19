@@ -68,10 +68,10 @@ public class Player : MonoBehaviour
                 GameManagerScript.Instance.setGameState(GameManagerScript.GameState.ScavengersFaction);
                 break;
             case 4:
-                GameManagerScript.Instance.setGameState(GameManagerScript.GameState.ThievesFaction);
+                GameManagerScript.Instance.setGameState(GameManagerScript.GameState.MagiciansFaction);
                 break;
             case 5:
-                GameManagerScript.Instance.setGameState(GameManagerScript.GameState.MagiciansFaction);
+                GameManagerScript.Instance.setGameState(GameManagerScript.GameState.ThievesFaction);
                 break;
             default:
                 GameManagerScript.Instance.setGameState(GameManagerScript.GameState.MainMenu);
