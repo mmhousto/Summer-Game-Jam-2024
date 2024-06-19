@@ -11,6 +11,8 @@ public class StealthGameUI : MonoBehaviour
     public GameObject gameWinUI;
     bool gameIsOver;
 
+    public StealthGameManager sgm;
+
     #endregion
 
     #region UnityMethods
@@ -19,6 +21,7 @@ public class StealthGameUI : MonoBehaviour
     void Start()
     {
         Enemy.OnPlayerSpotted += ShowGameOverUI;
+        sgm = GameObject.Find("StealthGameManager").GetComponent<StealthGameManager>();
     }
 
     // Update is called once per frame
@@ -28,8 +31,13 @@ public class StealthGameUI : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                //SceneManager.LoadScene(0);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+            }
+            else if (Input.GetKeyDown(KeyCode.Return))
+            {
+                Time.timeScale = 1;
+                sgm.playerInput.ActivateInput();
+                SceneManager.LoadScene(2);
             }
         }
     }
