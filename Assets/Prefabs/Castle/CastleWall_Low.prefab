@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b7f06813dd18b2843b0aa62ff88166c1, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 0e00d4aaeb97e3b45bb50b7389138768, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2654481027928110384, guid: 2531025c48bf8c74fbab9243ebcfc012, type: 3}
     - target: {fileID: 919132149155446097, guid: 0e00d4aaeb97e3b45bb50b7389138768, type: 3}
       propertyPath: m_Name
       value: CastleWall_Low

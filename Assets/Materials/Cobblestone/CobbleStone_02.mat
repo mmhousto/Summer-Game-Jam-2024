@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cobblestone 4
+  m_Name: CobbleStone_02
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_Parent: {fileID: 2100000, guid: b4408c26c925fc847b24a9c4c44ebb81, type: 2}
+  m_Parent: {fileID: 2100000, guid: f6f52967b02432d48807dc3404c903ab, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _NORMALMAP
@@ -29,17 +29,17 @@ Material:
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 86e55a11fb99e1a44aef913a65d24782, type: 3}
-        m_Scale: {x: 5, y: 2}
+        m_Scale: {x: 10, y: 10}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 86e55a11fb99e1a44aef913a65d24782, type: 3}
-        m_Scale: {x: 5, y: 2}
+        m_Scale: {x: 10, y: 10}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats: []
     m_Colors: []
   m_BuildTextureStacks: []
---- !u!114 &8761670347054807469
+--- !u!114 &357529305021205028
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
