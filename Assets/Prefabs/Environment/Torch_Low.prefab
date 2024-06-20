@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 54e7df8405d992d419d15811a6efcb48, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 4807724d5a99427459037c9801b67304, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 6207859346680560765, guid: 86a28fadc197b734da7090a1939e6023, type: 3}
     - target: {fileID: 919132149155446097, guid: 4807724d5a99427459037c9801b67304, type: 3}
       propertyPath: m_Name
       value: Torch_Low

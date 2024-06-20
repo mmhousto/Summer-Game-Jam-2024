@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Wood_01
   m_Shader: {fileID: 4800000, guid: 2e676947039d29a4584b72b277a0bd47, type: 3}
-  m_Parent: {fileID: 2100000, guid: 5c5035f3ab3497d4b81661f98216822a, type: 2}
+  m_Parent: {fileID: 2100000, guid: 88e2a69abcf994946b6a03f7276c8ad5, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []

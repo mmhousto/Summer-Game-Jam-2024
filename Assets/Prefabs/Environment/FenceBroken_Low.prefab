@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3005fb86845577944b7ac43e22bc6f7c, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 2ba9c559c6de4b84f966ed5a20fa75e0, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6337819291552707298, guid: 9e5d066a0bc8efd41a6c35cb5b9c78f3, type: 3}
     - target: {fileID: 919132149155446097, guid: 2ba9c559c6de4b84f966ed5a20fa75e0, type: 3}
       propertyPath: m_Name
       value: FenceBroken_Low

@@ -26,7 +26,7 @@ Material:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 430c8ef7f5f6e7a4593f0accd63381c8, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 9.27}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _OutlineWidth: 0.01

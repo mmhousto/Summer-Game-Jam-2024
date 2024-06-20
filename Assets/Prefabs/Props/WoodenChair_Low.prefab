@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3005fb86845577944b7ac43e22bc6f7c, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 4273e5cdcbc82624db7638efda927895, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -874026046031972218, guid: 4f2c4c61324d08a40a557fedca75031c, type: 3}
     - target: {fileID: 919132149155446097, guid: 4273e5cdcbc82624db7638efda927895, type: 3}
       propertyPath: m_Name
       value: WoodenChair_Low

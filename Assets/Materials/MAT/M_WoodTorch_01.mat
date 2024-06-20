@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_WoodTorch_01
   m_Shader: {fileID: 4800000, guid: 2e676947039d29a4584b72b277a0bd47, type: 3}
-  m_Parent: {fileID: 2100000, guid: 5c5035f3ab3497d4b81661f98216822a, type: 2}
+  m_Parent: {fileID: 2100000, guid: 3005fb86845577944b7ac43e22bc6f7c, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -24,7 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: cedd7195e2f255d4e88b050603822dec, type: 3}
+        m_Texture: {fileID: 2800000, guid: d1b5a82abad549a479dd5f9a293417f2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
