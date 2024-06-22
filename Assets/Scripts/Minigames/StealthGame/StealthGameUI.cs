@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class StealthGameUI : MonoBehaviour
@@ -9,6 +10,7 @@ public class StealthGameUI : MonoBehaviour
 
     public GameObject gameOverUI;
     public GameObject gameWinUI;
+    public GameObject buttonToSelectOver, buttonToSelectWin;
     bool gameIsOver;
 
     public StealthGameManager sgm;
@@ -24,40 +26,59 @@ public class StealthGameUI : MonoBehaviour
         sgm = GameObject.Find("StealthGameManager").GetComponent<StealthGameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        if (gameIsOver)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
-            }
-            else if (Input.GetKeyDown(KeyCode.Return))
-            {
-                Time.timeScale = 1;
-                sgm.playerInput.ActivateInput();
-                SceneManager.LoadScene(2);
-            }
-        }
+        TimerManager.OnTimeOver += EndGame;
+    }
+
+    private void OnDisable()
+    {
+        TimerManager.OnTimeOver -= EndGame;
     }
 
     #endregion
 
     #region Methods
 
+    public void Replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+    }
+
+    public void GoToCastle()
+    {
+        Time.timeScale = 1;
+        sgm.playerInput.ActivateInput();
+        SceneLoader.LoadLevel((int)SceneLoader.Levels.Castle);
+    }
+
     void ShowGameWinUI()
     {
+        EventSystem.current.SetSelectedGameObject(buttonToSelectWin);
         OnGameOver(gameWinUI);
     }
 
     void ShowGameOverUI()
     {
+        EventSystem.current.SetSelectedGameObject(buttonToSelectOver);
+        OnGameOver(gameOverUI);
+    }
+
+    void EndGame()
+    {
+        EventSystem.current.SetSelectedGameObject(buttonToSelectOver);
+        sgm.playerInput.DeactivateInput();
+        Time.timeScale = 0;
         OnGameOver(gameOverUI);
     }
 
     public void OnGameOver(GameObject gameUI)
     {
+        if (gameUI.name.Contains("Win"))
+        {
+            EventSystem.current.SetSelectedGameObject(buttonToSelectWin);
+        }
+        Cursor.lockState = CursorLockMode.None;
         gameUI.SetActive(true);
         gameIsOver = true;
         Enemy.OnPlayerSpotted -= ShowGameOverUI;

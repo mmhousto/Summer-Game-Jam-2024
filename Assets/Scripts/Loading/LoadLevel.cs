@@ -23,6 +23,11 @@ public class LoadLevel : MonoBehaviour
 
     #region Unity Methods
 
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

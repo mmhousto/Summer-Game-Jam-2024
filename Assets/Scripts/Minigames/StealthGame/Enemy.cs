@@ -61,6 +61,8 @@ public class Enemy : Interactable
         {
             spotLight.color = Color.red;
             sgm.playerInput.DeactivateInput();
+            if(SoundManagerScript.Instance != null)
+                SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.stealthDeath);
             
             if (OnPlayerSpotted != null)
             {

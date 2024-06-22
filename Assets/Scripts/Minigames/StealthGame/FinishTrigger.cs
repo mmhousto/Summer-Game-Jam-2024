@@ -17,6 +17,11 @@ public class FinishTrigger : MonoBehaviour
     {
         if (sgm.playerHasItem)
         {
+            if (SoundManagerScript.Instance != null)
+                SoundManagerScript.Instance.PlaySFXSound(SoundManagerScript.Instance.stealthWin);
+
+            if (Player.Instance != null) Player.Instance.GainThievesRespect();
+
             sgm.playerInput.DeactivateInput();
             Time.timeScale = 0;
             finishUI.OnGameOver(finishUI.gameWinUI);
