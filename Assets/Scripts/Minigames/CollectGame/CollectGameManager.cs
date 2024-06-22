@@ -244,7 +244,8 @@ public class CollectGameManager : MonoBehaviour
         if (remainingItems > NO_REMAINING) return;
         OnFinished?.Invoke();
         wonOnce = true;
-        Player.Instance.scavengerRespect = true;
+        if(Player.Instance != null)
+            Player.Instance.scavengerRespect = true;
         gameIsActive = false;
         NpcDialogueRemaining();
         StartCoroutine(WaitAndRestart());
